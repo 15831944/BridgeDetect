@@ -393,6 +393,11 @@
             this.txtBasketAllowDisDiffLimit.Font = new System.Drawing.Font("宋体", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txtBasketAllowDisDiffLimit.Location = new System.Drawing.Point(272, 306);
             this.txtBasketAllowDisDiffLimit.Margin = new System.Windows.Forms.Padding(1);
+            this.txtBasketAllowDisDiffLimit.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
             this.txtBasketAllowDisDiffLimit.Name = "txtBasketAllowDisDiffLimit";
             this.txtBasketAllowDisDiffLimit.Size = new System.Drawing.Size(215, 53);
             this.txtBasketAllowDisDiffLimit.TabIndex = 12;

@@ -51,6 +51,7 @@ namespace BridgeDetectSystem
                 ConfigManager.ConfigKeys.anchor_ForceDiffLimit,
                 ConfigManager.ConfigKeys.frontPivot_DisLimit,
             };
+            SetNumericValue(numericList, configKeysList);
         }
 
         private void initial()
@@ -58,8 +59,6 @@ namespace BridgeDetectSystem
             this.panel2.Width = this.panel1.Width / 2;
             this.panel1.BackColor = Color.FromArgb(255, 50, 161, 206);
 
-
-            SetNumericValue(numericList, configKeysList);
 
             //#region label显示设置
             //lblUpDis.Text = configManager.GetReadableName(ConfigManager.ConfigKeys.basket_upDisLimit);
@@ -82,9 +81,9 @@ namespace BridgeDetectSystem
         {
             for (int i = 0; i < numericList.Count; i++)
             {
-                numericList[i].Value = Convert.ToDecimal(configManager.Get(configKeysList[i]));
                 numericList[i].Maximum = Convert.ToDecimal(configManager.GetMaxValue(configKeysList[i]));
                 numericList[i].Minimum = Convert.ToDecimal(configManager.GetMinValue(configKeysList[i]));
+                numericList[i].Value = Convert.ToDecimal(configManager.Get(configKeysList[i]));
             }
         }
 

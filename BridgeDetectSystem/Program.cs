@@ -32,17 +32,16 @@ namespace BridgeDetectSystem
         private static void Initialize(string[] args)
         {
             bool recreate = false;
-            bool loadFromDB = true;
+            bool isResetDb = false;
 
             if (args.Length > 0)
             {
                 recreate = bool.Parse(args[0]);
-                loadFromDB = bool.Parse(args[1]);
+                isResetDb = bool.Parse(args[1]);
             }
 
             //操作日志初始化
             log4net.Config.XmlConfigurator.Configure();
-
 
             //数据库初始化
             try
@@ -60,8 +59,16 @@ namespace BridgeDetectSystem
             //配置初始化
             try
             {
-                DBHelper dbhelper = DBHelper.GetInstance();
-                ConfigManager.Initialize(dbhelper, loadFromDB);
+                DBHelper dbHelper = DBHelper.GetInstance();
+                if (isResetDb)
+                {
+                    ConfigManager.Initialize(dbHelper, false);
+                    ConfigManager.GetInstance().RecreateDbTable();
+                }
+                else
+                {
+                    ConfigManager.Initialize(dbHelper);
+                }
             }
             catch (Exception ex)
             {

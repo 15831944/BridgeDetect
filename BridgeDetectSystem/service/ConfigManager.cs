@@ -238,7 +238,7 @@ namespace BridgeDetectSystem.service
             dbHelper.ExecuteNonQuery(
                 @"create table config
                 (
-                    name varchar(30) primary key,·
+                    name varchar(30) primary key,
                     value real not null
                 )");
         }

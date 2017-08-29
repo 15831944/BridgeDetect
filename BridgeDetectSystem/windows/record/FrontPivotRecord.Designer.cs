@@ -34,16 +34,16 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.dgv = new System.Windows.Forms.DataGridView();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.btnBack = new System.Windows.Forms.Button();
-            this.btnExport = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.btnBack = new System.Windows.Forms.Button();
+            this.btnExport = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
@@ -107,6 +107,37 @@
             this.dgv.TabIndex = 0;
             this.dgv.RowStateChanged += new System.Windows.Forms.DataGridViewRowStateChangedEventHandler(this.dataGridView1_RowStateChanged);
             // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "guid";
+            this.Column1.HeaderText = "序号";
+            this.Column1.Name = "Column1";
+            this.Column1.Visible = false;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "time";
+            this.Column3.HeaderText = "时间";
+            this.Column3.Name = "Column3";
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "operator";
+            this.Column4.HeaderText = "操作人";
+            this.Column4.Name = "Column4";
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "position1";
+            this.Column5.HeaderText = "1(cm)";
+            this.Column5.Name = "Column5";
+            // 
+            // Column6
+            // 
+            this.Column6.DataPropertyName = "position2";
+            this.Column6.HeaderText = "2(cm)";
+            this.Column6.Name = "Column6";
+            // 
             // panel3
             // 
             this.panel3.Controls.Add(this.btnBack);
@@ -163,37 +194,6 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "guid";
-            this.Column1.HeaderText = "序号";
-            this.Column1.Name = "Column1";
-            this.Column1.Visible = false;
-            // 
-            // Column3
-            // 
-            this.Column3.DataPropertyName = "time";
-            this.Column3.HeaderText = "时间";
-            this.Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            this.Column4.DataPropertyName = "operator";
-            this.Column4.HeaderText = "操作人";
-            this.Column4.Name = "Column4";
-            // 
-            // Column5
-            // 
-            this.Column5.DataPropertyName = "position1";
-            this.Column5.HeaderText = "1(cm)";
-            this.Column5.Name = "Column5";
-            // 
-            // Column6
-            // 
-            this.Column6.DataPropertyName = "position2";
-            this.Column6.HeaderText = "2(cm)";
-            this.Column6.Name = "Column6";
-            // 
             // FrontPivotRecord
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
@@ -201,6 +201,7 @@
             this.ClientSize = new System.Drawing.Size(1280, 1024);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;

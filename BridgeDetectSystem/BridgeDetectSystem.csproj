@@ -291,6 +291,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ico\m8.ico" />
+    <Content Include="ico\xingtu.ico" />
     <Content Include="image\banner.jpg" />
     <Content Include="ico\logo.ico" />
     <Content Include="image\warning.png" />

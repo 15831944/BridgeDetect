@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VideoMonitorWin));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.btnAllVideo = new System.Windows.Forms.ToolStripMenuItem();
             this.btnVideo1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -81,7 +82,7 @@
             this.btnAllVideo.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnAllVideo.ForeColor = System.Drawing.Color.White;
             this.btnAllVideo.Name = "btnAllVideo";
-            this.btnAllVideo.Size = new System.Drawing.Size(84, 44);
+            this.btnAllVideo.Size = new System.Drawing.Size(101, 44);
             this.btnAllVideo.Text = "全部显示";
             this.btnAllVideo.Click += new System.EventHandler(this.btnAllVideo_Click);
             // 
@@ -90,7 +91,7 @@
             this.btnVideo1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnVideo1.ForeColor = System.Drawing.Color.White;
             this.btnVideo1.Name = "btnVideo1";
-            this.btnVideo1.Size = new System.Drawing.Size(60, 44);
+            this.btnVideo1.Size = new System.Drawing.Size(71, 44);
             this.btnVideo1.Text = "1放大";
             this.btnVideo1.Click += new System.EventHandler(this.btnVideo1_Click);
             // 
@@ -99,7 +100,7 @@
             this.btnVideo2.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnVideo2.ForeColor = System.Drawing.Color.White;
             this.btnVideo2.Name = "btnVideo2";
-            this.btnVideo2.Size = new System.Drawing.Size(60, 44);
+            this.btnVideo2.Size = new System.Drawing.Size(71, 44);
             this.btnVideo2.Text = "2放大";
             this.btnVideo2.Click += new System.EventHandler(this.btnVideo2_Click);
             // 
@@ -108,7 +109,7 @@
             this.btnVideo3.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnVideo3.ForeColor = System.Drawing.Color.White;
             this.btnVideo3.Name = "btnVideo3";
-            this.btnVideo3.Size = new System.Drawing.Size(60, 44);
+            this.btnVideo3.Size = new System.Drawing.Size(71, 44);
             this.btnVideo3.Text = "3放大";
             this.btnVideo3.Click += new System.EventHandler(this.btnVideo3_Click);
             // 
@@ -117,7 +118,7 @@
             this.btnVideo4.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnVideo4.ForeColor = System.Drawing.Color.White;
             this.btnVideo4.Name = "btnVideo4";
-            this.btnVideo4.Size = new System.Drawing.Size(60, 44);
+            this.btnVideo4.Size = new System.Drawing.Size(71, 44);
             this.btnVideo4.Text = "4放大";
             this.btnVideo4.Click += new System.EventHandler(this.btnVideo4_Click);
             // 
@@ -225,12 +226,13 @@
             // 
             // VideoMonitorWin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1152, 922);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("宋体", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;

@@ -39,39 +39,9 @@ namespace BridgeDetectSystem.service
                 }
             }
         }
-        /// <summary>
-        /// 插入一万条数据
-        /// </summary>
-        public static void InsertData()
-        {
-            int n = 10000;
-            int r = -1;
-            string insertSql = "insert into AnchorForce values(newid(),getdate(),'工人李某',1.01,2.22,3.033,4.0)";
-            DBHelper dbheler = DBHelper.GetInstance();
-            while (n > 0)
-            {
-                r = dbheler.ExecuteNonQuery(insertSql, null);
-                n = n - 1;
-            }
-            if (r > 0)
-            {
-                MessageBox.Show("插入一万条数据成功");
-            }
-          
-        }
-        /// <summary>
-        /// 删除数据
-        /// </summary>
-        public static void DeleteData()
-        {
-            string sql = "delete  from AnchorForce";
-            DBHelper dbheler = DBHelper.GetInstance();
-            int r = dbheler.ExecuteNonQuery(sql, null);
-            if (r > 0)
-            {
-                MessageBox.Show("删除成功");
-            }
-        }
+     
+       
+    
         
         
 

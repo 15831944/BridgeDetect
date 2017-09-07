@@ -264,7 +264,8 @@ namespace BridgeDetectSystem.service
                 forceLimit = config.Get(ConfigManager.ConfigKeys.steeve_ForceLimit);
                 forceDiff = config.Get(ConfigManager.ConfigKeys.steeve_ForceDiffLimit);
                 var dic = obj as Dictionary<int, Steeve>;
-                foreach (var kv in dic)
+                var list = dic.ToList();
+                foreach (var kv in list)
                 {
                     forceList.Add(kv.Value.GetForce());
                 }
@@ -274,7 +275,8 @@ namespace BridgeDetectSystem.service
                 forceLimit = config.Get(ConfigManager.ConfigKeys.anchor_ForceLimit);
                 forceDiff = config.Get(ConfigManager.ConfigKeys.anchor_ForceDiffLimit);
                 var dic = obj as Dictionary<int, Anchor>;
-                foreach (var kv in dic)
+                var list = dic.ToList();
+                foreach (var kv in list)
                 {
                     forceList.Add(kv.Value.GetForce());
                 }

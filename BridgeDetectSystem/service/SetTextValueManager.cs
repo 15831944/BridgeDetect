@@ -18,6 +18,7 @@ namespace BridgeDetectSystem.service
             txt2.Text = array[1].ToString();
             txt3.Text = array[2].ToString();
             txt4.Text = array[3].ToString();
+           
             txtmax.Text = Max.ToString();
             txtmaxdiff.Text = MaxDiff.ToString();
         }

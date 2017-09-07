@@ -32,7 +32,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PouringState));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.btnFirstPage = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnSetParameter = new System.Windows.Forms.ToolStripMenuItem();
             this.btnExit = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -211,7 +210,6 @@
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnFirstPage,
-            this.btnSetParameter,
             this.btnExit});
             this.menuStrip1.Location = new System.Drawing.Point(22, 72);
             this.menuStrip1.Name = "menuStrip1";
@@ -227,15 +225,6 @@
             this.btnFirstPage.Size = new System.Drawing.Size(61, 44);
             this.btnFirstPage.Text = "首页";
             this.btnFirstPage.Click += new System.EventHandler(this.btnFirstPage_Click);
-            // 
-            // btnSetParameter
-            // 
-            this.btnSetParameter.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnSetParameter.ForeColor = System.Drawing.Color.White;
-            this.btnSetParameter.Name = "btnSetParameter";
-            this.btnSetParameter.Size = new System.Drawing.Size(101, 44);
-            this.btnSetParameter.Text = "参数设置";
-            this.btnSetParameter.Click += new System.EventHandler(this.btnSetParameter_Click);
             // 
             // btnExit
             // 
@@ -2127,6 +2116,7 @@
             // 
             // timer1
             // 
+            this.timer1.Enabled = true;
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
@@ -2151,7 +2141,7 @@
             this.TextAlign = System.Windows.Forms.VisualStyles.HorizontalAlign.Center;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PouringState_FormClosing);
-            this.Load += new System.EventHandler(this.SteeveForceAndDisplacement16_Load);
+            this.Load += new System.EventHandler(this.PourState_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -2320,7 +2310,6 @@
         private MetroFramework.Controls.MetroLabel lblAnchorF9;
         private MetroFramework.Controls.MetroLabel lblAnchorF1;
         private MetroFramework.Controls.MetroTextBox txtAnchorF1;
-        private System.Windows.Forms.ToolStripMenuItem btnSetParameter;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;

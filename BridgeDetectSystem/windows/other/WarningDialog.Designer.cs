@@ -121,7 +121,7 @@
             this.listBoxWarning.FormattingEnabled = true;
             this.listBoxWarning.ItemHeight = 15;
             this.listBoxWarning.Location = new System.Drawing.Point(297, 91);
-            this.listBoxWarning.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.listBoxWarning.Margin = new System.Windows.Forms.Padding(4);
             this.listBoxWarning.Name = "listBoxWarning";
             this.tableLayoutPanel1.SetRowSpan(this.listBoxWarning, 4);
             this.listBoxWarning.Size = new System.Drawing.Size(385, 446);
@@ -132,7 +132,7 @@
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(72, 91);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.tableLayoutPanel1.SetRowSpan(this.pictureBox1, 2);
             this.pictureBox1.Size = new System.Drawing.Size(188, 166);
@@ -145,7 +145,7 @@
             this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(719, 91);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox2.Name = "pictureBox2";
             this.tableLayoutPanel1.SetRowSpan(this.pictureBox2, 2);
             this.pictureBox2.Size = new System.Drawing.Size(188, 166);
@@ -164,7 +164,6 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Movable = false;
             this.Name = "WarningDialog";
             this.Padding = new System.Windows.Forms.Padding(20, 75, 20, 20);
             this.Resizable = false;

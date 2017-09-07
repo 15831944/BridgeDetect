@@ -25,7 +25,13 @@ namespace BridgeDetectSystem.service
         private ConfigManager config;
         private AdamHelper adamHelper;
         private DBHelper dbhelper;
-
+       
+        double steeveDisLimit;
+        double steeveDisDiffLimit;
+        
+        double FrontDisLimit;
+        double basketupDisLimit;
+        double allowDisDiffLimit;
         private List<string> warningList;
         //同步信号，当报警发生时，暂停当前线程。需要手动重新启动线程，
         //在WarningDialog界面中传入信号到当前类
@@ -68,7 +74,7 @@ namespace BridgeDetectSystem.service
         public void BgCancel()
         {
             bgWork.CancelAsync();
-            isStart = true;
+            isStart = false;
         }
 
 
@@ -104,7 +110,7 @@ namespace BridgeDetectSystem.service
         /// <param name="e"></param>
         private void BgDoWork(object sender, DoWorkEventArgs e)
         {
-            Thread.CurrentThread.Name = "报警后台线程";
+            //Thread.CurrentThread.Name = "报警后台线程";
             //写判断逻辑,
             while (true)
             {
@@ -172,11 +178,12 @@ namespace BridgeDetectSystem.service
             }
             double first = Math.Abs(disDiffList[0] - adamHelper.first_frontPivotDisStandard);
             double second = Math.Abs(disDiffList[1] - adamHelper.second_frontPivotDisStandard);
-            if (first > 0)
+            FrontDisLimit = config.Get(ConfigManager.ConfigKeys.frontPivot_DisLimit);
+            if (first > FrontDisLimit)
             {
                 warningList.Add("1号前支点沉降超过设定值！！！");
             }
-            if (second > 0)
+            if (second > FrontDisLimit)
             {
                 warningList.Add("2号前支点沉降超过设定值！！！");
             }
@@ -201,10 +208,12 @@ namespace BridgeDetectSystem.service
             {
                 disList.Add(kv.Value.GetDisplace());
             }
-
+            basketupDisLimit = config.Get(ConfigManager.ConfigKeys.basket_upDisLimit);
+            allowDisDiffLimit = config.Get(ConfigManager.ConfigKeys.basket_allowDisDiffLimit);
+            steeveDisLimit = basketupDisLimit + allowDisDiffLimit;
             for (int i = 0; i < disList.Count; i++)
             {
-                if (disList[i] > adamHelper.steeveDisStandard)
+                if (disList[i] > steeveDisLimit)
                 {
                     warningList.Add("第" + i + "号吊杆位移过大,值为：" + disList[i] + "(cm)");
                 }

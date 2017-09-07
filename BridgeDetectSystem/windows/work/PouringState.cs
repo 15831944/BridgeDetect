@@ -18,23 +18,55 @@ namespace BridgeDetectSystem
         AdamHelper adamHelper;
         DataStoreManager dataStoreManager;
         WarningManager warningManager;
-
+        ConfigManager config;
+        double steeveForceLimit;
+        double steeveForceDiffLimit;
+        double steeveDisLimit;
+        double steeveDisDiffLimit;
+        double anchorForceLimit;
+        double anchorForceDiffLimit;
+        double FrontDisLimit;
+        double basketupDisLimit;
+        double allowDisDiffLimit;
+         double firstStandard;
+        double secondStanard;
         public PouringState()
         {
             InitializeComponent();
             adamHelper = AdamHelper.GetInstance();
+            //数据保存类初始化
+            try
+            {
+                DataStoreManager.Initialize();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
             dataStoreManager = DataStoreManager.GetInstance();
             warningManager = WarningManager.GetInstance();
+            config = ConfigManager.GetInstance();
+          
         }
 
-        private void SteeveForceAndDisplacement16_Load(object sender, EventArgs e)
+        private void PourState_Load(object sender, EventArgs e)
         {
             this.panel1.BackColor = Color.FromArgb(255, 50, 161, 206);
             this.panel2.Width = this.panel1.Width / 2;
             this.panel4.Height = (this.panel1.Height - menuStrip1.Height) / 2;
             this.panel6.Height = (this.panel1.Height - menuStrip1.Height) / 2;
             this.panel8.Width = this.panel7.Width / 2;
-
+           
+            //得到配置项的值
+            steeveForceLimit = config.Get(ConfigManager.ConfigKeys.steeve_ForceLimit);
+            steeveForceDiffLimit = config.Get(ConfigManager.ConfigKeys.steeve_ForceDiffLimit);
+            basketupDisLimit = config.Get(ConfigManager.ConfigKeys.basket_upDisLimit);
+            allowDisDiffLimit = config.Get(ConfigManager.ConfigKeys.basket_allowDisDiffLimit);
+            steeveDisLimit = basketupDisLimit + allowDisDiffLimit;
+            steeveDisDiffLimit = config.Get(ConfigManager.ConfigKeys.steeve_DisDiffLimit);
+            anchorForceLimit = config.Get(ConfigManager.ConfigKeys.anchor_ForceLimit);
+            anchorForceDiffLimit = config.Get(ConfigManager.ConfigKeys.anchor_ForceDiffLimit);
+            FrontDisLimit = config.Get(ConfigManager.ConfigKeys.frontPivot_DisLimit);
             //开始接收数据
             adamHelper.StartTimer(250);
             dataStoreManager.StartTimer(500, 1000);
@@ -43,6 +75,7 @@ namespace BridgeDetectSystem
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+            
             RefreshSteeveText();
             RefreshAnchorText();
             RefreshFrontPivotText();
@@ -79,7 +112,11 @@ namespace BridgeDetectSystem
                 steeveDis[i] = dicSteeve[i].GetDisplace();//为吊杆力位移数组赋值
             }
             SetTextValueManager.SetValueToText(steeveForce, ref txtSteeveF1, ref txtSteeveF2, ref txtSteeveF3, ref txtSteeveF4, ref txtMaxSteeveForce, ref txtMaxSteeveForceDiff);
+            txtSteeveForceLimit.Text = steeveForceLimit.ToString();
+            txtSteeveForceDiffLimit.Text = steeveForceDiffLimit.ToString();
             SetTextValueManager.SetValueToText(steeveDis, ref txtSteeveDis1, ref txtSteeveDis2, ref txtSteeveDis3, ref txtSteeveDis4, ref txtMaxSteeveDis, ref txtMaxSteeveDisDiff);
+            txtSteeveDisLimit.Text = steeveDisLimit.ToString();
+            txtSteeveDisDiffLimit.Text = steeveDisDiffLimit.ToString();
         }
 
         /// <summary>
@@ -94,7 +131,8 @@ namespace BridgeDetectSystem
                 anchorForce[i] = dicAnchor[i].GetForce();
             }
             SetTextValueManager.SetValueToText(anchorForce, ref txtAnchorF1, ref txtAnchorF2, ref txtAnchorF3, ref txtAnchorF4, ref txtMaxAnchorForce, ref txtMaxAnchorForceDiff);
-
+            txtAnchorForceLimit.Text = anchorForceLimit.ToString();
+            txtAnchorForceDiffLimit.Text = anchorForceDiffLimit.ToString();
 
         }
 
@@ -103,14 +141,17 @@ namespace BridgeDetectSystem
         /// </summary>
         private void RefreshFrontPivotText()
         {
+            firstStandard = adamHelper.first_frontPivotDisStandard;
+            secondStanard = adamHelper.second_frontPivotDisStandard;
             Dictionary<int, FrontPivot> dicFrontPivot = adamHelper.frontPivotDic;
             double[] frontPivotDis = new double[dicFrontPivot.Count];
-            for (int i = 0; i < 2; i++)
-            {
-                frontPivotDis[i] = dicFrontPivot[i].GetDisplace();//数组存位移
-            }
+            
+            
+                frontPivotDis[0] = dicFrontPivot[0].GetDisplace()-firstStandard;//数组存位移
+            frontPivotDis[1] = dicFrontPivot[1].GetDisplace() - secondStanard;
             txtFrontPivotDis1.Text = frontPivotDis[0].ToString();
             txtFrontPivotDis2.Text = frontPivotDis[1].ToString();
+            txtFrontDIsDiffLimit.Text = FrontDisLimit.ToString();
         }
 
         /// <summary>
@@ -148,11 +189,7 @@ namespace BridgeDetectSystem
             this.Close();
         }
 
-        private void btnSetParameter_Click(object sender, EventArgs e)
-        {
-            SetParameter win = new SetParameter();
-            win.Show();
-        }
+       
 
         #endregion
 

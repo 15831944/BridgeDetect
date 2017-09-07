@@ -63,7 +63,8 @@ namespace BridgeDetectSystem.adam
                 {
                     readTimer.Change(Timeout.Infinite, Timeout.Infinite);
                     hasData = false;
-                    throw ex;
+                    //throw ex;
+                    System.Windows.Forms.MessageBox.Show("研华模块掉线，请检查硬件连接，确保连接完全正确，重新启动软件");
                 }
             }, null, Timeout.Infinite,Timeout.Infinite);
         }
@@ -152,7 +153,7 @@ namespace BridgeDetectSystem.adam
                     }
                     for (j = 4; j < 6; j++)
                     {
-                        disSensor = new Sensor(SensorType.displaceSensor, 4, 20, 5, 100);
+                        disSensor = new Sensor(SensorType.displaceSensor, 4, 20,0.8, 100);
                         tempDic.TryGetValue(j, out disData);
                         disSensor.readValue = double.Parse(disData);
 
@@ -194,9 +195,15 @@ namespace BridgeDetectSystem.adam
                 sum += val;
             }
             steeveDisStandard = Math.Round(sum / disList.Count, 3);
-
-            first_frontPivotDisStandard = Math.Round(double.Parse(adamList[1].Read(4)));
-            second_frontPivotDisStandard = Math.Round(double.Parse(adamList[1].Read(5)));
+            //前支点基准值
+            Sensor sensor1 = new Sensor(SensorType.displaceSensor, 4, 20, 0.8, 100);
+            sensor1.readValue = double.Parse(adamList[1].Read(4));
+            //first_frontPivotDisStandard = Math.Round(double.Parse(adamList[1].Read(4)));
+            //second_frontPivotDisStandard = Math.Round(double.Parse(adamList[1].Read(5)));
+            first_frontPivotDisStandard = sensor1.GetRealValue();
+            Sensor sensor2 = new Sensor(SensorType.displaceSensor, 4, 20, 0.8, 100);
+            sensor2.readValue = double.Parse(adamList[1].Read(5));
+            second_frontPivotDisStandard = sensor2.GetRealValue();
         }
 
         /// <summary>

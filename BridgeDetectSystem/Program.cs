@@ -80,7 +80,7 @@ namespace BridgeDetectSystem
             List<AdamOperation> list = new List<AdamOperation>
             {
                 new Adam6217Operation("192.168.1.3", 0),
-                new Adam6217Operation("192.168.1.4", 1)
+                new Adam6217Operation("192.168.1.190", 1)
             };
 
             try
@@ -96,7 +96,7 @@ namespace BridgeDetectSystem
             //行走状态接收线程初始化
             try
             {
-                AdamHelper2.Initialize(new Adam6217Operation("192.168.1.4", 1));
+                AdamHelper2.Initialize(new Adam6217Operation("192.168.1.190", 1));
             }
             catch (Exception ex)
             {
@@ -104,14 +104,15 @@ namespace BridgeDetectSystem
             }
 
             //数据保存类初始化
-            try
-            {
-                DataStoreManager.Initialize();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            //放到浇筑窗体那里初始化
+            //try
+            //{
+            //    DataStoreManager.Initialize();
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message);
+            //}
 
         }
 

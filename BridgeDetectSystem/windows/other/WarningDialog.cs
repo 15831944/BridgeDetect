@@ -81,8 +81,8 @@ namespace BridgeDetectSystem.windows
         public void DoWork(object obj)
         {
             var list = obj as List<string>;
-
-            foreach(string str in list)
+            listBoxWarning.Items.Clear();
+            foreach (string str in list)
             {
                 listBoxWarning.Items.Add(str);
             }

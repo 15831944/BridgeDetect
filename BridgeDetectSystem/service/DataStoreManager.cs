@@ -6,23 +6,25 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading;
+using System.Windows.Forms;
 
 namespace BridgeDetectSystem.service
 {
     public class DataStoreManager
     {
-        Timer storeTimer { get; set; }
+        System.Threading.Timer storeTimer { get; set; }
         DBHelper dbhelper;
         AdamHelper adamHelper;
-        string name;//得到操作人的名字
+        string name;
 
 
         private DataStoreManager()
         {
             dbhelper = DBHelper.GetInstance();
             adamHelper = AdamHelper.GetInstance();
-            name = UserRightManager.user.userName;
-            storeTimer = new Timer(_ =>
+            name = UserRightManager.user.userName;//得到操作人的名字
+          //  name = "admin";
+            storeTimer = new System.Threading.Timer(_ =>
             {
                 if (adamHelper.hasData)
                 {
@@ -57,7 +59,7 @@ namespace BridgeDetectSystem.service
         /// </summary>
         public void InsertSteeveData()
         {
-
+           
             Dictionary<int, Steeve> dicSteeve = adamHelper.steeveDic;       //吊杆
             string sqlSteeveForce = string.Format("insert into SteeveForce values(newid(),getdate(),'{0}',{1},{2},{3},{4})", name, dicSteeve[0].GetForce(), dicSteeve[1].GetForce(), dicSteeve[2].GetForce(), dicSteeve[3].GetForce());                      //吊杆力
             string sqlSteeveDis = string.Format("insert into SteeveDisplacement values(newid(),getdate(),'{0}',{1},{2},{3},{4})", name, dicSteeve[0].GetDisplace(), dicSteeve[1].GetDisplace(), dicSteeve[2].GetDisplace(), dicSteeve[3].GetDisplace());          //吊杆位移
@@ -92,8 +94,18 @@ namespace BridgeDetectSystem.service
         /// </summary>
         public void InsertFrontPivotDis()
         {
+            double firstStandard;
+            double secondStandard;
+            firstStandard = adamHelper.first_frontPivotDisStandard;
+            secondStandard = adamHelper.second_frontPivotDisStandard;
             Dictionary<int, FrontPivot> dicFrontPivot = adamHelper.frontPivotDic;
-            string sql = string.Format("insert into FrontPivotDis values(newid(),getdate(),'{0}',{1},{2})", name, dicFrontPivot[0].GetDisplace(), dicFrontPivot[1].GetDisplace());
+            double[] frontPivotDis = new double[dicFrontPivot.Count];
+
+
+            frontPivotDis[0] = dicFrontPivot[0].GetDisplace() - firstStandard;//数组存位移
+            frontPivotDis[1] = dicFrontPivot[1].GetDisplace() - secondStandard;
+          //  Dictionary<int, FrontPivot> dicFrontPivot = adamHelper.frontPivotDic;
+            string sql = string.Format("insert into FrontPivotDis values(newid(),getdate(),'{0}',{1},{2})", name, frontPivotDis[0], frontPivotDis[1]);
             try
             {
                 int r = dbhelper.ExecuteNonQuery(sql);
@@ -117,7 +129,7 @@ namespace BridgeDetectSystem.service
             catch (Exception ex)
             {
                 storeTimer.Change(Timeout.Infinite, Timeout.Infinite);
-                throw ex;
+                MessageBox.Show(ex.Message);
             }
         }
 

@@ -193,10 +193,17 @@ namespace BridgeDetectSystem
             }
         }
 
-        
-
-
-
-
+        private void MainWin_Load(object sender, EventArgs e)
+        {
+            //数据保存类初始化
+            try
+            {
+                DataStoreManager.Initialize();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }

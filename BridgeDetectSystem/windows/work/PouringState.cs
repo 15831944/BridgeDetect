@@ -34,15 +34,7 @@ namespace BridgeDetectSystem
         {
             InitializeComponent();
             adamHelper = AdamHelper.GetInstance();
-            //数据保存类初始化
-            try
-            {
-                DataStoreManager.Initialize();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+           
             dataStoreManager = DataStoreManager.GetInstance();
             warningManager = WarningManager.GetInstance();
             config = ConfigManager.GetInstance();
@@ -80,7 +72,11 @@ namespace BridgeDetectSystem
             RefreshAnchorText();
             RefreshFrontPivotText();
         }
-
+        /// <summary>
+/// 关闭窗体时关闭线程
+/// </summary>
+/// <param name="sender"></param>
+/// <param name="e"></param>
         private void PouringState_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (dataStoreManager != null)
@@ -161,14 +157,35 @@ namespace BridgeDetectSystem
         /// <param name="e"></param>
         private void btnReset_Click(object sender, EventArgs e)
         {
+            if (dataStoreManager != null)
+            {
+                dataStoreManager.StopTimer();
+            }
+            if (adamHelper != null)
+            {
+                adamHelper.StopTimer();
+            }
+
+
+           
             try
             {
-                adamHelper.ReadStandardValue();
+                adamHelper.StartTimer(250);
+                dataStoreManager.StartTimer(500, 1000);
             }
-            catch (Exception ex)
+            catch(Exception ex)
             {
-                MessageBox.Show("重置发生错误：" + ex.Message);
+                MessageBox.Show("重置发生错误" + ex.Message);
             }
+           
+            //try
+            //{
+            //    adamHelper.ReadStandardValue();
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show("重置发生错误：" + ex.Message);
+            //}
         }
         #endregion
 

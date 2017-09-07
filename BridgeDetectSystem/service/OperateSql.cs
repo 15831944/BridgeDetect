@@ -11,7 +11,7 @@ namespace BridgeDetectSystem.service
    public static class OperateSql
     {   
         /// <summary>
-        /// 加载数据表
+        /// 加载数据表，按时间降序排列
         /// </summary>
         /// <param name="sql">sql语句</param>
         /// <param name="dgv">控件datagridview</param>
@@ -19,6 +19,9 @@ namespace BridgeDetectSystem.service
         {
             DBHelper dbhelper = DBHelper.GetInstance();
             DataTable dt = dbhelper.ExecuteSqlDataAdapter(sql, null, 0);
+            DataView dv = dt.DefaultView;
+            dv.Sort = "time desc";//按时间降序
+            dt = dv.ToTable();
             dgv.DataSource = dt;
             OperateSql.RemoveNULL(dgv);
             dgv.AutoGenerateColumns = false;

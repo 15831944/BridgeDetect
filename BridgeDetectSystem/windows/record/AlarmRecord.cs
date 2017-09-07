@@ -59,6 +59,7 @@ namespace BridgeDetectSystem
             dt.Columns[1].ColumnName = "时间";
             dt.Columns[2].ColumnName = "报警类型";
             dt.Columns[3].ColumnName = "操作人";
+           
             ExportToExcel.ExportData(dt);
         }
     }

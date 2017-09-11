@@ -210,7 +210,7 @@ namespace BridgeDetectSystem.service
             }
             basketupDisLimit = config.Get(ConfigManager.ConfigKeys.basket_upDisLimit);
             allowDisDiffLimit = config.Get(ConfigManager.ConfigKeys.basket_allowDisDiffLimit);
-            steeveDisLimit = basketupDisLimit + allowDisDiffLimit;
+            steeveDisLimit = basketupDisLimit + allowDisDiffLimit;//吊杆位移上限
             for (int i = 0; i < disList.Count; i++)
             {
                 if (disList[i] > steeveDisLimit)
@@ -226,20 +226,20 @@ namespace BridgeDetectSystem.service
             }
 
             double average = sum / disList.Count;
-            double realDis = average - adamHelper.steeveDisStandard;
+            double realDis = average - adamHelper.steeveDisStandard;//四根吊杆的平均位移，可当作前下横梁位移
             double allowDisDiff = config.Get(ConfigManager.ConfigKeys.basket_allowDisDiffLimit);
             if (realDis > 0)
             {
                 if (realDis - config.Get(ConfigManager.ConfigKeys.basket_upDisLimit) > allowDisDiff)
                 {
-                    warningList.Add("挂篮上升位移，超过设定值报警。上升的位移平均值为：" + realDis);
+                    warningList.Add("前下横梁上升位移，超过设定值报警。上升的位移平均值为：" + realDis);
                 }
             }
             else
             {
                 if (Math.Abs(realDis) - config.Get(ConfigManager.ConfigKeys.basket_downDisLimit) > allowDisDiff)
                 {
-                    warningList.Add("挂篮下降位移，超过设定值报警。下降的位移平均值为：" + Math.Abs(realDis));
+                    warningList.Add("前下横梁下降位移，超过设定值报警。下降的位移平均值为：" + Math.Abs(realDis));
                 }
             }
 

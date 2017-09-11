@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VideoMonitorWin));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.btnAllVideo = new System.Windows.Forms.ToolStripMenuItem();
@@ -46,6 +47,8 @@
             this.picBox2 = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.picBox1 = new System.Windows.Forms.PictureBox();
+            this.txtRailway = new System.Windows.Forms.TextBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -224,11 +227,24 @@
             this.picBox1.TabIndex = 0;
             this.picBox1.TabStop = false;
             // 
+            // txtRailway
+            // 
+            this.txtRailway.Location = new System.Drawing.Point(961, 36);
+            this.txtRailway.Name = "txtRailway";
+            this.txtRailway.Size = new System.Drawing.Size(100, 28);
+            this.txtRailway.TabIndex = 2;
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // VideoMonitorWin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1152, 922);
+            this.Controls.Add(this.txtRailway);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("宋体", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
@@ -260,6 +276,7 @@
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -282,5 +299,7 @@
         private System.Windows.Forms.PictureBox picBox2;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.PictureBox picBox1;
+        private System.Windows.Forms.TextBox txtRailway;
+        private System.Windows.Forms.Timer timer1;
     }
 }

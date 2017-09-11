@@ -16,6 +16,8 @@ namespace BridgeDetectSystem.adam
         public volatile bool hasData;
         public double readData { get; }
         public Timer readTimer { get; set; }
+        public FrontPivot f { get; set; }
+        public double v { get; set; }
         #endregion
 
         #region 单例
@@ -24,7 +26,7 @@ namespace BridgeDetectSystem.adam
         {
             hasData = false;
             this.oper = oper;
-          
+            this.v = 0;
             readTimer = new Timer(_ =>
             {
                 ReadRailWay();
@@ -64,15 +66,18 @@ namespace BridgeDetectSystem.adam
 
         #region 方法
         private static readonly object obj = new object(); //锁对象
+        
+
         private void ReadRailWay()
         {
             try
             {
                 lock (obj)
                 {
-                    value = oper.Read(6);         //读第7个通道的值
-
-                    ConvertToRealValue();
+                    value = oper.Read(4);
+                    //读第5个通道的值
+                    double x = double.Parse(value);
+                    ConvertToRealValue(x);
 
                     hasData = true;
                 }
@@ -85,8 +90,18 @@ namespace BridgeDetectSystem.adam
             }
         }
 
-        private void ConvertToRealValue()
+        private void ConvertToRealValue(double x)
         {
+           
+            
+            //string disData;
+           
+            Sensor disSensor;
+            disSensor = new Sensor(SensorType.displaceSensor, 4, 20, 0.8, 100);
+           
+            disSensor.readValue = x;
+           f = new FrontPivot(0, disSensor);
+            v = f.GetDisplace();
             //转成实际值
 
             //readData=??

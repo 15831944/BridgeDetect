@@ -120,16 +120,16 @@ namespace BridgeDetectSystem.service
             var config = new Dictionary<ConfigKeys, ConfigItem>()
             {
                  //配置项                                                    min  max  default
-                {ConfigKeys.basket_upDisLimit,new ConfigItem("挂篮上升位移", 0, 10000, 100 ) },
-                {ConfigKeys.basket_downDisLimit,new ConfigItem("挂篮下降位移", 0, 10000, 100 ) },
-                {ConfigKeys.basket_allowDisDiffLimit,new ConfigItem("挂篮位移允许误差", 0, 10000, 100 ) },
+                {ConfigKeys.basket_upDisLimit,new ConfigItem("挂篮上升位移", 0, 10000, 8000 ) },
+                {ConfigKeys.basket_downDisLimit,new ConfigItem("挂篮下降位移", 0, 10000, 8000 ) },
+                {ConfigKeys.basket_allowDisDiffLimit,new ConfigItem("挂篮位移允许误差", 0, 10000, 8000 ) },
 
-                {ConfigKeys.steeve_DisDiffLimit,new ConfigItem("吊杆位移差值上限", 0, 10000, 100 ) },
-                {ConfigKeys.steeve_ForceLimit,new ConfigItem("吊杆受力上限", 0, 10000, 100 ) },
-                {ConfigKeys.steeve_ForceDiffLimit,new ConfigItem("吊杆力差值上限", 0, 10000, 100 ) },
+                {ConfigKeys.steeve_DisDiffLimit,new ConfigItem("吊杆位移差值上限", 0, 10000, 8000 ) },
+                {ConfigKeys.steeve_ForceLimit,new ConfigItem("吊杆受力上限", 0, 10000, 8000 ) },
+                {ConfigKeys.steeve_ForceDiffLimit,new ConfigItem("吊杆力差值上限", 0, 10000, 8000 ) },
 
-                {ConfigKeys.anchor_ForceLimit,new ConfigItem("锚杆力上限", 0, 10000, 100 ) },
-                {ConfigKeys.anchor_ForceDiffLimit,new ConfigItem("锚杆力差值上限", 0, 10000, 100 ) },
+                {ConfigKeys.anchor_ForceLimit,new ConfigItem("锚杆力上限", 0, 10000, 8000 ) },
+                {ConfigKeys.anchor_ForceDiffLimit,new ConfigItem("锚杆力差值上限", 0, 10000, 8000 ) },
                 {ConfigKeys.frontPivot_DisLimit,new ConfigItem("前支点位移上限", 0, 10000, 5 ) },
 
             };

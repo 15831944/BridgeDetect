@@ -3,6 +3,7 @@ using System.Windows.Forms;
 using BridgeDetectSystem.video;
 using BridgeDetectSystem.service;
 using BridgeDetectSystem.adam;
+using System.Threading;
 
 namespace BridgeDetectSystem
 {
@@ -39,7 +40,7 @@ namespace BridgeDetectSystem
             catch (VideoPlayerException ex)
             {
                 MessageBox.Show("视频预览初始化出错! " + ex.Message);
-                return;
+               return;
             }
 
             #endregion
@@ -47,7 +48,8 @@ namespace BridgeDetectSystem
             ShowPreview();
 
             adamHelper2.StartTimer(250);
-            warningManager2.BgStart();
+           
+           warningManager2.BgStart();
         }
 
         private void initial()
@@ -177,11 +179,20 @@ namespace BridgeDetectSystem
         }
 
         private void btnAllVideo_Click(object sender, EventArgs e)
-        {
+        {//增加停掉。
+            warningManager2.BgCancel();
+            adamHelper2.StopTimer();
             this.Close();
+
             VideoMonitorWin win = new VideoMonitorWin();
             win.Show();
+
         }
 
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+           txtRailway.Text = adamHelper2.v.ToString();
+          
+        }
     }
 }

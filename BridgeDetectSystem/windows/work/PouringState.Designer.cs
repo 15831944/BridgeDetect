@@ -33,15 +33,12 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.btnFirstPage = new System.Windows.Forms.ToolStripMenuItem();
             this.btnExit = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnReSetStandard = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.grpSteeveDis = new System.Windows.Forms.GroupBox();
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
-            this.lblResetSteeve = new MetroFramework.Controls.MetroLabel();
-            this.btnReset = new System.Windows.Forms.Button();
             this.panel8 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
@@ -186,9 +183,6 @@
             this.panel3.SuspendLayout();
             this.grpSteeveDis.SuspendLayout();
             this.panel7.SuspendLayout();
-            this.panel9.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.tableLayoutPanel5.SuspendLayout();
             this.panel8.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
@@ -210,7 +204,8 @@
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnFirstPage,
-            this.btnExit});
+            this.btnExit,
+            this.btnReSetStandard});
             this.menuStrip1.Location = new System.Drawing.Point(22, 72);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1108, 48);
@@ -234,6 +229,15 @@
             this.btnExit.Size = new System.Drawing.Size(61, 44);
             this.btnExit.Text = "退出";
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
+            // btnReSetStandard
+            // 
+            this.btnReSetStandard.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnReSetStandard.ForeColor = System.Drawing.Color.White;
+            this.btnReSetStandard.Name = "btnReSetStandard";
+            this.btnReSetStandard.Size = new System.Drawing.Size(221, 44);
+            this.btnReSetStandard.Text = "吊杆与前支点位移重置";
+            this.btnReSetStandard.Click += new System.EventHandler(this.btnReSetStandard_Click);
             // 
             // panel1
             // 
@@ -268,7 +272,7 @@
             this.grpSteeveDis.Size = new System.Drawing.Size(552, 768);
             this.grpSteeveDis.TabIndex = 0;
             this.grpSteeveDis.TabStop = false;
-            this.grpSteeveDis.Text = "吊杆位移(cm)";
+            this.grpSteeveDis.Text = "前吊杆位移(cm)";
             // 
             // panel7
             // 
@@ -283,74 +287,11 @@
             // 
             // panel9
             // 
-            this.panel9.Controls.Add(this.groupBox2);
             this.panel9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel9.Location = new System.Drawing.Point(271, 0);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(275, 381);
             this.panel9.TabIndex = 1;
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.tableLayoutPanel5);
-            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox2.Location = new System.Drawing.Point(0, 0);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(275, 381);
-            this.groupBox2.TabIndex = 0;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "重置按钮";
-            // 
-            // tableLayoutPanel5
-            // 
-            this.tableLayoutPanel5.ColumnCount = 5;
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 6F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 26F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 36F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 26F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 6F));
-            this.tableLayoutPanel5.Controls.Add(this.lblResetSteeve, 1, 2);
-            this.tableLayoutPanel5.Controls.Add(this.btnReset, 2, 4);
-            this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 24);
-            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
-            this.tableLayoutPanel5.RowCount = 8;
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 13.3002F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.09109F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.86357F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.86357F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.86357F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.86357F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.57721F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.57721F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(269, 354);
-            this.tableLayoutPanel5.TabIndex = 5;
-            // 
-            // lblResetSteeve
-            // 
-            this.lblResetSteeve.AutoSize = true;
-            this.tableLayoutPanel5.SetColumnSpan(this.lblResetSteeve, 3);
-            this.lblResetSteeve.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblResetSteeve.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.lblResetSteeve.Location = new System.Drawing.Point(19, 89);
-            this.lblResetSteeve.Name = "lblResetSteeve";
-            this.lblResetSteeve.Size = new System.Drawing.Size(228, 45);
-            this.lblResetSteeve.TabIndex = 2;
-            this.lblResetSteeve.Text = "吊杆与前支点位移重置";
-            this.lblResetSteeve.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // btnReset
-            // 
-            this.btnReset.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(115)))), ((int)(((byte)(177)))));
-            this.btnReset.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnReset.ForeColor = System.Drawing.Color.White;
-            this.btnReset.Location = new System.Drawing.Point(88, 182);
-            this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(90, 39);
-            this.btnReset.TabIndex = 3;
-            this.btnReset.Text = "重置";
-            this.btnReset.UseVisualStyleBackColor = false;
-            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // panel8
             // 
@@ -1029,7 +970,7 @@
             this.grpSteeveForce.Size = new System.Drawing.Size(556, 768);
             this.grpSteeveForce.TabIndex = 0;
             this.grpSteeveForce.TabStop = false;
-            this.grpSteeveForce.Text = "吊杆力(kN)";
+            this.grpSteeveForce.Text = "前吊杆力(kN)";
             // 
             // panel5
             // 
@@ -2132,7 +2073,6 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
-            this.MinimizeBox = false;
             this.Movable = false;
             this.Name = "PouringState";
             this.Padding = new System.Windows.Forms.Padding(22, 72, 22, 24);
@@ -2148,10 +2088,6 @@
             this.panel3.ResumeLayout(false);
             this.grpSteeveDis.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
-            this.panel9.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
-            this.tableLayoutPanel5.ResumeLayout(false);
-            this.tableLayoutPanel5.PerformLayout();
             this.panel8.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.tableLayoutPanel4.ResumeLayout(false);
@@ -2311,9 +2247,6 @@
         private MetroFramework.Controls.MetroLabel lblAnchorF1;
         private MetroFramework.Controls.MetroTextBox txtAnchorF1;
         private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
-        private MetroFramework.Controls.MetroLabel lblResetSteeve;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
@@ -2324,6 +2257,6 @@
         private MetroFramework.Controls.MetroLabel lblFrontDIsDiffLimit;
         private MetroFramework.Controls.MetroTextBox txtFrontDIsDiffLimit;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.Button btnReset;
+        private System.Windows.Forms.ToolStripMenuItem btnReSetStandard;
     }
 }

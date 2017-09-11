@@ -9,6 +9,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace BridgeDetectSystem
@@ -60,6 +61,7 @@ namespace BridgeDetectSystem
             anchorForceDiffLimit = config.Get(ConfigManager.ConfigKeys.anchor_ForceDiffLimit);
             FrontDisLimit = config.Get(ConfigManager.ConfigKeys.frontPivot_DisLimit);
             //开始接收数据
+            timer1.Enabled = true;
             adamHelper.StartTimer(250);
             dataStoreManager.StartTimer(500, 1000);
             warningManager.BgStart();
@@ -99,20 +101,32 @@ namespace BridgeDetectSystem
         /// </summary>
         private void RefreshSteeveText()
         {
-            Dictionary<int, Steeve> dicSteeve = adamHelper.steeveDic;//得到吊杆的字典集合，用方法得到力和位移
-            double[] steeveForce = new double[dicSteeve.Count];//吊杆力数组，元素为double
-            double[] steeveDis = new double[dicSteeve.Count];//吊杆位移数组，元素为double
-            for (int i = 0; i < 4; i++)
+            try
             {
-                steeveForce[i] = dicSteeve[i].GetForce();//为吊杆力数组赋值值
-                steeveDis[i] = dicSteeve[i].GetDisplace();//为吊杆力位移数组赋值
+                Dictionary<int, Steeve> dicSteeve = adamHelper.steeveDic;//得到吊杆的字典集合，用方法得到力和位移
+
+
+                double[] steeveForce = new double[dicSteeve.Count];//吊杆力数组，元素为double
+                double[] steeveDis = new double[dicSteeve.Count];//吊杆位移数组，元素为double
+                for (int i = 0; i < 4; i++)
+                {
+                    steeveForce[i] = dicSteeve[i].GetForce();//为吊杆力数组赋值值
+                    steeveDis[i] = dicSteeve[i].GetDisplace() - adamHelper.steeveDisStandard;//为吊杆位移数组赋值
+                }
+
+
+                SetTextValueManager.SetValueToText(steeveForce, ref txtSteeveF1, ref txtSteeveF2, ref txtSteeveF3, ref txtSteeveF4, ref txtMaxSteeveForce, ref txtMaxSteeveForceDiff);
+                txtSteeveForceLimit.Text = steeveForceLimit.ToString();
+                txtSteeveForceDiffLimit.Text = steeveForceDiffLimit.ToString();
+                SetTextValueManager.SetValueToText(steeveDis, ref txtSteeveDis1, ref txtSteeveDis2, ref txtSteeveDis3, ref txtSteeveDis4, ref txtMaxSteeveDis, ref txtMaxSteeveDisDiff);
+                txtSteeveDisLimit.Text = steeveDisLimit.ToString();//吊杆位移上限
+                txtSteeveDisDiffLimit.Text = steeveDisDiffLimit.ToString();//吊杆位移差
             }
-            SetTextValueManager.SetValueToText(steeveForce, ref txtSteeveF1, ref txtSteeveF2, ref txtSteeveF3, ref txtSteeveF4, ref txtMaxSteeveForce, ref txtMaxSteeveForceDiff);
-            txtSteeveForceLimit.Text = steeveForceLimit.ToString();
-            txtSteeveForceDiffLimit.Text = steeveForceDiffLimit.ToString();
-            SetTextValueManager.SetValueToText(steeveDis, ref txtSteeveDis1, ref txtSteeveDis2, ref txtSteeveDis3, ref txtSteeveDis4, ref txtMaxSteeveDis, ref txtMaxSteeveDisDiff);
-            txtSteeveDisLimit.Text = steeveDisLimit.ToString();
-            txtSteeveDisDiffLimit.Text = steeveDisDiffLimit.ToString();
+            catch (Exception ex)
+            {
+                timer1.Enabled = false;
+                MessageBox.Show("采集吊杆力，位移数据失败，请检查硬件后重启软件。" + ex.Message);
+            }
         }
 
         /// <summary>
@@ -120,16 +134,23 @@ namespace BridgeDetectSystem
         /// </summary>
         private void RefreshAnchorText()
         {
-            Dictionary<int, Anchor> dicAnchor = adamHelper.anchorDic;
-            double[] anchorForce = new double[dicAnchor.Count];
-            for (int i = 0; i < 4; i++)
+            try
             {
-                anchorForce[i] = dicAnchor[i].GetForce();
+                Dictionary<int, Anchor> dicAnchor = adamHelper.anchorDic;
+                double[] anchorForce = new double[dicAnchor.Count];
+                for (int i = 0; i < 4; i++)
+                {
+                    anchorForce[i] = dicAnchor[i].GetForce();
+                }
+                SetTextValueManager.SetValueToText(anchorForce, ref txtAnchorF1, ref txtAnchorF2, ref txtAnchorF3, ref txtAnchorF4, ref txtMaxAnchorForce, ref txtMaxAnchorForceDiff);
+                txtAnchorForceLimit.Text = anchorForceLimit.ToString();
+                txtAnchorForceDiffLimit.Text = anchorForceDiffLimit.ToString();
             }
-            SetTextValueManager.SetValueToText(anchorForce, ref txtAnchorF1, ref txtAnchorF2, ref txtAnchorF3, ref txtAnchorF4, ref txtMaxAnchorForce, ref txtMaxAnchorForceDiff);
-            txtAnchorForceLimit.Text = anchorForceLimit.ToString();
-            txtAnchorForceDiffLimit.Text = anchorForceDiffLimit.ToString();
-
+            catch (Exception ex)
+            {
+                timer1.Enabled = false;
+                MessageBox.Show("采集锚杆力数据失败，请检查硬件后重启软件。" + ex.Message);
+            }
         }
 
         /// <summary>
@@ -137,17 +158,25 @@ namespace BridgeDetectSystem
         /// </summary>
         private void RefreshFrontPivotText()
         {
-            firstStandard = adamHelper.first_frontPivotDisStandard;
-            secondStanard = adamHelper.second_frontPivotDisStandard;
-            Dictionary<int, FrontPivot> dicFrontPivot = adamHelper.frontPivotDic;
-            double[] frontPivotDis = new double[dicFrontPivot.Count];
-            
-            
-                frontPivotDis[0] = dicFrontPivot[0].GetDisplace()-firstStandard;//数组存位移
-            frontPivotDis[1] = dicFrontPivot[1].GetDisplace() - secondStanard;
-            txtFrontPivotDis1.Text = frontPivotDis[0].ToString();
-            txtFrontPivotDis2.Text = frontPivotDis[1].ToString();
-            txtFrontDIsDiffLimit.Text = FrontDisLimit.ToString();
+            try
+            {
+                firstStandard = adamHelper.first_frontPivotDisStandard;
+                secondStanard = adamHelper.second_frontPivotDisStandard;
+                Dictionary<int, FrontPivot> dicFrontPivot = adamHelper.frontPivotDic;
+                double[] frontPivotDis = new double[dicFrontPivot.Count];
+
+
+                frontPivotDis[0] = dicFrontPivot[0].GetDisplace() - firstStandard;//数组存位移
+                frontPivotDis[1] = dicFrontPivot[1].GetDisplace() - secondStanard;
+                txtFrontPivotDis1.Text = frontPivotDis[0].ToString();
+                txtFrontPivotDis2.Text = frontPivotDis[1].ToString();
+                txtFrontDIsDiffLimit.Text = FrontDisLimit.ToString();
+            }
+            catch (Exception ex)
+            {
+                timer1.Enabled = false;
+                MessageBox.Show("采集前支点位移数据失败，请检查硬件后重启软件。" + ex.Message);
+            }
         }
 
         /// <summary>
@@ -155,38 +184,31 @@ namespace BridgeDetectSystem
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btnReset_Click(object sender, EventArgs e)
-        {
-            if (dataStoreManager != null)
-            {
-                dataStoreManager.StopTimer();
-            }
-            if (adamHelper != null)
-            {
-                adamHelper.StopTimer();
-            }
+        //private void btnReset_Click(object sender, EventArgs e)
+        //{
+        //    if (dataStoreManager != null)
+        //    {
+        //        dataStoreManager.StopTimer();
+        //    }
+        //    if (adamHelper != null)
+        //    {
+        //        adamHelper.StopTimer();
+        //    }
 
-
+        //    Thread.Sleep(200);
            
-            try
-            {
-                adamHelper.StartTimer(250);
-                dataStoreManager.StartTimer(500, 1000);
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show("重置发生错误" + ex.Message);
-            }
+        //    try
+        //    {
+        //        adamHelper.StartTimer(250);
+        //        dataStoreManager.StartTimer(500, 1000);
+        //    }
+        //    catch(Exception ex)
+        //    {
+        //        MessageBox.Show("重置发生错误" + ex.Message);
+        //    }
            
-            //try
-            //{
-            //    adamHelper.ReadStandardValue();
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show("重置发生错误：" + ex.Message);
-            //}
-        }
+           
+        //}
         #endregion
 
         #region 菜单栏按钮功能方法
@@ -206,9 +228,33 @@ namespace BridgeDetectSystem
             this.Close();
         }
 
+
+
        
 
-        #endregion
+        private void btnReSetStandard_Click(object sender, EventArgs e)
+        {
+            if (dataStoreManager != null)
+            {
+                dataStoreManager.StopTimer();
+            }
+            if (adamHelper != null)
+            {
+                adamHelper.StopTimer();
+            }
 
+            Thread.Sleep(200);
+
+            try
+            {
+                adamHelper.StartTimer(250);
+                dataStoreManager.StartTimer(500, 1000);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("重置发生错误" + ex.Message);
+            }
+        }
+        #endregion
     }
 }

@@ -45,6 +45,7 @@ namespace BridgeDetectSystem.service
             bgWork.WorkerReportsProgress = true;
             bgWork.DoWork += new DoWorkEventHandler(BgDoWork);
             bgWork.ProgressChanged += new ProgressChangedEventHandler(BgProgressChanged);
+            if (bgWork.IsBusy) { return; }
             bgWork.RunWorkerAsync();
             isStart = true;
         }
@@ -91,7 +92,7 @@ namespace BridgeDetectSystem.service
         /// <param name="e"></param>
         private void BgDoWork(object sender, DoWorkEventArgs e)
         {
-            Thread.CurrentThread.Name = "报警后台线程";
+           // Thread.CurrentThread.Name = "报警后台线程";
             //写判断逻辑,
             while (true)
             {
@@ -131,7 +132,10 @@ namespace BridgeDetectSystem.service
         /// </summary>
         private void CheckMainTruss()
         {
-            double d = adamHelper2.readData;
+            double d = adamHelper2.v;
+            if (d > 20) {
+                warningList.Add("不同步");
+            }
         }
 
         #endregion

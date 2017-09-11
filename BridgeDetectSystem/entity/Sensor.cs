@@ -43,7 +43,7 @@ namespace BridgeDetectSystem.entity
         }
 
         /// <summary>
-        /// 将传感器的值，转换为实际的值
+        /// 将传感器的电流值，转换为实际的值
         /// </summary>
         /// <returns></returns>
         public double GetRealValue()

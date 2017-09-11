@@ -317,7 +317,7 @@
             this.lblUpDis.Name = "lblUpDis";
             this.lblUpDis.Size = new System.Drawing.Size(211, 55);
             this.lblUpDis.TabIndex = 0;
-            this.lblUpDis.Text = "挂篮上升位移(cm)";
+            this.lblUpDis.Text = "前下横梁上升位移(cm)";
             this.lblUpDis.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblDownDis
@@ -330,20 +330,19 @@
             this.lblDownDis.Name = "lblDownDis";
             this.lblDownDis.Size = new System.Drawing.Size(211, 55);
             this.lblDownDis.TabIndex = 2;
-            this.lblDownDis.Text = "挂篮下降位移(cm)";
+            this.lblDownDis.Text = "前下横梁下降位移(cm)";
             this.lblDownDis.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblAllowDisDiffLimit
             // 
             this.lblAllowDisDiffLimit.AutoSize = true;
             this.lblAllowDisDiffLimit.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblAllowDisDiffLimit.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.lblAllowDisDiffLimit.Location = new System.Drawing.Point(3, 308);
             this.lblAllowDisDiffLimit.Margin = new System.Windows.Forms.Padding(3);
             this.lblAllowDisDiffLimit.Name = "lblAllowDisDiffLimit";
             this.lblAllowDisDiffLimit.Size = new System.Drawing.Size(211, 55);
             this.lblAllowDisDiffLimit.TabIndex = 3;
-            this.lblAllowDisDiffLimit.Text = "挂篮位移允许误差(cm)";
+            this.lblAllowDisDiffLimit.Text = "前下横梁位移允许误差(cm)";
             this.lblAllowDisDiffLimit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblSteeveDisDiffLimit

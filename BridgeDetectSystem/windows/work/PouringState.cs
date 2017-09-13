@@ -29,17 +29,17 @@ namespace BridgeDetectSystem
         double FrontDisLimit;
         double basketupDisLimit;
         double allowDisDiffLimit;
-         double firstStandard;
+        double firstStandard;
         double secondStanard;
         public PouringState()
         {
             InitializeComponent();
-            adamHelper = AdamHelper.GetInstance();
-           
-            dataStoreManager = DataStoreManager.GetInstance();
-            warningManager = WarningManager.GetInstance();
+            //adamHelper = AdamHelper.GetInstance();
+
+            //dataStoreManager = DataStoreManager.GetInstance();
+            //warningManager = WarningManager.GetInstance();
             config = ConfigManager.GetInstance();
-          
+
         }
 
         private void PourState_Load(object sender, EventArgs e)
@@ -48,8 +48,8 @@ namespace BridgeDetectSystem
             this.panel2.Width = this.panel1.Width / 2;
             this.panel4.Height = (this.panel1.Height - menuStrip1.Height) / 2;
             this.panel6.Height = (this.panel1.Height - menuStrip1.Height) / 2;
-            this.panel8.Width = this.panel7.Width / 2;
-           
+            //this.panel8.Width = this.panel7.Width / 2;
+
             //得到配置项的值
             steeveForceLimit = config.Get(ConfigManager.ConfigKeys.steeve_ForceLimit);
             steeveForceDiffLimit = config.Get(ConfigManager.ConfigKeys.steeve_ForceDiffLimit);
@@ -62,23 +62,23 @@ namespace BridgeDetectSystem
             FrontDisLimit = config.Get(ConfigManager.ConfigKeys.frontPivot_DisLimit);
             //开始接收数据
             timer1.Enabled = true;
-            adamHelper.StartTimer(250);
-            dataStoreManager.StartTimer(500, 1000);
-            warningManager.BgStart();
+            //adamHelper.StartTimer(250);
+            //dataStoreManager.StartTimer(500, 1000);
+            //warningManager.BgStart();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            
+
             RefreshSteeveText();
             RefreshAnchorText();
             RefreshFrontPivotText();
         }
         /// <summary>
-/// 关闭窗体时关闭线程
-/// </summary>
-/// <param name="sender"></param>
-/// <param name="e"></param>
+        /// 关闭窗体时关闭线程
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void PouringState_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (dataStoreManager != null)
@@ -164,13 +164,14 @@ namespace BridgeDetectSystem
                 secondStanard = adamHelper.second_frontPivotDisStandard;
                 Dictionary<int, FrontPivot> dicFrontPivot = adamHelper.frontPivotDic;
                 double[] frontPivotDis = new double[dicFrontPivot.Count];
-
+                txtFrontDisLimit.Text = FrontDisLimit.ToString();
 
                 frontPivotDis[0] = dicFrontPivot[0].GetDisplace() - firstStandard;//数组存位移
                 frontPivotDis[1] = dicFrontPivot[1].GetDisplace() - secondStanard;
-                txtFrontPivotDis1.Text = frontPivotDis[0].ToString();
-                txtFrontPivotDis2.Text = frontPivotDis[1].ToString();
-                txtFrontDIsDiffLimit.Text = FrontDisLimit.ToString();
+              
+                txtFrontPivotDis2.Text = frontPivotDis[0].ToString();
+                txtFrontPivotDis4.Text = frontPivotDis[1].ToString();
+                
             }
             catch (Exception ex)
             {
@@ -196,7 +197,7 @@ namespace BridgeDetectSystem
         //    }
 
         //    Thread.Sleep(200);
-           
+
         //    try
         //    {
         //        adamHelper.StartTimer(250);
@@ -206,8 +207,8 @@ namespace BridgeDetectSystem
         //    {
         //        MessageBox.Show("重置发生错误" + ex.Message);
         //    }
-           
-           
+
+
         //}
         #endregion
 
@@ -230,7 +231,7 @@ namespace BridgeDetectSystem
 
 
 
-       
+
 
         private void btnReSetStandard_Click(object sender, EventArgs e)
         {

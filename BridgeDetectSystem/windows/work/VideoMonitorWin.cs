@@ -45,11 +45,12 @@ namespace BridgeDetectSystem
 
             #endregion
 
-            ShowPreview();
 
+            ShowPreview();
             adamHelper2.StartTimer(250);
            
            warningManager2.BgStart();
+            
         }
 
         private void initial()

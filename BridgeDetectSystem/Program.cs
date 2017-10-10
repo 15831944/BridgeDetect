@@ -106,15 +106,8 @@ namespace BridgeDetectSystem
             }
 
             //数据保存类初始化
-            //放到浇筑窗体那里初始化
-            //try
-            //{
-            //    DataStoreManager.Initialize();
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show(ex.Message);
-            //}
+            //放到主窗体加载那里初始化
+           
 
         }
 

@@ -34,10 +34,10 @@ namespace BridgeDetectSystem
         public PouringState()
         {
             InitializeComponent();
-            //adamHelper = AdamHelper.GetInstance();
+            adamHelper = AdamHelper.GetInstance();
 
-            //dataStoreManager = DataStoreManager.GetInstance();
-            //warningManager = WarningManager.GetInstance();
+            dataStoreManager = DataStoreManager.GetInstance();
+            warningManager = WarningManager.GetInstance();
             config = ConfigManager.GetInstance();
 
         }
@@ -60,11 +60,11 @@ namespace BridgeDetectSystem
             anchorForceLimit = config.Get(ConfigManager.ConfigKeys.anchor_ForceLimit);
             anchorForceDiffLimit = config.Get(ConfigManager.ConfigKeys.anchor_ForceDiffLimit);
             FrontDisLimit = config.Get(ConfigManager.ConfigKeys.frontPivot_DisLimit);
-            //开始接收数据
+           // 开始接收数据
             timer1.Enabled = true;
-            //adamHelper.StartTimer(250);
-            //dataStoreManager.StartTimer(500, 1000);
-            //warningManager.BgStart();
+            adamHelper.StartTimer(250);
+            dataStoreManager.StartTimer(500, 1000);
+            warningManager.BgStart();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -180,36 +180,8 @@ namespace BridgeDetectSystem
             }
         }
 
-        /// <summary>
-        /// 行走后重置
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        //private void btnReset_Click(object sender, EventArgs e)
-        //{
-        //    if (dataStoreManager != null)
-        //    {
-        //        dataStoreManager.StopTimer();
-        //    }
-        //    if (adamHelper != null)
-        //    {
-        //        adamHelper.StopTimer();
-        //    }
-
-        //    Thread.Sleep(200);
-
-        //    try
-        //    {
-        //        adamHelper.StartTimer(250);
-        //        dataStoreManager.StartTimer(500, 1000);
-        //    }
-        //    catch(Exception ex)
-        //    {
-        //        MessageBox.Show("重置发生错误" + ex.Message);
-        //    }
-
-
-        //}
+       
+        
         #endregion
 
         #region 菜单栏按钮功能方法
@@ -232,7 +204,11 @@ namespace BridgeDetectSystem
 
 
 
-
+        /// <summary>
+        /// 重置基准点
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnReSetStandard_Click(object sender, EventArgs e)
         {
             if (dataStoreManager != null)

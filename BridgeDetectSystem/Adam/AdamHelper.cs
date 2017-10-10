@@ -126,11 +126,11 @@ namespace BridgeDetectSystem.adam
                 {
                     for (int j = 0; j < 4; j++)
                     {
-                        forceSensor = new Sensor(SensorType.forceSensor, 3.987, 20, 60, 10);
+                        forceSensor = new Sensor(SensorType.forceSensor, 4, 20, 300, 1,0);
                         tempDic.TryGetValue(j, out forceData);
                         forceSensor.readValue = double.Parse(forceData);
 
-                        disSensor = new Sensor(SensorType.displaceSensor, 4.035, 20,70, 100);
+                        disSensor = new Sensor(SensorType.displaceSensor, 4, 20,29.8, 100,20);
                         tempDic.TryGetValue(j + 4, out disData);
                         disSensor.readValue = double.Parse(disData);
 
@@ -144,7 +144,7 @@ namespace BridgeDetectSystem.adam
                     int count = 0;
                     for (j = 0; j < 4; j++)
                     {
-                        forceSensor = new Sensor(SensorType.forceSensor, 4, 20, 60, 10);
+                        forceSensor = new Sensor(SensorType.forceSensor, 4, 20, 300, 1,0);
                         tempDic.TryGetValue(j, out forceData);
                         forceSensor.readValue = double.Parse(forceData);
 
@@ -153,7 +153,7 @@ namespace BridgeDetectSystem.adam
                     }
                     for (j = 4; j < 6; j++)
                     {
-                        disSensor = new Sensor(SensorType.displaceSensor, 4, 20,0.8, 100);
+                        disSensor = new Sensor(SensorType.displaceSensor, 4, 20,0.8, 100,0);
                         tempDic.TryGetValue(j, out disData);
                         disSensor.readValue = double.Parse(disData);
 
@@ -175,16 +175,16 @@ namespace BridgeDetectSystem.adam
         }
 
         /// <summary>
-        /// 读取初始数值作为基准，只读一次
+        /// 读取初始数值作为基准，只读一次。。。。？？？？？？
         /// </summary>
         public void ReadStandardValue()
         {
             List<double> disList = new List<double>();
-            Sensor sensor = new Sensor(SensorType.displaceSensor, 4, 20, 70, 100);
+            Sensor sensor = new Sensor(SensorType.displaceSensor, 4, 20, 29.8, 100,20);
 
             for (int i = 0; i < 4; i++)
             {
-                sensor.readValue = double.Parse(adamList[0].Read(i));
+                sensor.readValue = double.Parse(adamList[0].Read(i+1));//
                    
                 disList.Add(sensor.GetRealValue());
             }
@@ -194,14 +194,19 @@ namespace BridgeDetectSystem.adam
             {
                 sum += val;
             }
-            steeveDisStandard = Math.Round(sum / disList.Count, 3);
+            Sensor sensorsteeve1= new Sensor(SensorType.displaceSensor, 4, 20, 29.8, 100, 20);
+            sensorsteeve1.readValue = double.Parse(adamList[0].Read(4));
+            steeveDisStandard = sensorsteeve1.GetRealValue();//得到一个标准值
+
+            //steeveDisStandard = 0;//Math.Round(sum / disList.Count, 3);
+
+
             //前支点基准值
-            Sensor sensor1 = new Sensor(SensorType.displaceSensor, 4, 20, 0.8, 100);
+            Sensor sensor1 = new Sensor(SensorType.displaceSensor, 4, 20, 0.8, 100,0);
             sensor1.readValue = double.Parse(adamList[1].Read(4));
-            //first_frontPivotDisStandard = Math.Round(double.Parse(adamList[1].Read(4)));
-            //second_frontPivotDisStandard = Math.Round(double.Parse(adamList[1].Read(5)));
             first_frontPivotDisStandard = sensor1.GetRealValue();
-            Sensor sensor2 = new Sensor(SensorType.displaceSensor, 4, 20, 0.8, 100);
+
+            Sensor sensor2 = new Sensor(SensorType.displaceSensor, 4, 20, 0.8, 100,0);
             sensor2.readValue = double.Parse(adamList[1].Read(5));
             second_frontPivotDisStandard = sensor2.GetRealValue();
         }

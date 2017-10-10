@@ -97,7 +97,7 @@ namespace BridgeDetectSystem.adam
             //string disData;
            
             Sensor disSensor;
-            disSensor = new Sensor(SensorType.displaceSensor, 4, 20, 0.8, 100);
+            disSensor = new Sensor(SensorType.displaceSensor, 4, 20, 0.8, 100,0);
            
             disSensor.readValue = x;
            f = new FrontPivot(0, disSensor);

@@ -233,6 +233,7 @@
             this.txtRailway.Name = "txtRailway";
             this.txtRailway.Size = new System.Drawing.Size(100, 28);
             this.txtRailway.TabIndex = 2;
+            this.txtRailway.Visible = false;
             // 
             // timer1
             // 

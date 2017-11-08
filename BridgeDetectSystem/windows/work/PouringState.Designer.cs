@@ -37,6 +37,23 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.grpSteeveDis = new System.Windows.Forms.GroupBox();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.lblFrontPivotDis2 = new MetroFramework.Controls.MetroLabel();
+            this.lblFrontPivotDis4 = new MetroFramework.Controls.MetroLabel();
+            this.lblFrontDIsLimit = new MetroFramework.Controls.MetroLabel();
+            this.lblFrontPivotDis3 = new MetroFramework.Controls.MetroLabel();
+            this.lblFrontPivotDis1 = new MetroFramework.Controls.MetroLabel();
+            this.lblMaxFrontDis = new MetroFramework.Controls.MetroLabel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.txtFrontPivotDis1 = new MetroFramework.Controls.MetroTextBox();
+            this.txtFrontPivotDis2 = new MetroFramework.Controls.MetroTextBox();
+            this.txtFrontPivotDis3 = new MetroFramework.Controls.MetroTextBox();
+            this.txtFrontPivotDis4 = new MetroFramework.Controls.MetroTextBox();
+            this.txtFrontDisLimit = new MetroFramework.Controls.MetroTextBox();
+            this.txtMaxFrontDis = new MetroFramework.Controls.MetroTextBox();
             this.panel6 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.txtMaxSteeveDisDiff = new MetroFramework.Controls.MetroTextBox();
@@ -124,6 +141,7 @@
             this.lblAnchorF9 = new MetroFramework.Controls.MetroLabel();
             this.lblAnchorF1 = new MetroFramework.Controls.MetroLabel();
             this.txtAnchorF1 = new MetroFramework.Controls.MetroTextBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.txtMaxSteeveForceDiff = new MetroFramework.Controls.MetroTextBox();
@@ -166,30 +184,17 @@
             this.lblSteeveF9 = new MetroFramework.Controls.MetroLabel();
             this.lblSteeveF1 = new MetroFramework.Controls.MetroLabel();
             this.txtSteeveF1 = new MetroFramework.Controls.MetroTextBox();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.lblMaxFrontDis = new MetroFramework.Controls.MetroLabel();
-            this.lblFrontPivotDis1 = new MetroFramework.Controls.MetroLabel();
-            this.lblFrontPivotDis3 = new MetroFramework.Controls.MetroLabel();
-            this.lblFrontDIsLimit = new MetroFramework.Controls.MetroLabel();
-            this.lblFrontPivotDis4 = new MetroFramework.Controls.MetroLabel();
-            this.lblFrontPivotDis2 = new MetroFramework.Controls.MetroLabel();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.txtFrontPivotDis1 = new MetroFramework.Controls.MetroTextBox();
-            this.txtFrontPivotDis2 = new MetroFramework.Controls.MetroTextBox();
-            this.txtFrontPivotDis3 = new MetroFramework.Controls.MetroTextBox();
-            this.txtFrontPivotDis4 = new MetroFramework.Controls.MetroTextBox();
-            this.txtFrontDisLimit = new MetroFramework.Controls.MetroTextBox();
-            this.txtMaxFrontDis = new MetroFramework.Controls.MetroTextBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.grpSteeveDis.SuspendLayout();
+            this.panel7.SuspendLayout();
+            this.panel8.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.tableLayoutPanel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel6.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -197,15 +202,10 @@
             this.panel5.SuspendLayout();
             this.grpAnchorForce.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panel4.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.panel8.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            this.tableLayoutPanel4.SuspendLayout();
-            this.panel7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -284,6 +284,212 @@
             this.grpSteeveDis.TabIndex = 0;
             this.grpSteeveDis.TabStop = false;
             this.grpSteeveDis.Text = "前吊杆位移(cm)";
+            // 
+            // panel7
+            // 
+            this.panel7.Controls.Add(this.panel8);
+            this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel7.Location = new System.Drawing.Point(3, 385);
+            this.panel7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(546, 381);
+            this.panel7.TabIndex = 1;
+            // 
+            // panel8
+            // 
+            this.panel8.Controls.Add(this.groupBox1);
+            this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel8.Location = new System.Drawing.Point(0, 0);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(546, 381);
+            this.panel8.TabIndex = 0;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.tableLayoutPanel4);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox1.Location = new System.Drawing.Point(0, 0);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(546, 381);
+            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "前支点沉降位移(cm)";
+            // 
+            // tableLayoutPanel4
+            // 
+            this.tableLayoutPanel4.ColumnCount = 3;
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 45F));
+            this.tableLayoutPanel4.Controls.Add(this.lblFrontPivotDis2, 0, 1);
+            this.tableLayoutPanel4.Controls.Add(this.lblFrontPivotDis4, 0, 3);
+            this.tableLayoutPanel4.Controls.Add(this.lblFrontDIsLimit, 0, 5);
+            this.tableLayoutPanel4.Controls.Add(this.lblFrontPivotDis3, 0, 2);
+            this.tableLayoutPanel4.Controls.Add(this.lblFrontPivotDis1, 0, 0);
+            this.tableLayoutPanel4.Controls.Add(this.lblMaxFrontDis, 0, 7);
+            this.tableLayoutPanel4.Controls.Add(this.pictureBox1, 2, 0);
+            this.tableLayoutPanel4.Controls.Add(this.txtFrontPivotDis1, 1, 0);
+            this.tableLayoutPanel4.Controls.Add(this.txtFrontPivotDis2, 1, 1);
+            this.tableLayoutPanel4.Controls.Add(this.txtFrontPivotDis3, 1, 2);
+            this.tableLayoutPanel4.Controls.Add(this.txtFrontPivotDis4, 1, 3);
+            this.tableLayoutPanel4.Controls.Add(this.txtFrontDisLimit, 1, 5);
+            this.tableLayoutPanel4.Controls.Add(this.txtMaxFrontDis, 1, 7);
+            this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 24);
+            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
+            this.tableLayoutPanel4.RowCount = 8;
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.81778F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.81777F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.82133F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.82133F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.82133F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.82133F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.5392F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.53992F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(540, 354);
+            this.tableLayoutPanel4.TabIndex = 4;
+            // 
+            // lblFrontPivotDis2
+            // 
+            this.lblFrontPivotDis2.AutoSize = true;
+            this.lblFrontPivotDis2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblFrontPivotDis2.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.lblFrontPivotDis2.Location = new System.Drawing.Point(3, 48);
+            this.lblFrontPivotDis2.Margin = new System.Windows.Forms.Padding(3);
+            this.lblFrontPivotDis2.Name = "lblFrontPivotDis2";
+            this.lblFrontPivotDis2.Size = new System.Drawing.Size(102, 39);
+            this.lblFrontPivotDis2.TabIndex = 0;
+            this.lblFrontPivotDis2.Text = "2";
+            this.lblFrontPivotDis2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblFrontPivotDis4
+            // 
+            this.lblFrontPivotDis4.AutoSize = true;
+            this.lblFrontPivotDis4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblFrontPivotDis4.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.lblFrontPivotDis4.Location = new System.Drawing.Point(3, 138);
+            this.lblFrontPivotDis4.Margin = new System.Windows.Forms.Padding(3);
+            this.lblFrontPivotDis4.Name = "lblFrontPivotDis4";
+            this.lblFrontPivotDis4.Size = new System.Drawing.Size(102, 39);
+            this.lblFrontPivotDis4.TabIndex = 2;
+            this.lblFrontPivotDis4.Text = "4";
+            this.lblFrontPivotDis4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblFrontDIsLimit
+            // 
+            this.lblFrontDIsLimit.AutoSize = true;
+            this.lblFrontDIsLimit.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblFrontDIsLimit.Location = new System.Drawing.Point(3, 228);
+            this.lblFrontDIsLimit.Margin = new System.Windows.Forms.Padding(3);
+            this.lblFrontDIsLimit.Name = "lblFrontDIsLimit";
+            this.lblFrontDIsLimit.Size = new System.Drawing.Size(102, 39);
+            this.lblFrontDIsLimit.TabIndex = 4;
+            this.lblFrontDIsLimit.Text = "位移上限";
+            this.lblFrontDIsLimit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblFrontPivotDis3
+            // 
+            this.lblFrontPivotDis3.AutoSize = true;
+            this.lblFrontPivotDis3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblFrontPivotDis3.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.lblFrontPivotDis3.Location = new System.Drawing.Point(3, 93);
+            this.lblFrontPivotDis3.Margin = new System.Windows.Forms.Padding(3);
+            this.lblFrontPivotDis3.Name = "lblFrontPivotDis3";
+            this.lblFrontPivotDis3.Size = new System.Drawing.Size(102, 39);
+            this.lblFrontPivotDis3.TabIndex = 6;
+            this.lblFrontPivotDis3.Text = "3";
+            this.lblFrontPivotDis3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblFrontPivotDis1
+            // 
+            this.lblFrontPivotDis1.AutoSize = true;
+            this.lblFrontPivotDis1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblFrontPivotDis1.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.lblFrontPivotDis1.Location = new System.Drawing.Point(3, 3);
+            this.lblFrontPivotDis1.Margin = new System.Windows.Forms.Padding(3);
+            this.lblFrontPivotDis1.Name = "lblFrontPivotDis1";
+            this.lblFrontPivotDis1.Size = new System.Drawing.Size(102, 39);
+            this.lblFrontPivotDis1.TabIndex = 7;
+            this.lblFrontPivotDis1.Text = "1";
+            this.lblFrontPivotDis1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblMaxFrontDis
+            // 
+            this.lblMaxFrontDis.AutoSize = true;
+            this.lblMaxFrontDis.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblMaxFrontDis.Location = new System.Drawing.Point(3, 313);
+            this.lblMaxFrontDis.Margin = new System.Windows.Forms.Padding(3);
+            this.lblMaxFrontDis.Name = "lblMaxFrontDis";
+            this.lblMaxFrontDis.Size = new System.Drawing.Size(102, 38);
+            this.lblMaxFrontDis.TabIndex = 10;
+            this.lblMaxFrontDis.Text = "最大位移";
+            this.lblMaxFrontDis.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(300, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.tableLayoutPanel4.SetRowSpan(this.pictureBox1, 8);
+            this.pictureBox1.Size = new System.Drawing.Size(237, 348);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 11;
+            this.pictureBox1.TabStop = false;
+            // 
+            // txtFrontPivotDis1
+            // 
+            this.txtFrontPivotDis1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtFrontPivotDis1.FontSize = MetroFramework.MetroTextBoxSize.Medium;
+            this.txtFrontPivotDis1.Location = new System.Drawing.Point(111, 3);
+            this.txtFrontPivotDis1.Name = "txtFrontPivotDis1";
+            this.txtFrontPivotDis1.Size = new System.Drawing.Size(183, 39);
+            this.txtFrontPivotDis1.TabIndex = 12;
+            // 
+            // txtFrontPivotDis2
+            // 
+            this.txtFrontPivotDis2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtFrontPivotDis2.FontSize = MetroFramework.MetroTextBoxSize.Medium;
+            this.txtFrontPivotDis2.Location = new System.Drawing.Point(111, 48);
+            this.txtFrontPivotDis2.Name = "txtFrontPivotDis2";
+            this.txtFrontPivotDis2.Size = new System.Drawing.Size(183, 39);
+            this.txtFrontPivotDis2.TabIndex = 13;
+            // 
+            // txtFrontPivotDis3
+            // 
+            this.txtFrontPivotDis3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtFrontPivotDis3.FontSize = MetroFramework.MetroTextBoxSize.Medium;
+            this.txtFrontPivotDis3.Location = new System.Drawing.Point(111, 93);
+            this.txtFrontPivotDis3.Name = "txtFrontPivotDis3";
+            this.txtFrontPivotDis3.Size = new System.Drawing.Size(183, 39);
+            this.txtFrontPivotDis3.TabIndex = 14;
+            // 
+            // txtFrontPivotDis4
+            // 
+            this.txtFrontPivotDis4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtFrontPivotDis4.FontSize = MetroFramework.MetroTextBoxSize.Medium;
+            this.txtFrontPivotDis4.Location = new System.Drawing.Point(111, 138);
+            this.txtFrontPivotDis4.Name = "txtFrontPivotDis4";
+            this.txtFrontPivotDis4.Size = new System.Drawing.Size(183, 39);
+            this.txtFrontPivotDis4.TabIndex = 15;
+            // 
+            // txtFrontDisLimit
+            // 
+            this.txtFrontDisLimit.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtFrontDisLimit.FontSize = MetroFramework.MetroTextBoxSize.Medium;
+            this.txtFrontDisLimit.Location = new System.Drawing.Point(111, 228);
+            this.txtFrontDisLimit.Name = "txtFrontDisLimit";
+            this.txtFrontDisLimit.Size = new System.Drawing.Size(183, 39);
+            this.txtFrontDisLimit.TabIndex = 16;
+            // 
+            // txtMaxFrontDis
+            // 
+            this.txtMaxFrontDis.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtMaxFrontDis.FontSize = MetroFramework.MetroTextBoxSize.Medium;
+            this.txtMaxFrontDis.Location = new System.Drawing.Point(111, 313);
+            this.txtMaxFrontDis.Name = "txtMaxFrontDis";
+            this.txtMaxFrontDis.Size = new System.Drawing.Size(183, 38);
+            this.txtMaxFrontDis.TabIndex = 17;
             // 
             // panel6
             // 
@@ -1386,6 +1592,18 @@
             this.txtAnchorF1.Size = new System.Drawing.Size(95, 35);
             this.txtAnchorF1.TabIndex = 1;
             // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(327, 3);
+            this.pictureBox3.Name = "pictureBox3";
+            this.tableLayoutPanel3.SetRowSpan(this.pictureBox3, 10);
+            this.pictureBox3.Size = new System.Drawing.Size(214, 350);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 40;
+            this.pictureBox3.TabStop = false;
+            // 
             // panel4
             // 
             this.panel4.Controls.Add(this.tableLayoutPanel1);
@@ -1919,12 +2137,6 @@
             this.txtSteeveF1.Size = new System.Drawing.Size(97, 36);
             this.txtSteeveF1.TabIndex = 1;
             // 
-            // timer1
-            // 
-            this.timer1.Enabled = true;
-            this.timer1.Interval = 1000;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
             // pictureBox2
             // 
             this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -1937,222 +2149,11 @@
             this.pictureBox2.TabIndex = 40;
             this.pictureBox2.TabStop = false;
             // 
-            // panel8
+            // timer1
             // 
-            this.panel8.Controls.Add(this.groupBox1);
-            this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel8.Location = new System.Drawing.Point(0, 0);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(546, 381);
-            this.panel8.TabIndex = 0;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.tableLayoutPanel4);
-            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox1.Location = new System.Drawing.Point(0, 0);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(546, 381);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "前支点沉降位移(cm)";
-            // 
-            // tableLayoutPanel4
-            // 
-            this.tableLayoutPanel4.ColumnCount = 3;
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 45F));
-            this.tableLayoutPanel4.Controls.Add(this.lblFrontPivotDis2, 0, 1);
-            this.tableLayoutPanel4.Controls.Add(this.lblFrontPivotDis4, 0, 3);
-            this.tableLayoutPanel4.Controls.Add(this.lblFrontDIsLimit, 0, 5);
-            this.tableLayoutPanel4.Controls.Add(this.lblFrontPivotDis3, 0, 2);
-            this.tableLayoutPanel4.Controls.Add(this.lblFrontPivotDis1, 0, 0);
-            this.tableLayoutPanel4.Controls.Add(this.lblMaxFrontDis, 0, 7);
-            this.tableLayoutPanel4.Controls.Add(this.pictureBox1, 2, 0);
-            this.tableLayoutPanel4.Controls.Add(this.txtFrontPivotDis1, 1, 0);
-            this.tableLayoutPanel4.Controls.Add(this.txtFrontPivotDis2, 1, 1);
-            this.tableLayoutPanel4.Controls.Add(this.txtFrontPivotDis3, 1, 2);
-            this.tableLayoutPanel4.Controls.Add(this.txtFrontPivotDis4, 1, 3);
-            this.tableLayoutPanel4.Controls.Add(this.txtFrontDisLimit, 1, 5);
-            this.tableLayoutPanel4.Controls.Add(this.txtMaxFrontDis, 1, 7);
-            this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 24);
-            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
-            this.tableLayoutPanel4.RowCount = 8;
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.81778F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.81777F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.82133F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.82133F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.82133F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.82133F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.5392F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.53992F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(540, 354);
-            this.tableLayoutPanel4.TabIndex = 4;
-            // 
-            // lblMaxFrontDis
-            // 
-            this.lblMaxFrontDis.AutoSize = true;
-            this.lblMaxFrontDis.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblMaxFrontDis.Location = new System.Drawing.Point(3, 313);
-            this.lblMaxFrontDis.Margin = new System.Windows.Forms.Padding(3);
-            this.lblMaxFrontDis.Name = "lblMaxFrontDis";
-            this.lblMaxFrontDis.Size = new System.Drawing.Size(102, 38);
-            this.lblMaxFrontDis.TabIndex = 10;
-            this.lblMaxFrontDis.Text = "最大位移";
-            this.lblMaxFrontDis.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblFrontPivotDis1
-            // 
-            this.lblFrontPivotDis1.AutoSize = true;
-            this.lblFrontPivotDis1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblFrontPivotDis1.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.lblFrontPivotDis1.Location = new System.Drawing.Point(3, 3);
-            this.lblFrontPivotDis1.Margin = new System.Windows.Forms.Padding(3);
-            this.lblFrontPivotDis1.Name = "lblFrontPivotDis1";
-            this.lblFrontPivotDis1.Size = new System.Drawing.Size(102, 39);
-            this.lblFrontPivotDis1.TabIndex = 7;
-            this.lblFrontPivotDis1.Text = "1";
-            this.lblFrontPivotDis1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblFrontPivotDis3
-            // 
-            this.lblFrontPivotDis3.AutoSize = true;
-            this.lblFrontPivotDis3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblFrontPivotDis3.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.lblFrontPivotDis3.Location = new System.Drawing.Point(3, 93);
-            this.lblFrontPivotDis3.Margin = new System.Windows.Forms.Padding(3);
-            this.lblFrontPivotDis3.Name = "lblFrontPivotDis3";
-            this.lblFrontPivotDis3.Size = new System.Drawing.Size(102, 39);
-            this.lblFrontPivotDis3.TabIndex = 6;
-            this.lblFrontPivotDis3.Text = "3";
-            this.lblFrontPivotDis3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblFrontDIsLimit
-            // 
-            this.lblFrontDIsLimit.AutoSize = true;
-            this.lblFrontDIsLimit.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblFrontDIsLimit.Location = new System.Drawing.Point(3, 228);
-            this.lblFrontDIsLimit.Margin = new System.Windows.Forms.Padding(3);
-            this.lblFrontDIsLimit.Name = "lblFrontDIsLimit";
-            this.lblFrontDIsLimit.Size = new System.Drawing.Size(102, 39);
-            this.lblFrontDIsLimit.TabIndex = 4;
-            this.lblFrontDIsLimit.Text = "位移上限";
-            this.lblFrontDIsLimit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblFrontPivotDis4
-            // 
-            this.lblFrontPivotDis4.AutoSize = true;
-            this.lblFrontPivotDis4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblFrontPivotDis4.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.lblFrontPivotDis4.Location = new System.Drawing.Point(3, 138);
-            this.lblFrontPivotDis4.Margin = new System.Windows.Forms.Padding(3);
-            this.lblFrontPivotDis4.Name = "lblFrontPivotDis4";
-            this.lblFrontPivotDis4.Size = new System.Drawing.Size(102, 39);
-            this.lblFrontPivotDis4.TabIndex = 2;
-            this.lblFrontPivotDis4.Text = "4";
-            this.lblFrontPivotDis4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblFrontPivotDis2
-            // 
-            this.lblFrontPivotDis2.AutoSize = true;
-            this.lblFrontPivotDis2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblFrontPivotDis2.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.lblFrontPivotDis2.Location = new System.Drawing.Point(3, 48);
-            this.lblFrontPivotDis2.Margin = new System.Windows.Forms.Padding(3);
-            this.lblFrontPivotDis2.Name = "lblFrontPivotDis2";
-            this.lblFrontPivotDis2.Size = new System.Drawing.Size(102, 39);
-            this.lblFrontPivotDis2.TabIndex = 0;
-            this.lblFrontPivotDis2.Text = "2";
-            this.lblFrontPivotDis2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // panel7
-            // 
-            this.panel7.Controls.Add(this.panel8);
-            this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel7.Location = new System.Drawing.Point(3, 385);
-            this.panel7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(546, 381);
-            this.panel7.TabIndex = 1;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(300, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.tableLayoutPanel4.SetRowSpan(this.pictureBox1, 8);
-            this.pictureBox1.Size = new System.Drawing.Size(237, 348);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 11;
-            this.pictureBox1.TabStop = false;
-            // 
-            // txtFrontPivotDis1
-            // 
-            this.txtFrontPivotDis1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtFrontPivotDis1.FontSize = MetroFramework.MetroTextBoxSize.Medium;
-            this.txtFrontPivotDis1.Location = new System.Drawing.Point(111, 3);
-            this.txtFrontPivotDis1.Name = "txtFrontPivotDis1";
-            this.txtFrontPivotDis1.Size = new System.Drawing.Size(183, 39);
-            this.txtFrontPivotDis1.TabIndex = 12;
-            // 
-            // txtFrontPivotDis2
-            // 
-            this.txtFrontPivotDis2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtFrontPivotDis2.FontSize = MetroFramework.MetroTextBoxSize.Medium;
-            this.txtFrontPivotDis2.Location = new System.Drawing.Point(111, 48);
-            this.txtFrontPivotDis2.Name = "txtFrontPivotDis2";
-            this.txtFrontPivotDis2.Size = new System.Drawing.Size(183, 39);
-            this.txtFrontPivotDis2.TabIndex = 13;
-            // 
-            // txtFrontPivotDis3
-            // 
-            this.txtFrontPivotDis3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtFrontPivotDis3.Location = new System.Drawing.Point(111, 93);
-            this.txtFrontPivotDis3.Name = "txtFrontPivotDis3";
-            this.txtFrontPivotDis3.Size = new System.Drawing.Size(183, 39);
-            this.txtFrontPivotDis3.TabIndex = 14;
-            // 
-            // txtFrontPivotDis4
-            // 
-            this.txtFrontPivotDis4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtFrontPivotDis4.FontSize = MetroFramework.MetroTextBoxSize.Medium;
-            this.txtFrontPivotDis4.Location = new System.Drawing.Point(111, 138);
-            this.txtFrontPivotDis4.Name = "txtFrontPivotDis4";
-            this.txtFrontPivotDis4.Size = new System.Drawing.Size(183, 39);
-            this.txtFrontPivotDis4.TabIndex = 15;
-            // 
-            // txtFrontDisLimit
-            // 
-            this.txtFrontDisLimit.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtFrontDisLimit.FontSize = MetroFramework.MetroTextBoxSize.Medium;
-            this.txtFrontDisLimit.Location = new System.Drawing.Point(111, 228);
-            this.txtFrontDisLimit.Name = "txtFrontDisLimit";
-            this.txtFrontDisLimit.Size = new System.Drawing.Size(183, 39);
-            this.txtFrontDisLimit.TabIndex = 16;
-            // 
-            // txtMaxFrontDis
-            // 
-            this.txtMaxFrontDis.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtMaxFrontDis.FontSize = MetroFramework.MetroTextBoxSize.Medium;
-            this.txtMaxFrontDis.Location = new System.Drawing.Point(111, 313);
-            this.txtMaxFrontDis.Name = "txtMaxFrontDis";
-            this.txtMaxFrontDis.Size = new System.Drawing.Size(183, 38);
-            this.txtMaxFrontDis.TabIndex = 17;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(327, 3);
-            this.pictureBox3.Name = "pictureBox3";
-            this.tableLayoutPanel3.SetRowSpan(this.pictureBox3, 10);
-            this.pictureBox3.Size = new System.Drawing.Size(214, 350);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 40;
-            this.pictureBox3.TabStop = false;
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // PouringState
             // 
@@ -2166,6 +2167,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Movable = false;
             this.Name = "PouringState";
             this.Padding = new System.Windows.Forms.Padding(22, 72, 22, 24);
@@ -2180,6 +2182,12 @@
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.grpSteeveDis.ResumeLayout(false);
+            this.panel7.ResumeLayout(false);
+            this.panel8.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            this.tableLayoutPanel4.ResumeLayout(false);
+            this.tableLayoutPanel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel6.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
@@ -2189,17 +2197,11 @@
             this.grpAnchorForce.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.panel4.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.panel8.ResumeLayout(false);
-            this.groupBox1.ResumeLayout(false);
-            this.tableLayoutPanel4.ResumeLayout(false);
-            this.tableLayoutPanel4.PerformLayout();
-            this.panel7.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
 
         }

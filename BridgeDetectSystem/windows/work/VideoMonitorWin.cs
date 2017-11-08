@@ -104,7 +104,11 @@ namespace BridgeDetectSystem
 
             }
         }
-
+        /// <summary>
+        /// 关闭--退出视频，结束数据接收，报警
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void VideoMonitorWin_FormClosing_1(object sender, FormClosingEventArgs e)
         {
             player.CleanUp();

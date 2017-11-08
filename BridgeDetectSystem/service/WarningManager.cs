@@ -178,6 +178,8 @@ namespace BridgeDetectSystem.service
             }
             double first = Math.Abs(disDiffList[0] - adamHelper.first_frontPivotDisStandard);
             double second = Math.Abs(disDiffList[1] - adamHelper.second_frontPivotDisStandard);
+            double three = Math.Abs(disDiffList[2] - adamHelper.three_standard);
+            double four = Math.Abs(disDiffList[3] - adamHelper.four_standard);
             FrontDisLimit = config.Get(ConfigManager.ConfigKeys.frontPivot_DisLimit);
             if (first > FrontDisLimit)
             {
@@ -186,6 +188,15 @@ namespace BridgeDetectSystem.service
             if (second > FrontDisLimit)
             {
                 warningList.Add("2号前支点沉降超过设定值！！！");
+            }
+            if (three > FrontDisLimit)
+            {
+                warningList.Add("3号前支点沉降超过设定值！！！");
+
+            }
+            if (four > FrontDisLimit)
+            {
+                warningList.Add("4号前支点沉降超过设定值！！！");
             }
         }
 
@@ -202,15 +213,29 @@ namespace BridgeDetectSystem.service
         /// </summary>
         private void CheckSteeveDis()
         {
-            var dic = adamHelper.steeveDic;
-            List<double> disList = new List<double>();
-            foreach (var kv in dic)
+           // var dic = adamHelper.steeveDic;
+            Dictionary<int, Steeve> dicSteeve = adamHelper.steeveDic;
+            List<double> disList = new List<double>();//位移集合
+            List<double> reallist = new List<double>();
+            List<double> standardlist = new List<double>();
+            for (int i = 0; i < 4; i++)
             {
-                disList.Add(kv.Value.GetDisplace());
+                standardlist.Add(adamHelper.standardlist[i]);
             }
-            basketupDisLimit = config.Get(ConfigManager.ConfigKeys.basket_upDisLimit);
-            allowDisDiffLimit = config.Get(ConfigManager.ConfigKeys.basket_allowDisDiffLimit);
-            steeveDisLimit = basketupDisLimit + allowDisDiffLimit;//吊杆位移上限
+           //四个基点标准
+            
+            for (int i = 0; i < 4; i++)
+            {
+                reallist.Add(dicSteeve[i].GetDisplace() - standardlist[i]);//带正负，上升为-，下降为正
+                disList.Add(Math.Abs(dicSteeve[i].GetDisplace() - standardlist[i]));//绝对值
+            }
+               
+              
+            
+            basketupDisLimit = config.Get(ConfigManager.ConfigKeys.basket_upDisLimit);//前下横梁上升位移上限。。。平均
+            allowDisDiffLimit = config.Get(ConfigManager.ConfigKeys.basket_allowDisDiffLimit);//单根吊杆位移上限
+            steeveDisLimit =  allowDisDiffLimit;//吊杆位移上限
+            steeveDisDiffLimit = config.Get(ConfigManager.ConfigKeys.steeve_DisDiffLimit);//位移差上限
             for (int i = 0; i < disList.Count; i++)
             {
                 if (disList[i] > steeveDisLimit)
@@ -218,26 +243,50 @@ namespace BridgeDetectSystem.service
                     warningList.Add("第" + i + "号吊杆位移过大,值为：" + disList[i] + "(cm)");
                 }
             }
+            //基准位移差报警
+            for (int i = 0; i < 4; i++)
+            {
+                for (int j = i + 1; j < 4; j++)
+                {
+                    if (Math.Abs(standardlist[i] - standardlist[j]) >= steeveDisDiffLimit)
+                    {
+                        warningList.Add("第" + i + "、" + j + "号" + "吊杆基准之间位移差值过大。值分别为："
+                            + standardlist[i] + "(cm)" + "||" + standardlist[j] + "cm");
+                    }
+                }
+            }
+            //吊杆位移差
+            for (int i = 0; i < 4; i++)
+            {
+                for (int j = i + 1; j < 4; j++)
+                {
+                    if (Math.Abs(disList[i] - disList[j]) >= steeveDisDiffLimit)
+                    {
+                        warningList.Add("第" + i + "、" + j + "号"  + "吊杆之间位移差值过大。值分别为："
+                            + disList[i] + "(cm)" + "||" + disList[j] + "cm");
+                    }
+                }
+            }
 
             double sum = 0;
-            foreach (var val in disList)
+            foreach (var val in reallist)
             {
                 sum += val;
             }
 
-            double average = sum / disList.Count;
-            double realDis = average - adamHelper.steeveDisStandard;//四根吊杆的平均位移，可当作前下横梁位移
-            double allowDisDiff = config.Get(ConfigManager.ConfigKeys.basket_allowDisDiffLimit);
-            if (realDis > 0)
+            double average = sum / 4;
+            double realDis = average;//- adamHelper.steeveDisStandard;//四根吊杆的平均位移，可当作前下横梁位移
+         
+            if (realDis < 0)
             {
-                if (realDis - config.Get(ConfigManager.ConfigKeys.basket_upDisLimit) > allowDisDiff)
+                if (Math.Abs( realDis )- config.Get(ConfigManager.ConfigKeys.basket_upDisLimit) > 0)
                 {
                     warningList.Add("前下横梁上升位移，超过设定值报警。上升的位移平均值为：" + realDis);
                 }
             }
             else
             {
-                if (Math.Abs(realDis) - config.Get(ConfigManager.ConfigKeys.basket_downDisLimit) > allowDisDiff)
+                if (Math.Abs(realDis) - config.Get(ConfigManager.ConfigKeys.basket_downDisLimit) >0)
                 {
                     warningList.Add("前下横梁下降位移，超过设定值报警。下降的位移平均值为：" + Math.Abs(realDis));
                 }

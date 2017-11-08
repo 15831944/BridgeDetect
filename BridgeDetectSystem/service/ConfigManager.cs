@@ -72,9 +72,10 @@ namespace BridgeDetectSystem.service
             //挂篮
             basket_upDisLimit,
             basket_downDisLimit,
-            basket_allowDisDiffLimit,
+            basket_allowDisDiffLimit,//单根吊杆位移上限
+            
             //吊杆
-            steeve_DisDiffLimit,
+            steeve_DisDiffLimit,//吊杆位移差
             steeve_ForceLimit,
             steeve_ForceDiffLimit,
             //锚杆

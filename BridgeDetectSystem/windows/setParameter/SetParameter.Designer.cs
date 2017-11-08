@@ -337,12 +337,13 @@
             // 
             this.lblAllowDisDiffLimit.AutoSize = true;
             this.lblAllowDisDiffLimit.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblAllowDisDiffLimit.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.lblAllowDisDiffLimit.Location = new System.Drawing.Point(3, 308);
             this.lblAllowDisDiffLimit.Margin = new System.Windows.Forms.Padding(3);
             this.lblAllowDisDiffLimit.Name = "lblAllowDisDiffLimit";
             this.lblAllowDisDiffLimit.Size = new System.Drawing.Size(211, 55);
             this.lblAllowDisDiffLimit.TabIndex = 3;
-            this.lblAllowDisDiffLimit.Text = "前下横梁位移允许误差(cm)";
+            this.lblAllowDisDiffLimit.Text = "吊杆位移上限(cm)";
             this.lblAllowDisDiffLimit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblSteeveDisDiffLimit

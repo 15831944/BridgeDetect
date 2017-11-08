@@ -59,10 +59,23 @@ namespace BridgeDetectSystem.service
         /// </summary>
         public void InsertSteeveData()
         {
-           
-            Dictionary<int, Steeve> dicSteeve = adamHelper.steeveDic;       //吊杆
-            string sqlSteeveForce = string.Format("insert into SteeveForce values(newid(),getdate(),'{0}',{1},{2},{3},{4})", name, dicSteeve[0].GetForce(), dicSteeve[1].GetForce(), dicSteeve[2].GetForce(), dicSteeve[3].GetForce());                      //吊杆力
-            string sqlSteeveDis = string.Format("insert into SteeveDisplacement values(newid(),getdate(),'{0}',{1},{2},{3},{4})", name, dicSteeve[0].GetDisplace(), dicSteeve[1].GetDisplace(), dicSteeve[2].GetDisplace(), dicSteeve[3].GetDisplace());          //吊杆位移
+            double averstandard = adamHelper.steeveDisStandard;
+            Dictionary<int, Steeve> dicSteeve = adamHelper.steeveDic;
+            //吊杆
+            double[] dissteeve = new double[4];
+            List<double> standardlist = new List<double>();
+            for (int i = 0; i < 4; i++)
+            {
+                standardlist.Add(adamHelper.standardlist[i]);
+            }
+            for (int i = 0; i < 4; i++)
+            {
+                //  dissteeve[i] =Math.Abs( dicSteeve[i].GetDisplace() - averstandard);
+                dissteeve[i] = standardlist[i] - dicSteeve[i].GetDisplace();
+            }
+            
+            string sqlSteeveForce = string.Format("insert into AnchorForce values(newid(),getdate(),'{0}',{1},{2},{3},{4})", name, dicSteeve[0].GetForce(), dicSteeve[1].GetForce(), dicSteeve[2].GetForce(), dicSteeve[3].GetForce());                      //吊杆力
+            string sqlSteeveDis = string.Format("insert into SteeveDisplacement values(newid(),getdate(),'{0}',{1},{2},{3},{4})", name, dissteeve[0], dissteeve[1], dissteeve[2], dissteeve[3]);          //吊杆位移
             try
             {
                 int r1 = dbhelper.ExecuteNonQuery(sqlSteeveForce);
@@ -77,9 +90,9 @@ namespace BridgeDetectSystem.service
         /// 将锚杆力记录存入数据库
         /// </summary>
         public void InsertAnchorData()
-        {
+        {    
             Dictionary<int, Anchor> dicAnchor = adamHelper.anchorDic;
-            string sql = string.Format("insert into AnchorForce values(newid(),getdate(),'{0}',{1},{2},{3},{4})", name, dicAnchor[0].GetForce(), dicAnchor[1].GetForce(), dicAnchor[2].GetForce(), dicAnchor[3].GetForce());
+            string sql = string.Format("insert into SteeveForce values(newid(),getdate(),'{0}',{1},{2},{3},{4})", name, dicAnchor[0].GetForce(), dicAnchor[1].GetForce(), dicAnchor[2].GetForce(), dicAnchor[3].GetForce());
             try
             {
                 int r = dbhelper.ExecuteNonQuery(sql);
@@ -96,16 +109,22 @@ namespace BridgeDetectSystem.service
         {
             double firstStandard;
             double secondStandard;
+            double threeStanard;
+            double fourStantard;
             firstStandard = adamHelper.first_frontPivotDisStandard;
             secondStandard = adamHelper.second_frontPivotDisStandard;
+            threeStanard = adamHelper.three_standard;
+            fourStantard = adamHelper.four_standard;
             Dictionary<int, FrontPivot> dicFrontPivot = adamHelper.frontPivotDic;
             double[] frontPivotDis = new double[dicFrontPivot.Count];
 
 
-            frontPivotDis[0] = dicFrontPivot[0].GetDisplace() - firstStandard;//数组存位移
-            frontPivotDis[1] = dicFrontPivot[1].GetDisplace() - secondStandard;
-          //  Dictionary<int, FrontPivot> dicFrontPivot = adamHelper.frontPivotDic;
-            string sql = string.Format("insert into FrontPivotDis values(newid(),getdate(),'{0}',{1},{2})", name, frontPivotDis[0], frontPivotDis[1]);
+            frontPivotDis[0] = firstStandard - dicFrontPivot[0].GetDisplace();//数组存位移
+            frontPivotDis[1] = secondStandard-dicFrontPivot[1].GetDisplace();
+            frontPivotDis[2] = threeStanard-dicFrontPivot[2].GetDisplace();
+            frontPivotDis[3] = fourStantard-dicFrontPivot[3].GetDisplace();
+            
+            string sql = string.Format("insert into FrontPivotDis values(newid(),getdate(),'{0}',{1},{2},{3},{4})", name, frontPivotDis[0], frontPivotDis[1],frontPivotDis[2],frontPivotDis[3]);
             try
             {
                 int r = dbhelper.ExecuteNonQuery(sql);

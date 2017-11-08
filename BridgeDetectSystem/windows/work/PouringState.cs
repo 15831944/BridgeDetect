@@ -31,6 +31,8 @@ namespace BridgeDetectSystem
         double allowDisDiffLimit;
         double firstStandard;
         double secondStanard;
+        double threeStandard;
+        double fourStandard;
         public PouringState()
         {
             InitializeComponent();
@@ -102,16 +104,18 @@ namespace BridgeDetectSystem
         private void RefreshSteeveText()
         {
             try
-            {
+            {  //自己加吊杆锚杆互换
                 Dictionary<int, Steeve> dicSteeve = adamHelper.steeveDic;//得到吊杆的字典集合，用方法得到力和位移
-
+            
 
                 double[] steeveForce = new double[dicSteeve.Count];//吊杆力数组，元素为double
                 double[] steeveDis = new double[dicSteeve.Count];//吊杆位移数组，元素为double
                 for (int i = 0; i < 4; i++)
                 {
                     steeveForce[i] = dicSteeve[i].GetForce();//为吊杆力数组赋值值
-                    steeveDis[i] = dicSteeve[i].GetDisplace() - adamHelper.steeveDisStandard;//为吊杆位移数组赋值
+                   // steeveDis[i] =Math.Abs( dicSteeve[i].GetDisplace() - adamHelper.steeveDisStandard);
+                    //为吊杆位移数组赋值
+                    steeveDis[i] =Math.Abs(adamHelper.standardlist[i] - dicSteeve[i].GetDisplace());
                 }
 
 
@@ -120,7 +124,7 @@ namespace BridgeDetectSystem
                 txtSteeveForceDiffLimit.Text = steeveForceDiffLimit.ToString();
                 SetTextValueManager.SetValueToText(steeveDis, ref txtSteeveDis1, ref txtSteeveDis2, ref txtSteeveDis3, ref txtSteeveDis4, ref txtMaxSteeveDis, ref txtMaxSteeveDisDiff);
                 txtSteeveDisLimit.Text = steeveDisLimit.ToString();//吊杆位移上限
-                txtSteeveDisDiffLimit.Text = steeveDisDiffLimit.ToString();//吊杆位移差
+                txtSteeveDisDiffLimit.Text = steeveDisDiffLimit.ToString();//吊杆位移差上限
             }
             catch (Exception ex)
             {
@@ -134,10 +138,12 @@ namespace BridgeDetectSystem
         /// </summary>
         private void RefreshAnchorText()
         {
+           // Dictionary<int, Anchor> dicAnchor = adamHelper.anchorDic;
             try
-            {
-                Dictionary<int, Anchor> dicAnchor = adamHelper.anchorDic;
-                double[] anchorForce = new double[dicAnchor.Count];
+            {  
+               
+                Dictionary<int, Anchor> dicAnchor= adamHelper.anchorDic;
+                double[] anchorForce = new double[4];
                 for (int i = 0; i < 4; i++)
                 {
                     anchorForce[i] = dicAnchor[i].GetForce();
@@ -162,16 +168,21 @@ namespace BridgeDetectSystem
             {
                 firstStandard = adamHelper.first_frontPivotDisStandard;
                 secondStanard = adamHelper.second_frontPivotDisStandard;
+                threeStandard = adamHelper.three_standard;
+                fourStandard = adamHelper.four_standard;
                 Dictionary<int, FrontPivot> dicFrontPivot = adamHelper.frontPivotDic;
                 double[] frontPivotDis = new double[dicFrontPivot.Count];
                 txtFrontDisLimit.Text = FrontDisLimit.ToString();
 
-                frontPivotDis[0] = dicFrontPivot[0].GetDisplace() - firstStandard;//数组存位移
-                frontPivotDis[1] = dicFrontPivot[1].GetDisplace() - secondStanard;
+                frontPivotDis[0] =  firstStandard-dicFrontPivot[0].GetDisplace();//数组存位移
               
-                txtFrontPivotDis2.Text = frontPivotDis[0].ToString();
-                txtFrontPivotDis4.Text = frontPivotDis[1].ToString();
-                
+                frontPivotDis[1] = secondStanard - dicFrontPivot[1].GetDisplace();
+                frontPivotDis[2] = threeStandard-dicFrontPivot[2].GetDisplace();
+                frontPivotDis[3] = fourStandard - dicFrontPivot[3].GetDisplace();
+                txtFrontPivotDis1.Text = frontPivotDis[0].ToString();
+                txtFrontPivotDis2.Text = frontPivotDis[1].ToString();
+                txtFrontPivotDis3.Text = frontPivotDis[2].ToString();
+                txtFrontPivotDis4.Text = frontPivotDis[3].ToString();
             }
             catch (Exception ex)
             {

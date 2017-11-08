@@ -54,6 +54,8 @@ namespace BridgeDetectSystem
             dt.Columns[2].ColumnName = "操作人";
             dt.Columns[3].ColumnName = "位置1";
             dt.Columns[4].ColumnName = "位置2";
+            dt.Columns[5].ColumnName = "位置3";
+            dt.Columns[6].ColumnName = "位置4";
             ExportToExcel.ExportData(dt);
 
 

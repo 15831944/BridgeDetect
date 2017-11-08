@@ -7,7 +7,7 @@ namespace BridgeDetectSystem.entity
 {
     public class Steeve
     {
-        public  int id; //吊杆编号：0,1,2,3,4...
+        public  int id; //吊杆编号：0,1,2,3
         private double force; //吊杆力 ：KN
         private double displace; //位移：cm;
         private Sensor disSensor;

@@ -74,8 +74,8 @@ namespace BridgeDetectSystem.adam
             {
                 lock (obj)
                 {
-                    value = oper.Read(4);
-                    //读第5个通道的值
+                    value = oper.Read(0);//需要改变
+                    //读模块2第1个通道的值
                     double x = double.Parse(value);
                     ConvertToRealValue(x);
 

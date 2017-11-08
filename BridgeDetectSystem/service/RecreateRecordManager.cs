@@ -76,6 +76,8 @@ namespace BridgeDetectSystem.service
 	             [operator] [nvarchar](50) NULL,
 	             [position1] [real] NULL,
 	             [position2] [real] NULL,
+                 [position3] [real] NULL,
+                 [position4] [real] NULL,
                 )");
         }
         /// <summary>

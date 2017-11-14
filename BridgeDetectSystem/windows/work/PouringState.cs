@@ -73,7 +73,7 @@ namespace BridgeDetectSystem
         {
 
             RefreshSteeveText();
-            RefreshAnchorText();
+           // RefreshAnchorText();
             RefreshFrontPivotText();
         }
         /// <summary>

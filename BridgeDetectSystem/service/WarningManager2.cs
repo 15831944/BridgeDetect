@@ -133,8 +133,8 @@ namespace BridgeDetectSystem.service
         private void CheckMainTruss()
         {
             double d = adamHelper2.v;
-            if (Math.Abs(d-50) > 10) {
-                warningList.Add("行走不同步，请注意");
+            if (Math.Abs(d-66) > 10) {
+                warningList.Add("主桁行走不同步，请注意调整！！！");
             }
         }
 

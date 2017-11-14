@@ -47,10 +47,10 @@
             // 
             this.panel1.Controls.Add(this.tableLayoutPanel1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(15, 60);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2);
+            this.panel1.Location = new System.Drawing.Point(20, 75);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(738, 538);
+            this.panel1.Size = new System.Drawing.Size(984, 673);
             this.panel1.TabIndex = 0;
             // 
             // tableLayoutPanel1
@@ -69,7 +69,7 @@
             this.tableLayoutPanel1.Controls.Add(this.pictureBox2, 5, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 8;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 13.01044F));
@@ -80,7 +80,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.360465F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.430233F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.395349F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(738, 538);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(984, 673);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // tableLayoutPanel2
@@ -89,15 +89,15 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 15F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel2.Controls.Add(this.button1, 1, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(222, 458);
-            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(2);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(296, 572);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(291, 41);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(387, 52);
             this.tableLayoutPanel2.TabIndex = 4;
             // 
             // button1
@@ -106,10 +106,10 @@
             this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.button1.Font = new System.Drawing.Font("宋体", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(98, 2);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
+            this.button1.Location = new System.Drawing.Point(131, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(93, 37);
+            this.button1.Size = new System.Drawing.Size(123, 48);
             this.button1.TabIndex = 0;
             this.button1.Text = "确定";
             this.button1.UseVisualStyleBackColor = false;
@@ -118,22 +118,26 @@
             // listBoxWarning
             // 
             this.listBoxWarning.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listBoxWarning.Font = new System.Drawing.Font("宋体", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.listBoxWarning.ForeColor = System.Drawing.Color.Red;
             this.listBoxWarning.FormattingEnabled = true;
-            this.listBoxWarning.ItemHeight = 12;
-            this.listBoxWarning.Location = new System.Drawing.Point(223, 73);
+            this.listBoxWarning.ItemHeight = 23;
+            this.listBoxWarning.Location = new System.Drawing.Point(297, 91);
+            this.listBoxWarning.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.listBoxWarning.Name = "listBoxWarning";
             this.tableLayoutPanel1.SetRowSpan(this.listBoxWarning, 4);
-            this.listBoxWarning.Size = new System.Drawing.Size(289, 357);
+            this.listBoxWarning.Size = new System.Drawing.Size(385, 446);
             this.listBoxWarning.TabIndex = 1;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(54, 73);
+            this.pictureBox1.Location = new System.Drawing.Point(72, 91);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox1.Name = "pictureBox1";
             this.tableLayoutPanel1.SetRowSpan(this.pictureBox1, 2);
-            this.pictureBox1.Size = new System.Drawing.Size(141, 133);
+            this.pictureBox1.Size = new System.Drawing.Size(188, 166);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
@@ -142,27 +146,28 @@
             // 
             this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(540, 73);
+            this.pictureBox2.Location = new System.Drawing.Point(719, 91);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox2.Name = "pictureBox2";
             this.tableLayoutPanel1.SetRowSpan(this.pictureBox2, 2);
-            this.pictureBox2.Size = new System.Drawing.Size(141, 133);
+            this.pictureBox2.Size = new System.Drawing.Size(188, 166);
             this.pictureBox2.TabIndex = 6;
             this.pictureBox2.TabStop = false;
             // 
             // WarningDialog2
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(768, 614);
+            this.ClientSize = new System.Drawing.Size(1024, 768);
             this.ControlBox = false;
             this.Controls.Add(this.panel1);
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Movable = false;
             this.Name = "WarningDialog2";
-            this.Padding = new System.Windows.Forms.Padding(15, 60, 15, 16);
+            this.Padding = new System.Windows.Forms.Padding(20, 75, 20, 20);
             this.Resizable = false;
             this.Text = "报警";
             this.TextAlign = System.Windows.Forms.VisualStyles.HorizontalAlign.Center;

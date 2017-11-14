@@ -201,9 +201,10 @@ namespace BridgeDetectSystem.adam
                         FrontPivot pivot = new FrontPivot(j, disSensor);
                         frontPivotDic[pivot.id] = pivot;
                     }
-                  //  for (j = 4; j < 8; j++)//锚杆力
-                    //{
-                        forceSensor = new Sensor(SensorType.forceSensor,4 , 20, 300, 1, 0);
+                    #region 锚杆力，接收但不显示，不保存，不后台报警
+                    //  for (j = 4; j < 8; j++)//锚杆力
+
+                    forceSensor = new Sensor(SensorType.forceSensor,4 , 20, 300, 1, 0);
                         tempDic.TryGetValue(4, out forceData);
                         forceSensor.readValue = double.Parse(forceData);
 
@@ -229,7 +230,7 @@ namespace BridgeDetectSystem.adam
 
                     Anchor anchor3 = new Anchor(3, forceSensor);
                     anchorDic[anchor3.id] = anchor3;
-
+                    #endregion
 
 
                     //  }

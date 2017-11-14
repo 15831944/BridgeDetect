@@ -49,6 +49,7 @@
             this.picBox1 = new System.Windows.Forms.PictureBox();
             this.txtRailway = new System.Windows.Forms.TextBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.label1 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -229,22 +230,35 @@
             // 
             // txtRailway
             // 
-            this.txtRailway.Location = new System.Drawing.Point(961, 36);
+            this.txtRailway.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtRailway.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txtRailway.Location = new System.Drawing.Point(1007, 86);
             this.txtRailway.Name = "txtRailway";
-            this.txtRailway.Size = new System.Drawing.Size(100, 28);
+            this.txtRailway.Size = new System.Drawing.Size(100, 30);
             this.txtRailway.TabIndex = 2;
-            this.txtRailway.Visible = false;
             // 
             // timer1
             // 
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Honeydew;
+            this.label1.Location = new System.Drawing.Point(889, 89);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(85, 19);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "主桁距离";
+            // 
             // VideoMonitorWin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1152, 922);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.txtRailway);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
@@ -302,5 +316,6 @@
         private System.Windows.Forms.PictureBox picBox1;
         private System.Windows.Forms.TextBox txtRailway;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label label1;
     }
 }

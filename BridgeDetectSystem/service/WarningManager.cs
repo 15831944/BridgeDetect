@@ -134,11 +134,11 @@ namespace BridgeDetectSystem.service
 
                     CheckSteeveDis();
 
-                    CheckAnchorForce();
+                  //CheckAnchorForce();
 
                     CheckFrontPivotDis();
 
-                    //CheckMainTruss();
+                    
 
                     if (warningList.Count > 0)
                     {

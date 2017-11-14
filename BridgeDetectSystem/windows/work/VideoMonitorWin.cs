@@ -9,6 +9,7 @@ namespace BridgeDetectSystem
 {
     public partial class VideoMonitorWin : MetroFramework.Forms.MetroForm
     {
+
         VideoPlayer player = null;
         AdamHelper2 adamHelper2 = null;
         WarningManager2 warningManager2 = null;
@@ -40,7 +41,7 @@ namespace BridgeDetectSystem
             catch (VideoPlayerException ex)
             {
                 MessageBox.Show("视频预览初始化出错! " + ex.Message);
-               return;
+                return;
             }
 
             #endregion
@@ -48,9 +49,9 @@ namespace BridgeDetectSystem
 
             ShowPreview();
             adamHelper2.StartTimer(250);
-           
-           warningManager2.BgStart();
-            
+
+            warningManager2.BgStart();
+
         }
 
         private void initial()
@@ -196,8 +197,9 @@ namespace BridgeDetectSystem
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-           txtRailway.Text = adamHelper2.v.ToString();
-          
+            txtRailway.Text = adamHelper2.v.ToString();
+
         }
     }
+
 }

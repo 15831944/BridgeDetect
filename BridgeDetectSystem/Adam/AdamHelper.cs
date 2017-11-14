@@ -25,7 +25,7 @@ namespace BridgeDetectSystem.adam
         public Dictionary<int, FrontPivot> frontPivotDic { get; }
 
         //吊杆基准点
-        public List<double> standardlist { get;  }//四个基准点
+        public List<double> standardlist { get; set; }//四个基准点
 
         public double steeveDisStandard { get; set; }
         //前支架基准点
@@ -133,62 +133,57 @@ namespace BridgeDetectSystem.adam
                 if (i == 0)
                 {
                     ////读取模块192.168.1.3数据，吊杆力0，1，2，3与吊杆位移4，5，6，7
-                    for (int j = 0; j < 4; j++)
-                    {//
-                        forceSensor = new Sensor(SensorType.forceSensor, 4, 20, 300, 1, 0);
-                        tempDic.TryGetValue(j+4, out forceData);
-                        forceSensor.readValue = double.Parse(forceData);
-                        disSensor = new Sensor(SensorType.displaceSensor, 4, 20, 29.8, 100, 20);
-                        tempDic.TryGetValue(j , out disData);
-                        disSensor.readValue = double.Parse(disData);
-                        Steeve steeves = new Steeve(j, forceSensor, disSensor);
-                        steeveDic[steeves.id] = steeves;
-                    }
+                    //for (int j = 0; j < 4; j++)
+                    //{//
+                    //    forceSensor = new Sensor(SensorType.forceSensor, 4, 20, 300, 1, 0);
+                    //    tempDic.TryGetValue(j + 4, out forceData);
+                    //    forceSensor.readValue = double.Parse(forceData);
+                    //    disSensor = new Sensor(SensorType.displaceSensor, 4, 20, 29.8, 100, 20);
+                    //    tempDic.TryGetValue(j, out disData);
+                    //    disSensor.readValue = double.Parse(disData);
+                    //    Steeve steeves = new Steeve(j, forceSensor, disSensor);
+                  
+                    //    steeveDic[steeves.id] = steeves;
+                    //}
 
                     ////代替循环--每个力传感器校正
+                    //  j = 0;
+                    forceSensor = new Sensor(SensorType.forceSensor, 4, 20, 300, 1, 0);
+                    tempDic.TryGetValue(4, out forceData);
+                    forceSensor.readValue = double.Parse(forceData);
+                    disSensor = new Sensor(SensorType.displaceSensor, 4, 20, 29.8, 100, 20);
+                    tempDic.TryGetValue(0, out disData);
+                    disSensor.readValue = double.Parse(disData);
+                    Steeve steeve0 = new Steeve(0, forceSensor, disSensor);
+                    steeveDic[steeve0.id] = steeve0;
+                    //j=1
+                    forceSensor = new Sensor(SensorType.forceSensor, 4, 20, 300, 1, 0);
+                    tempDic.TryGetValue(5, out forceData);
+                    forceSensor.readValue = double.Parse(forceData);
+                    disSensor = new Sensor(SensorType.displaceSensor, 4, 20, 29.8, 100, 20);
+                    tempDic.TryGetValue(1, out disData);
+                    disSensor.readValue = double.Parse(disData);
+                    Steeve steeve1 = new Steeve(1, forceSensor, disSensor);
+                    steeveDic[steeve1.id] = steeve1;
+                    //j=2
+                    forceSensor = new Sensor(SensorType.forceSensor, 4, 20, 300, 1, 0);
+                    tempDic.TryGetValue(6, out forceData);
+                    forceSensor.readValue = double.Parse(forceData);
+                    disSensor = new Sensor(SensorType.displaceSensor, 4, 20, 29.8, 100, 20);
+                    tempDic.TryGetValue(2, out disData);
+                    disSensor.readValue = double.Parse(disData);
+                    Steeve steeve2 = new Steeve(2, forceSensor, disSensor);
+                    steeveDic[steeve2.id] = steeve2;
+                    //j=3
+                    forceSensor = new Sensor(SensorType.forceSensor, 4, 20, 300, 1, 0);
+                    tempDic.TryGetValue(7, out forceData);
+                    forceSensor.readValue = double.Parse(forceData);
+                    disSensor = new Sensor(SensorType.displaceSensor, 4, 20, 29.8, 100, 20);
+                    tempDic.TryGetValue(3, out disData);
+                    disSensor.readValue = double.Parse(disData);
+                    Steeve steeve3= new Steeve(3, forceSensor, disSensor);
+                    steeveDic[steeve3.id] = steeve3;
 
-                    ////steeveDic[0]
-                    //forceSensor = new Sensor(SensorType.forceSensor, 4, 20, 300, 1, 0);//力1
-                    //tempDic.TryGetValue(0, out forceData);
-                    //forceSensor.readValue = double.Parse(forceData);
-                    //disSensor = new Sensor(SensorType.displaceSensor, 4, 20, 29.8, 100, 20);
-                    //tempDic.TryGetValue(4, out disData);
-                    //disSensor.readValue = double.Parse(disData);
-                    //Steeve steeve= new Steeve(0, forceSensor, disSensor);
-                    //steeveDic[0] = steeve;
-                    ////steeveDic[1]
-                    //forceSensor = new Sensor(SensorType.forceSensor, 4, 20, 300, 1, 0);//力2
-                    //tempDic.TryGetValue(1, out forceData);
-                    //forceSensor.readValue = double.Parse(forceData);
-                    //disSensor = new Sensor(SensorType.displaceSensor, 4, 20, 29.8, 100, 20);
-                    //tempDic.TryGetValue(5, out disData);
-                    //disSensor.readValue = double.Parse(disData);
-                    //Steeve steeve1 = new Steeve(1, forceSensor, disSensor);
-                    //steeveDic[1] = steeve1;
-
-                    ////steeveDic[2]=
-                    //forceSensor = new Sensor(SensorType.forceSensor, 4, 20, 300, 1, 0);//力3
-                    //tempDic.TryGetValue(2, out forceData);
-                    //forceSensor.readValue = double.Parse(forceData);
-                    //disSensor = new Sensor(SensorType.displaceSensor, 4, 20, 29.8, 100, 20);
-                    //tempDic.TryGetValue(6, out disData);
-                    //disSensor.readValue = double.Parse(disData);
-                    //Steeve steeve2 = new Steeve(2, forceSensor, disSensor);
-                    //steeveDic[2] = steeve2;
-                    ////steeveDic[3]=steeve3
-                    //forceSensor = new Sensor(SensorType.forceSensor, 4, 20, 300, 1, 0);//力4
-                    //tempDic.TryGetValue(3, out forceData);
-                    //forceSensor.readValue = double.Parse(forceData);
-                    //disSensor = new Sensor(SensorType.displaceSensor, 4, 20, 29.8, 100, 20);
-                    //tempDic.TryGetValue(7, out disData);
-                    //disSensor.readValue = double.Parse(disData);
-                    //Steeve steeve3 = new Steeve(3, forceSensor, disSensor);
-                    //steeveDic[3] = steeve3;
-                    //for ( int n = 0; n < 4; i++)
-                    //{
-                    //    steeveCopy[n] = steeveDic[n];
-                    //}
-                    ////copy
                 }
                 
                 
@@ -206,15 +201,41 @@ namespace BridgeDetectSystem.adam
                         FrontPivot pivot = new FrontPivot(j, disSensor);
                         frontPivotDic[pivot.id] = pivot;
                     }
-                    for (j = 4; j < 8; j++)//锚杆力
-                    {
-                        forceSensor = new Sensor(SensorType.forceSensor, 4, 20, 300, 1, 0);
-                        tempDic.TryGetValue(j, out forceData);
+                  //  for (j = 4; j < 8; j++)//锚杆力
+                    //{
+                        forceSensor = new Sensor(SensorType.forceSensor,4 , 20, 300, 1, 0);
+                        tempDic.TryGetValue(4, out forceData);
                         forceSensor.readValue = double.Parse(forceData);
 
-                        Anchor anchor = new Anchor(j-4, forceSensor);
-                        anchorDic[anchor.id] = anchor;
-                    }
+                        Anchor anchor0 = new Anchor(0, forceSensor);
+                        anchorDic[anchor0.id] = anchor0;
+
+                    forceSensor = new Sensor(SensorType.forceSensor, 4, 20, 300, 1, 0);
+                    tempDic.TryGetValue(5, out forceData);
+                    forceSensor.readValue = double.Parse(forceData);
+
+                    Anchor anchor1 = new Anchor(1, forceSensor);
+                    anchorDic[anchor1.id] = anchor1;
+
+                    forceSensor = new Sensor(SensorType.forceSensor, 4, 20, 300, 1, 0);
+                    tempDic.TryGetValue(6, out forceData);
+                    forceSensor.readValue = double.Parse(forceData);
+                    Anchor anchor2 = new Anchor(2, forceSensor);
+                    anchorDic[anchor2.id] = anchor2;
+
+                    forceSensor = new Sensor(SensorType.forceSensor, 4, 20, 300, 1, 0);
+                    tempDic.TryGetValue(7, out forceData);
+                    forceSensor.readValue = double.Parse(forceData);
+
+                    Anchor anchor3 = new Anchor(3, forceSensor);
+                    anchorDic[anchor3.id] = anchor3;
+
+
+
+                    //  }
+
+
+
                     //count = 0;
                     //if (j == 6)
                     //{
@@ -236,6 +257,7 @@ namespace BridgeDetectSystem.adam
         {
           
             List<double> disList = new List<double>();
+            standardlist = new List<double>();
             Sensor sensor = new Sensor(SensorType.displaceSensor, 4, 20, 29.8, 100,20);
 
             for (int i = 0; i < 4; i++)
@@ -272,12 +294,7 @@ namespace BridgeDetectSystem.adam
             Sensor sensor4 = new Sensor(SensorType.displaceSensor, 4, 20, 3.8, 100, 20);
             sensor4.readValue = double.Parse(adamList[1].Read(3));
             four_standard = sensor4.GetRealValue();
-            //for (int i = 0; i < 4; i++)
-            //{
-            //    Sensor sensors = new Sensor(SensorType.displaceSensor,4,20,3.8,100,20);
-            //    sensors.readValue = double.Parse(adamList[1].Read(i+4));
-            //standards[i]=sensors.getrealvalue();
-            //}
+           
         }
 
         /// <summary>

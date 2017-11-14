@@ -74,7 +74,7 @@ namespace BridgeDetectSystem.service
                 dissteeve[i] = standardlist[i] - dicSteeve[i].GetDisplace();
             }
             
-            string sqlSteeveForce = string.Format("insert into AnchorForce values(newid(),getdate(),'{0}',{1},{2},{3},{4})", name, dicSteeve[0].GetForce(), dicSteeve[1].GetForce(), dicSteeve[2].GetForce(), dicSteeve[3].GetForce());                      //吊杆力
+            string sqlSteeveForce = string.Format("insert into SteeveForce values(newid(),getdate(),'{0}',{1},{2},{3},{4})", name, dicSteeve[0].GetForce(), dicSteeve[1].GetForce(), dicSteeve[2].GetForce(), dicSteeve[3].GetForce());                      //吊杆力
             string sqlSteeveDis = string.Format("insert into SteeveDisplacement values(newid(),getdate(),'{0}',{1},{2},{3},{4})", name, dissteeve[0], dissteeve[1], dissteeve[2], dissteeve[3]);          //吊杆位移
             try
             {
@@ -92,7 +92,7 @@ namespace BridgeDetectSystem.service
         public void InsertAnchorData()
         {    
             Dictionary<int, Anchor> dicAnchor = adamHelper.anchorDic;
-            string sql = string.Format("insert into SteeveForce values(newid(),getdate(),'{0}',{1},{2},{3},{4})", name, dicAnchor[0].GetForce(), dicAnchor[1].GetForce(), dicAnchor[2].GetForce(), dicAnchor[3].GetForce());
+            string sql = string.Format("insert into AnchorForce values(newid(),getdate(),'{0}',{1},{2},{3},{4})", name, dicAnchor[0].GetForce(), dicAnchor[1].GetForce(), dicAnchor[2].GetForce(), dicAnchor[3].GetForce());
             try
             {
                 int r = dbhelper.ExecuteNonQuery(sql);

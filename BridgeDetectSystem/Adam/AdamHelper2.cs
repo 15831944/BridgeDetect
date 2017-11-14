@@ -74,8 +74,8 @@ namespace BridgeDetectSystem.adam
             {
                 lock (obj)
                 {
-                    value = oper.Read(0);//需要改变
-                    //读模块2第1个通道的值
+                    value = oper.Read(4);//需要改变
+                    //读模块2第5个通道的值
                     double x = double.Parse(value);
                     ConvertToRealValue(x);
 
@@ -95,9 +95,9 @@ namespace BridgeDetectSystem.adam
            
             
             //string disData;
-           
+           //位移传感器
             Sensor disSensor;
-            disSensor = new Sensor(SensorType.displaceSensor, 4, 20, 0.8, 100,0);
+            disSensor = new Sensor(SensorType.displaceSensor, 4, 20, 29.8, 100,20);
            
             disSensor.readValue = x;
            f = new FrontPivot(0, disSensor);

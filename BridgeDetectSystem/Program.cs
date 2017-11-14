@@ -84,9 +84,10 @@ namespace BridgeDetectSystem
                 new Adam6217Operation("192.168.1.3", 0),
                 oper2
             };
-           var oper3 = new Adam6217Operation("192.168.1.191", 2);
+           //var oper3 = new Adam6217Operation("192.168.1.191", 2);
             try
             {
+
                 AdamHelper.Initialize(list);
             }
             catch (Exception ex)
@@ -98,7 +99,7 @@ namespace BridgeDetectSystem
             //行走状态接收线程初始化
             try
             {
-                AdamHelper2.Initialize(oper3);
+                AdamHelper2.Initialize(oper2);
             }
             catch (Exception ex)
             {

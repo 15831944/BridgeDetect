@@ -7,7 +7,7 @@ namespace BridgeDetectSystem.entity
 {
     public class Sensor
     {
-        private int b;
+        private int b;//截距
         public SensorType kind { get; } //传感器种类
         private double outputStart; //输出信号下限。。。指电流下限。4mA
         private double outputEnd; //输出信号上限。。。指电流上限.20mA
@@ -17,18 +17,6 @@ namespace BridgeDetectSystem.entity
         private int digits; //小数点后保留几位
         public double readValue
         {
-            //get
-            //{
-            //    return _readValue;
-            //}
-            //set
-            //{
-            //    if (value < outputStart || value > outputEnd)
-            //    {
-            //        throw new SensorException("传感器读取的数据有误！");
-            //    }
-            //    _readValue = value;
-            //}
             get;set;
         }
 

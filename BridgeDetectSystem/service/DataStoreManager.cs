@@ -71,7 +71,7 @@ namespace BridgeDetectSystem.service
             for (int i = 0; i < 4; i++)
             {
                 //  dissteeve[i] =Math.Abs( dicSteeve[i].GetDisplace() - averstandard);
-                dissteeve[i] = standardlist[i] - dicSteeve[i].GetDisplace();
+                dissteeve[i] =Math.Round( standardlist[i] - dicSteeve[i].GetDisplace(),1);
             }
             
             string sqlSteeveForce = string.Format("insert into SteeveForce values(newid(),getdate(),'{0}',{1},{2},{3},{4})", name, dicSteeve[0].GetForce(), dicSteeve[1].GetForce(), dicSteeve[2].GetForce(), dicSteeve[3].GetForce());                      //吊杆力
@@ -119,10 +119,14 @@ namespace BridgeDetectSystem.service
             double[] frontPivotDis = new double[dicFrontPivot.Count];
 
 
-            frontPivotDis[0] = firstStandard - dicFrontPivot[0].GetDisplace();//数组存位移
-            frontPivotDis[1] = secondStandard-dicFrontPivot[1].GetDisplace();
-            frontPivotDis[2] = threeStanard-dicFrontPivot[2].GetDisplace();
-            frontPivotDis[3] = fourStantard-dicFrontPivot[3].GetDisplace();
+            frontPivotDis[0] = Math.Abs( firstStandard - dicFrontPivot[0].GetDisplace());//数组存位移
+            frontPivotDis[1] = Math.Abs( secondStandard-dicFrontPivot[1].GetDisplace());
+            frontPivotDis[2] =Math.Abs( threeStanard-dicFrontPivot[2].GetDisplace());
+            frontPivotDis[3] = Math.Abs( fourStantard-dicFrontPivot[3].GetDisplace());
+            for (int i = 0; i < 4; i++)
+            {
+                frontPivotDis[i] = Math.Round(frontPivotDis[i], 1);
+            }
             
             string sql = string.Format("insert into FrontPivotDis values(newid(),getdate(),'{0}',{1},{2},{3},{4})", name, frontPivotDis[0], frontPivotDis[1],frontPivotDis[2],frontPivotDis[3]);
             try

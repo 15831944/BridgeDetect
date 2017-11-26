@@ -132,7 +132,7 @@ namespace BridgeDetectSystem.adam
 
                 if (i == 0)
                 {
-                    ////读取模块192.168.1.3数据，吊杆力0，1，2，3与吊杆位移4，5，6，7
+                    ////读取模块192.168.1.3数据，吊杆位移0，1，2，3与吊杆力4，5，6，7
                     //for (int j = 0; j < 4; j++)
                     //{//
                     //    forceSensor = new Sensor(SensorType.forceSensor, 4, 20, 300, 1, 0);
@@ -142,12 +142,38 @@ namespace BridgeDetectSystem.adam
                     //    tempDic.TryGetValue(j, out disData);
                     //    disSensor.readValue = double.Parse(disData);
                     //    Steeve steeves = new Steeve(j, forceSensor, disSensor);
-                  
+
                     //    steeveDic[steeves.id] = steeves;
                     //}
 
                     ////代替循环--每个力传感器校正
                     //  j = 0;
+                    // List<Sensor> sss = new List<Sensor>();
+                    //List<Sensor> ds = new List<Sensor>();
+                    //var fs1 = new Sensor(SensorType.forceSensor, 4, 20, 300, 1, 0);
+                    //var fs2 = new Sensor(SensorType.forceSensor, 4, 20, 300, 1, 0);
+                    //var fs3 = new Sensor(SensorType.forceSensor, 4, 20, 300, 1, 0);
+                    //var fs4 = new Sensor(SensorType.forceSensor, 4, 20, 300, 1, 0);
+                    //var ds1 = new Sensor(SensorType.displaceSensor, 4, 20, 29.9, 100, 20);
+                    //var ds2 = new Sensor(SensorType.displaceSensor, 4, 20, 29.9, 100, 20);
+                    //var ds3 = new Sensor(SensorType.displaceSensor, 4, 20, 29.9, 100, 20);
+                    //var ds4 = new Sensor(SensorType.displaceSensor, 4, 20, 29.9, 100, 20);
+                    //sss.Add(fs1);
+                    //sss.Add(fs2);
+                    //sss.Add(fs3);
+                    //sss.Add(fs4);
+                    //ds.Add(ds1);
+                    //ds.Add(ds2);
+                    //ds.Add(ds3);
+                    //ds.Add(ds4);
+                    //for (int k = 0; k < 4; k++)
+                    //{ tempDic.TryGetValue(k + 4, out forceData);
+                    //    tempDic.TryGetValue(k, out disData);
+                    //    ds[k].readValue = double.Parse(disData);
+                    //    sss[k].readValue = double.Parse(forceData);
+                    //}
+                    
+                    //j=0
                     forceSensor = new Sensor(SensorType.forceSensor, 4, 20, 300, 1, 0);
                     tempDic.TryGetValue(4, out forceData);
                     forceSensor.readValue = double.Parse(forceData);
@@ -190,7 +216,7 @@ namespace BridgeDetectSystem.adam
                 else if (i == 1)
                 {
                     int j = 0;
-                    int count = 0;
+                   // int count = 0;
                    
                     for (j = 0; j < 4; j++)//前支架位移
                     {
@@ -230,23 +256,7 @@ namespace BridgeDetectSystem.adam
 
                     Anchor anchor3 = new Anchor(3, forceSensor);
                     anchorDic[anchor3.id] = anchor3;
-                    #endregion
-
-
-                    //  }
-
-
-
-                    //count = 0;
-                    //if (j == 6)
-                    //{
-                    //    disSensor = new Sensor(SensorType.displaceSensor, 4, 20, 30, 100);
-                    //    tempDic.TryGetValue(j, out disData);
-                    //    disSensor.readValue = double.Parse(disData);
-
-                    //    RailWay railway = new RailWay(count++, disSensor);
-                    //    //railWayDic[railway.id] = railway;
-                    //}
+                    #endregion                
                 }
             }
         }
@@ -264,7 +274,7 @@ namespace BridgeDetectSystem.adam
             for (int i = 0; i < 4; i++)
             {
                 sensor.readValue = double.Parse(adamList[0].Read(i));//???位移加+4？？
-                standardlist.Add(sensor.GetRealValue());  //基准值
+                standardlist.Add(sensor.GetRealValue());  //每个吊杆的基准值
                 disList.Add(sensor.GetRealValue());
             }
           

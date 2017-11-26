@@ -668,13 +668,13 @@
             // 
             this.lblSteeveDis16.AutoSize = true;
             this.lblSteeveDis16.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblSteeveDis16.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.lblSteeveDis16.FontSize = MetroFramework.MetroLabelSize.Small;
             this.lblSteeveDis16.Location = new System.Drawing.Point(272, 253);
             this.lblSteeveDis16.Margin = new System.Windows.Forms.Padding(0, 1, 0, 0);
             this.lblSteeveDis16.Name = "lblSteeveDis16";
             this.lblSteeveDis16.Size = new System.Drawing.Size(109, 35);
             this.lblSteeveDis16.TabIndex = 30;
-            this.lblSteeveDis16.Text = "16";
+            this.lblSteeveDis16.Text = "吊杆平均位移";
             this.lblSteeveDis16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txtSteeveDis8
@@ -691,13 +691,13 @@
             // 
             this.lblSteeveDis8.AutoSize = true;
             this.lblSteeveDis8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblSteeveDis8.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.lblSteeveDis8.FontSize = MetroFramework.MetroLabelSize.Small;
             this.lblSteeveDis8.Location = new System.Drawing.Point(0, 253);
             this.lblSteeveDis8.Margin = new System.Windows.Forms.Padding(0, 1, 0, 0);
             this.lblSteeveDis8.Name = "lblSteeveDis8";
             this.lblSteeveDis8.Size = new System.Drawing.Size(109, 35);
             this.lblSteeveDis8.TabIndex = 28;
-            this.lblSteeveDis8.Text = "8";
+            this.lblSteeveDis8.Text = "4实际距离";
             this.lblSteeveDis8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txtSteeveDis15
@@ -737,13 +737,13 @@
             // 
             this.lblSteeveDis7.AutoSize = true;
             this.lblSteeveDis7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblSteeveDis7.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.lblSteeveDis7.FontSize = MetroFramework.MetroLabelSize.Small;
             this.lblSteeveDis7.Location = new System.Drawing.Point(0, 217);
             this.lblSteeveDis7.Margin = new System.Windows.Forms.Padding(0, 1, 0, 0);
             this.lblSteeveDis7.Name = "lblSteeveDis7";
             this.lblSteeveDis7.Size = new System.Drawing.Size(109, 35);
             this.lblSteeveDis7.TabIndex = 24;
-            this.lblSteeveDis7.Text = "7";
+            this.lblSteeveDis7.Text = "3实际距离";
             this.lblSteeveDis7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txtSteeveDis14
@@ -783,13 +783,12 @@
             // 
             this.lblSteeveDis6.AutoSize = true;
             this.lblSteeveDis6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblSteeveDis6.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.lblSteeveDis6.Location = new System.Drawing.Point(0, 181);
             this.lblSteeveDis6.Margin = new System.Windows.Forms.Padding(0, 1, 0, 0);
             this.lblSteeveDis6.Name = "lblSteeveDis6";
             this.lblSteeveDis6.Size = new System.Drawing.Size(109, 35);
             this.lblSteeveDis6.TabIndex = 20;
-            this.lblSteeveDis6.Text = "6";
+            this.lblSteeveDis6.Text = "2实际距离";
             this.lblSteeveDis6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txtSteeveDis13
@@ -829,13 +828,13 @@
             // 
             this.lblSteeveDis5.AutoSize = true;
             this.lblSteeveDis5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblSteeveDis5.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.lblSteeveDis5.FontSize = MetroFramework.MetroLabelSize.Small;
             this.lblSteeveDis5.Location = new System.Drawing.Point(0, 145);
             this.lblSteeveDis5.Margin = new System.Windows.Forms.Padding(0, 1, 0, 0);
             this.lblSteeveDis5.Name = "lblSteeveDis5";
             this.lblSteeveDis5.Size = new System.Drawing.Size(109, 35);
             this.lblSteeveDis5.TabIndex = 16;
-            this.lblSteeveDis5.Text = "5";
+            this.lblSteeveDis5.Text = "1实际距离";
             this.lblSteeveDis5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txtSteeveDis12
@@ -875,13 +874,13 @@
             // 
             this.lblSteeveDis4.AutoSize = true;
             this.lblSteeveDis4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblSteeveDis4.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.lblSteeveDis4.FontSize = MetroFramework.MetroLabelSize.Small;
             this.lblSteeveDis4.Location = new System.Drawing.Point(0, 109);
             this.lblSteeveDis4.Margin = new System.Windows.Forms.Padding(0, 1, 0, 0);
             this.lblSteeveDis4.Name = "lblSteeveDis4";
             this.lblSteeveDis4.Size = new System.Drawing.Size(109, 35);
             this.lblSteeveDis4.TabIndex = 12;
-            this.lblSteeveDis4.Text = "4";
+            this.lblSteeveDis4.Text = "4上升位移";
             this.lblSteeveDis4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txtSteeveDis11
@@ -921,13 +920,13 @@
             // 
             this.lblSteeveDis3.AutoSize = true;
             this.lblSteeveDis3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblSteeveDis3.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.lblSteeveDis3.FontSize = MetroFramework.MetroLabelSize.Small;
             this.lblSteeveDis3.Location = new System.Drawing.Point(0, 73);
             this.lblSteeveDis3.Margin = new System.Windows.Forms.Padding(0, 1, 0, 0);
             this.lblSteeveDis3.Name = "lblSteeveDis3";
             this.lblSteeveDis3.Size = new System.Drawing.Size(109, 35);
             this.lblSteeveDis3.TabIndex = 8;
-            this.lblSteeveDis3.Text = "3";
+            this.lblSteeveDis3.Text = "3上升位移";
             this.lblSteeveDis3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txtSteeveDis10
@@ -967,13 +966,13 @@
             // 
             this.lblSteeveDis2.AutoSize = true;
             this.lblSteeveDis2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblSteeveDis2.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.lblSteeveDis2.FontSize = MetroFramework.MetroLabelSize.Small;
             this.lblSteeveDis2.Location = new System.Drawing.Point(0, 37);
             this.lblSteeveDis2.Margin = new System.Windows.Forms.Padding(0, 1, 0, 0);
             this.lblSteeveDis2.Name = "lblSteeveDis2";
             this.lblSteeveDis2.Size = new System.Drawing.Size(109, 35);
             this.lblSteeveDis2.TabIndex = 4;
-            this.lblSteeveDis2.Text = "2";
+            this.lblSteeveDis2.Text = "2上升位移";
             this.lblSteeveDis2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txtSteeveDis9
@@ -1003,13 +1002,13 @@
             // 
             this.lblSteeveDis1.AutoSize = true;
             this.lblSteeveDis1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblSteeveDis1.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.lblSteeveDis1.FontSize = MetroFramework.MetroLabelSize.Small;
             this.lblSteeveDis1.Location = new System.Drawing.Point(0, 0);
             this.lblSteeveDis1.Margin = new System.Windows.Forms.Padding(0);
             this.lblSteeveDis1.Name = "lblSteeveDis1";
             this.lblSteeveDis1.Size = new System.Drawing.Size(109, 36);
             this.lblSteeveDis1.TabIndex = 0;
-            this.lblSteeveDis1.Text = "1";
+            this.lblSteeveDis1.Text = "1上升位移";
             this.lblSteeveDis1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txtSteeveDis1
@@ -1072,11 +1071,11 @@
             // tableLayoutPanel3
             // 
             this.tableLayoutPanel3.ColumnCount = 5;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 18F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 18F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 36F));
             this.tableLayoutPanel3.Controls.Add(this.txtMaxAnchorForceDiff, 3, 9);
             this.tableLayoutPanel3.Controls.Add(this.lblMaxAnchorForceDiff, 2, 9);
             this.tableLayoutPanel3.Controls.Add(this.txtAnchorForceDiffLimit, 1, 9);
@@ -1139,20 +1138,21 @@
             // 
             this.txtMaxAnchorForceDiff.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtMaxAnchorForceDiff.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.txtMaxAnchorForceDiff.Location = new System.Drawing.Point(228, 316);
+            this.txtMaxAnchorForceDiff.Location = new System.Drawing.Point(262, 316);
             this.txtMaxAnchorForceDiff.Margin = new System.Windows.Forms.Padding(1);
             this.txtMaxAnchorForceDiff.Name = "txtMaxAnchorForceDiff";
-            this.txtMaxAnchorForceDiff.Size = new System.Drawing.Size(95, 39);
+            this.txtMaxAnchorForceDiff.Size = new System.Drawing.Size(85, 39);
             this.txtMaxAnchorForceDiff.TabIndex = 39;
             // 
             // lblMaxAnchorForceDiff
             // 
             this.lblMaxAnchorForceDiff.AutoSize = true;
             this.lblMaxAnchorForceDiff.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblMaxAnchorForceDiff.Location = new System.Drawing.Point(162, 316);
+            this.lblMaxAnchorForceDiff.FontSize = MetroFramework.MetroLabelSize.Small;
+            this.lblMaxAnchorForceDiff.Location = new System.Drawing.Point(174, 316);
             this.lblMaxAnchorForceDiff.Margin = new System.Windows.Forms.Padding(0, 1, 0, 1);
             this.lblMaxAnchorForceDiff.Name = "lblMaxAnchorForceDiff";
-            this.lblMaxAnchorForceDiff.Size = new System.Drawing.Size(65, 39);
+            this.lblMaxAnchorForceDiff.Size = new System.Drawing.Size(87, 39);
             this.lblMaxAnchorForceDiff.TabIndex = 38;
             this.lblMaxAnchorForceDiff.Text = "力最大差值";
             this.lblMaxAnchorForceDiff.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1161,20 +1161,21 @@
             // 
             this.txtAnchorForceDiffLimit.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtAnchorForceDiffLimit.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.txtAnchorForceDiffLimit.Location = new System.Drawing.Point(66, 316);
+            this.txtAnchorForceDiffLimit.Location = new System.Drawing.Point(88, 316);
             this.txtAnchorForceDiffLimit.Margin = new System.Windows.Forms.Padding(1);
             this.txtAnchorForceDiffLimit.Name = "txtAnchorForceDiffLimit";
-            this.txtAnchorForceDiffLimit.Size = new System.Drawing.Size(95, 39);
+            this.txtAnchorForceDiffLimit.Size = new System.Drawing.Size(85, 39);
             this.txtAnchorForceDiffLimit.TabIndex = 37;
             // 
             // lblAnchorForceDiffLimit
             // 
             this.lblAnchorForceDiffLimit.AutoSize = true;
             this.lblAnchorForceDiffLimit.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblAnchorForceDiffLimit.FontSize = MetroFramework.MetroLabelSize.Small;
             this.lblAnchorForceDiffLimit.Location = new System.Drawing.Point(0, 316);
             this.lblAnchorForceDiffLimit.Margin = new System.Windows.Forms.Padding(0, 1, 0, 1);
             this.lblAnchorForceDiffLimit.Name = "lblAnchorForceDiffLimit";
-            this.lblAnchorForceDiffLimit.Size = new System.Drawing.Size(65, 39);
+            this.lblAnchorForceDiffLimit.Size = new System.Drawing.Size(87, 39);
             this.lblAnchorForceDiffLimit.TabIndex = 36;
             this.lblAnchorForceDiffLimit.Text = "力差值上限";
             this.lblAnchorForceDiffLimit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1183,20 +1184,20 @@
             // 
             this.txtMaxAnchorForce.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtMaxAnchorForce.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.txtMaxAnchorForce.Location = new System.Drawing.Point(228, 281);
+            this.txtMaxAnchorForce.Location = new System.Drawing.Point(262, 281);
             this.txtMaxAnchorForce.Margin = new System.Windows.Forms.Padding(1, 1, 1, 0);
             this.txtMaxAnchorForce.Name = "txtMaxAnchorForce";
-            this.txtMaxAnchorForce.Size = new System.Drawing.Size(95, 34);
+            this.txtMaxAnchorForce.Size = new System.Drawing.Size(85, 34);
             this.txtMaxAnchorForce.TabIndex = 35;
             // 
             // lblMaxAnchorForce
             // 
             this.lblMaxAnchorForce.AutoSize = true;
             this.lblMaxAnchorForce.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblMaxAnchorForce.Location = new System.Drawing.Point(162, 281);
+            this.lblMaxAnchorForce.Location = new System.Drawing.Point(174, 281);
             this.lblMaxAnchorForce.Margin = new System.Windows.Forms.Padding(0, 1, 0, 0);
             this.lblMaxAnchorForce.Name = "lblMaxAnchorForce";
-            this.lblMaxAnchorForce.Size = new System.Drawing.Size(65, 34);
+            this.lblMaxAnchorForce.Size = new System.Drawing.Size(87, 34);
             this.lblMaxAnchorForce.TabIndex = 34;
             this.lblMaxAnchorForce.Text = "最大力值";
             this.lblMaxAnchorForce.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1205,10 +1206,10 @@
             // 
             this.txtAnchorForceLimit.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtAnchorForceLimit.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.txtAnchorForceLimit.Location = new System.Drawing.Point(66, 281);
+            this.txtAnchorForceLimit.Location = new System.Drawing.Point(88, 281);
             this.txtAnchorForceLimit.Margin = new System.Windows.Forms.Padding(1, 1, 1, 0);
             this.txtAnchorForceLimit.Name = "txtAnchorForceLimit";
-            this.txtAnchorForceLimit.Size = new System.Drawing.Size(95, 34);
+            this.txtAnchorForceLimit.Size = new System.Drawing.Size(85, 34);
             this.txtAnchorForceLimit.TabIndex = 33;
             // 
             // lblAnchorForceLimit
@@ -1218,7 +1219,7 @@
             this.lblAnchorForceLimit.Location = new System.Drawing.Point(0, 281);
             this.lblAnchorForceLimit.Margin = new System.Windows.Forms.Padding(0, 1, 0, 0);
             this.lblAnchorForceLimit.Name = "lblAnchorForceLimit";
-            this.lblAnchorForceLimit.Size = new System.Drawing.Size(65, 34);
+            this.lblAnchorForceLimit.Size = new System.Drawing.Size(87, 34);
             this.lblAnchorForceLimit.TabIndex = 32;
             this.lblAnchorForceLimit.Text = "力值上限";
             this.lblAnchorForceLimit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1228,10 +1229,10 @@
             this.txtAnchorF16.AccessibleDescription = "";
             this.txtAnchorF16.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtAnchorF16.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.txtAnchorF16.Location = new System.Drawing.Point(228, 246);
+            this.txtAnchorF16.Location = new System.Drawing.Point(262, 246);
             this.txtAnchorF16.Margin = new System.Windows.Forms.Padding(1, 1, 1, 0);
             this.txtAnchorF16.Name = "txtAnchorF16";
-            this.txtAnchorF16.Size = new System.Drawing.Size(95, 34);
+            this.txtAnchorF16.Size = new System.Drawing.Size(85, 34);
             this.txtAnchorF16.TabIndex = 31;
             // 
             // lblAnchorF16
@@ -1239,10 +1240,10 @@
             this.lblAnchorF16.AutoSize = true;
             this.lblAnchorF16.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblAnchorF16.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.lblAnchorF16.Location = new System.Drawing.Point(162, 246);
+            this.lblAnchorF16.Location = new System.Drawing.Point(174, 246);
             this.lblAnchorF16.Margin = new System.Windows.Forms.Padding(0, 1, 0, 0);
             this.lblAnchorF16.Name = "lblAnchorF16";
-            this.lblAnchorF16.Size = new System.Drawing.Size(65, 34);
+            this.lblAnchorF16.Size = new System.Drawing.Size(87, 34);
             this.lblAnchorF16.TabIndex = 30;
             this.lblAnchorF16.Text = "16";
             this.lblAnchorF16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1251,10 +1252,10 @@
             // 
             this.txtAnchorF8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtAnchorF8.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.txtAnchorF8.Location = new System.Drawing.Point(66, 246);
+            this.txtAnchorF8.Location = new System.Drawing.Point(88, 246);
             this.txtAnchorF8.Margin = new System.Windows.Forms.Padding(1, 1, 1, 0);
             this.txtAnchorF8.Name = "txtAnchorF8";
-            this.txtAnchorF8.Size = new System.Drawing.Size(95, 34);
+            this.txtAnchorF8.Size = new System.Drawing.Size(85, 34);
             this.txtAnchorF8.TabIndex = 29;
             // 
             // lblAnchorF8
@@ -1265,7 +1266,7 @@
             this.lblAnchorF8.Location = new System.Drawing.Point(0, 246);
             this.lblAnchorF8.Margin = new System.Windows.Forms.Padding(0, 1, 0, 0);
             this.lblAnchorF8.Name = "lblAnchorF8";
-            this.lblAnchorF8.Size = new System.Drawing.Size(65, 34);
+            this.lblAnchorF8.Size = new System.Drawing.Size(87, 34);
             this.lblAnchorF8.TabIndex = 28;
             this.lblAnchorF8.Text = "8";
             this.lblAnchorF8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1274,10 +1275,10 @@
             // 
             this.txtAnchorF15.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtAnchorF15.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.txtAnchorF15.Location = new System.Drawing.Point(228, 211);
+            this.txtAnchorF15.Location = new System.Drawing.Point(262, 211);
             this.txtAnchorF15.Margin = new System.Windows.Forms.Padding(1, 1, 1, 0);
             this.txtAnchorF15.Name = "txtAnchorF15";
-            this.txtAnchorF15.Size = new System.Drawing.Size(95, 34);
+            this.txtAnchorF15.Size = new System.Drawing.Size(85, 34);
             this.txtAnchorF15.TabIndex = 27;
             // 
             // lblAnchorF15
@@ -1285,10 +1286,10 @@
             this.lblAnchorF15.AutoSize = true;
             this.lblAnchorF15.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblAnchorF15.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.lblAnchorF15.Location = new System.Drawing.Point(162, 211);
+            this.lblAnchorF15.Location = new System.Drawing.Point(174, 211);
             this.lblAnchorF15.Margin = new System.Windows.Forms.Padding(0, 1, 0, 0);
             this.lblAnchorF15.Name = "lblAnchorF15";
-            this.lblAnchorF15.Size = new System.Drawing.Size(65, 34);
+            this.lblAnchorF15.Size = new System.Drawing.Size(87, 34);
             this.lblAnchorF15.TabIndex = 26;
             this.lblAnchorF15.Text = "15";
             this.lblAnchorF15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1297,10 +1298,10 @@
             // 
             this.txtAnchorF7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtAnchorF7.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.txtAnchorF7.Location = new System.Drawing.Point(66, 211);
+            this.txtAnchorF7.Location = new System.Drawing.Point(88, 211);
             this.txtAnchorF7.Margin = new System.Windows.Forms.Padding(1, 1, 1, 0);
             this.txtAnchorF7.Name = "txtAnchorF7";
-            this.txtAnchorF7.Size = new System.Drawing.Size(95, 34);
+            this.txtAnchorF7.Size = new System.Drawing.Size(85, 34);
             this.txtAnchorF7.TabIndex = 25;
             // 
             // lblAnchorF7
@@ -1311,7 +1312,7 @@
             this.lblAnchorF7.Location = new System.Drawing.Point(0, 211);
             this.lblAnchorF7.Margin = new System.Windows.Forms.Padding(0, 1, 0, 0);
             this.lblAnchorF7.Name = "lblAnchorF7";
-            this.lblAnchorF7.Size = new System.Drawing.Size(65, 34);
+            this.lblAnchorF7.Size = new System.Drawing.Size(87, 34);
             this.lblAnchorF7.TabIndex = 24;
             this.lblAnchorF7.Text = "7";
             this.lblAnchorF7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1320,10 +1321,10 @@
             // 
             this.txtAnchorF14.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtAnchorF14.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.txtAnchorF14.Location = new System.Drawing.Point(228, 176);
+            this.txtAnchorF14.Location = new System.Drawing.Point(262, 176);
             this.txtAnchorF14.Margin = new System.Windows.Forms.Padding(1, 1, 1, 0);
             this.txtAnchorF14.Name = "txtAnchorF14";
-            this.txtAnchorF14.Size = new System.Drawing.Size(95, 34);
+            this.txtAnchorF14.Size = new System.Drawing.Size(85, 34);
             this.txtAnchorF14.TabIndex = 23;
             // 
             // lblAnchorF14
@@ -1331,10 +1332,10 @@
             this.lblAnchorF14.AutoSize = true;
             this.lblAnchorF14.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblAnchorF14.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.lblAnchorF14.Location = new System.Drawing.Point(162, 176);
+            this.lblAnchorF14.Location = new System.Drawing.Point(174, 176);
             this.lblAnchorF14.Margin = new System.Windows.Forms.Padding(0, 1, 0, 0);
             this.lblAnchorF14.Name = "lblAnchorF14";
-            this.lblAnchorF14.Size = new System.Drawing.Size(65, 34);
+            this.lblAnchorF14.Size = new System.Drawing.Size(87, 34);
             this.lblAnchorF14.TabIndex = 22;
             this.lblAnchorF14.Text = "14";
             this.lblAnchorF14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1343,10 +1344,10 @@
             // 
             this.txtAnchorF6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtAnchorF6.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.txtAnchorF6.Location = new System.Drawing.Point(66, 176);
+            this.txtAnchorF6.Location = new System.Drawing.Point(88, 176);
             this.txtAnchorF6.Margin = new System.Windows.Forms.Padding(1, 1, 1, 0);
             this.txtAnchorF6.Name = "txtAnchorF6";
-            this.txtAnchorF6.Size = new System.Drawing.Size(95, 34);
+            this.txtAnchorF6.Size = new System.Drawing.Size(85, 34);
             this.txtAnchorF6.TabIndex = 21;
             // 
             // lblAnchorF6
@@ -1357,7 +1358,7 @@
             this.lblAnchorF6.Location = new System.Drawing.Point(0, 176);
             this.lblAnchorF6.Margin = new System.Windows.Forms.Padding(0, 1, 0, 0);
             this.lblAnchorF6.Name = "lblAnchorF6";
-            this.lblAnchorF6.Size = new System.Drawing.Size(65, 34);
+            this.lblAnchorF6.Size = new System.Drawing.Size(87, 34);
             this.lblAnchorF6.TabIndex = 20;
             this.lblAnchorF6.Text = "6";
             this.lblAnchorF6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1366,10 +1367,10 @@
             // 
             this.txtAnchorF13.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtAnchorF13.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.txtAnchorF13.Location = new System.Drawing.Point(228, 141);
+            this.txtAnchorF13.Location = new System.Drawing.Point(262, 141);
             this.txtAnchorF13.Margin = new System.Windows.Forms.Padding(1, 1, 1, 0);
             this.txtAnchorF13.Name = "txtAnchorF13";
-            this.txtAnchorF13.Size = new System.Drawing.Size(95, 34);
+            this.txtAnchorF13.Size = new System.Drawing.Size(85, 34);
             this.txtAnchorF13.TabIndex = 19;
             // 
             // lblAnchorF13
@@ -1377,10 +1378,10 @@
             this.lblAnchorF13.AutoSize = true;
             this.lblAnchorF13.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblAnchorF13.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.lblAnchorF13.Location = new System.Drawing.Point(162, 141);
+            this.lblAnchorF13.Location = new System.Drawing.Point(174, 141);
             this.lblAnchorF13.Margin = new System.Windows.Forms.Padding(0, 1, 0, 0);
             this.lblAnchorF13.Name = "lblAnchorF13";
-            this.lblAnchorF13.Size = new System.Drawing.Size(65, 34);
+            this.lblAnchorF13.Size = new System.Drawing.Size(87, 34);
             this.lblAnchorF13.TabIndex = 18;
             this.lblAnchorF13.Text = "13";
             this.lblAnchorF13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1389,10 +1390,10 @@
             // 
             this.txtAnchorF5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtAnchorF5.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.txtAnchorF5.Location = new System.Drawing.Point(66, 141);
+            this.txtAnchorF5.Location = new System.Drawing.Point(88, 141);
             this.txtAnchorF5.Margin = new System.Windows.Forms.Padding(1, 1, 1, 0);
             this.txtAnchorF5.Name = "txtAnchorF5";
-            this.txtAnchorF5.Size = new System.Drawing.Size(95, 34);
+            this.txtAnchorF5.Size = new System.Drawing.Size(85, 34);
             this.txtAnchorF5.TabIndex = 17;
             // 
             // lblAnchorF5
@@ -1403,7 +1404,7 @@
             this.lblAnchorF5.Location = new System.Drawing.Point(0, 141);
             this.lblAnchorF5.Margin = new System.Windows.Forms.Padding(0, 1, 0, 0);
             this.lblAnchorF5.Name = "lblAnchorF5";
-            this.lblAnchorF5.Size = new System.Drawing.Size(65, 34);
+            this.lblAnchorF5.Size = new System.Drawing.Size(87, 34);
             this.lblAnchorF5.TabIndex = 16;
             this.lblAnchorF5.Text = "5";
             this.lblAnchorF5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1412,10 +1413,10 @@
             // 
             this.txtAnchorF12.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtAnchorF12.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.txtAnchorF12.Location = new System.Drawing.Point(228, 106);
+            this.txtAnchorF12.Location = new System.Drawing.Point(262, 106);
             this.txtAnchorF12.Margin = new System.Windows.Forms.Padding(1, 1, 1, 0);
             this.txtAnchorF12.Name = "txtAnchorF12";
-            this.txtAnchorF12.Size = new System.Drawing.Size(95, 34);
+            this.txtAnchorF12.Size = new System.Drawing.Size(85, 34);
             this.txtAnchorF12.TabIndex = 15;
             // 
             // lblAnchorF12
@@ -1423,10 +1424,10 @@
             this.lblAnchorF12.AutoSize = true;
             this.lblAnchorF12.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblAnchorF12.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.lblAnchorF12.Location = new System.Drawing.Point(162, 106);
+            this.lblAnchorF12.Location = new System.Drawing.Point(174, 106);
             this.lblAnchorF12.Margin = new System.Windows.Forms.Padding(0, 1, 0, 0);
             this.lblAnchorF12.Name = "lblAnchorF12";
-            this.lblAnchorF12.Size = new System.Drawing.Size(65, 34);
+            this.lblAnchorF12.Size = new System.Drawing.Size(87, 34);
             this.lblAnchorF12.TabIndex = 14;
             this.lblAnchorF12.Text = "12";
             this.lblAnchorF12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1435,10 +1436,10 @@
             // 
             this.txtAnchorF4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtAnchorF4.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.txtAnchorF4.Location = new System.Drawing.Point(66, 106);
+            this.txtAnchorF4.Location = new System.Drawing.Point(88, 106);
             this.txtAnchorF4.Margin = new System.Windows.Forms.Padding(1, 1, 1, 0);
             this.txtAnchorF4.Name = "txtAnchorF4";
-            this.txtAnchorF4.Size = new System.Drawing.Size(95, 34);
+            this.txtAnchorF4.Size = new System.Drawing.Size(85, 34);
             this.txtAnchorF4.TabIndex = 13;
             // 
             // lblAnchorF4
@@ -1449,7 +1450,7 @@
             this.lblAnchorF4.Location = new System.Drawing.Point(0, 106);
             this.lblAnchorF4.Margin = new System.Windows.Forms.Padding(0, 1, 0, 0);
             this.lblAnchorF4.Name = "lblAnchorF4";
-            this.lblAnchorF4.Size = new System.Drawing.Size(65, 34);
+            this.lblAnchorF4.Size = new System.Drawing.Size(87, 34);
             this.lblAnchorF4.TabIndex = 12;
             this.lblAnchorF4.Text = "4";
             this.lblAnchorF4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1458,10 +1459,10 @@
             // 
             this.txtAnchorF11.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtAnchorF11.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.txtAnchorF11.Location = new System.Drawing.Point(228, 71);
+            this.txtAnchorF11.Location = new System.Drawing.Point(262, 71);
             this.txtAnchorF11.Margin = new System.Windows.Forms.Padding(1, 1, 1, 0);
             this.txtAnchorF11.Name = "txtAnchorF11";
-            this.txtAnchorF11.Size = new System.Drawing.Size(95, 34);
+            this.txtAnchorF11.Size = new System.Drawing.Size(85, 34);
             this.txtAnchorF11.TabIndex = 11;
             // 
             // lblAnchorF11
@@ -1469,10 +1470,10 @@
             this.lblAnchorF11.AutoSize = true;
             this.lblAnchorF11.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblAnchorF11.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.lblAnchorF11.Location = new System.Drawing.Point(162, 71);
+            this.lblAnchorF11.Location = new System.Drawing.Point(174, 71);
             this.lblAnchorF11.Margin = new System.Windows.Forms.Padding(0, 1, 0, 0);
             this.lblAnchorF11.Name = "lblAnchorF11";
-            this.lblAnchorF11.Size = new System.Drawing.Size(65, 34);
+            this.lblAnchorF11.Size = new System.Drawing.Size(87, 34);
             this.lblAnchorF11.TabIndex = 10;
             this.lblAnchorF11.Text = "11";
             this.lblAnchorF11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1481,10 +1482,10 @@
             // 
             this.txtAnchorF3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtAnchorF3.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.txtAnchorF3.Location = new System.Drawing.Point(66, 71);
+            this.txtAnchorF3.Location = new System.Drawing.Point(88, 71);
             this.txtAnchorF3.Margin = new System.Windows.Forms.Padding(1, 1, 1, 0);
             this.txtAnchorF3.Name = "txtAnchorF3";
-            this.txtAnchorF3.Size = new System.Drawing.Size(95, 34);
+            this.txtAnchorF3.Size = new System.Drawing.Size(85, 34);
             this.txtAnchorF3.TabIndex = 9;
             // 
             // lblAnchorF3
@@ -1495,7 +1496,7 @@
             this.lblAnchorF3.Location = new System.Drawing.Point(0, 71);
             this.lblAnchorF3.Margin = new System.Windows.Forms.Padding(0, 1, 0, 0);
             this.lblAnchorF3.Name = "lblAnchorF3";
-            this.lblAnchorF3.Size = new System.Drawing.Size(65, 34);
+            this.lblAnchorF3.Size = new System.Drawing.Size(87, 34);
             this.lblAnchorF3.TabIndex = 8;
             this.lblAnchorF3.Text = "3";
             this.lblAnchorF3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1504,10 +1505,10 @@
             // 
             this.txtAnchorF10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtAnchorF10.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.txtAnchorF10.Location = new System.Drawing.Point(228, 36);
+            this.txtAnchorF10.Location = new System.Drawing.Point(262, 36);
             this.txtAnchorF10.Margin = new System.Windows.Forms.Padding(1, 1, 1, 0);
             this.txtAnchorF10.Name = "txtAnchorF10";
-            this.txtAnchorF10.Size = new System.Drawing.Size(95, 34);
+            this.txtAnchorF10.Size = new System.Drawing.Size(85, 34);
             this.txtAnchorF10.TabIndex = 7;
             // 
             // lblAnchorF10
@@ -1515,10 +1516,10 @@
             this.lblAnchorF10.AutoSize = true;
             this.lblAnchorF10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblAnchorF10.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.lblAnchorF10.Location = new System.Drawing.Point(162, 36);
+            this.lblAnchorF10.Location = new System.Drawing.Point(174, 36);
             this.lblAnchorF10.Margin = new System.Windows.Forms.Padding(0, 1, 0, 0);
             this.lblAnchorF10.Name = "lblAnchorF10";
-            this.lblAnchorF10.Size = new System.Drawing.Size(65, 34);
+            this.lblAnchorF10.Size = new System.Drawing.Size(87, 34);
             this.lblAnchorF10.TabIndex = 6;
             this.lblAnchorF10.Text = "10";
             this.lblAnchorF10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1527,10 +1528,10 @@
             // 
             this.txtAnchorF2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtAnchorF2.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.txtAnchorF2.Location = new System.Drawing.Point(66, 36);
+            this.txtAnchorF2.Location = new System.Drawing.Point(88, 36);
             this.txtAnchorF2.Margin = new System.Windows.Forms.Padding(1, 1, 1, 0);
             this.txtAnchorF2.Name = "txtAnchorF2";
-            this.txtAnchorF2.Size = new System.Drawing.Size(95, 34);
+            this.txtAnchorF2.Size = new System.Drawing.Size(85, 34);
             this.txtAnchorF2.TabIndex = 5;
             // 
             // lblAnchorF2
@@ -1541,7 +1542,7 @@
             this.lblAnchorF2.Location = new System.Drawing.Point(0, 36);
             this.lblAnchorF2.Margin = new System.Windows.Forms.Padding(0, 1, 0, 0);
             this.lblAnchorF2.Name = "lblAnchorF2";
-            this.lblAnchorF2.Size = new System.Drawing.Size(65, 34);
+            this.lblAnchorF2.Size = new System.Drawing.Size(87, 34);
             this.lblAnchorF2.TabIndex = 4;
             this.lblAnchorF2.Text = "2";
             this.lblAnchorF2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1550,10 +1551,10 @@
             // 
             this.txtAnchorF9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtAnchorF9.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.txtAnchorF9.Location = new System.Drawing.Point(228, 0);
+            this.txtAnchorF9.Location = new System.Drawing.Point(262, 0);
             this.txtAnchorF9.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.txtAnchorF9.Name = "txtAnchorF9";
-            this.txtAnchorF9.Size = new System.Drawing.Size(95, 35);
+            this.txtAnchorF9.Size = new System.Drawing.Size(85, 35);
             this.txtAnchorF9.TabIndex = 3;
             // 
             // lblAnchorF9
@@ -1561,10 +1562,10 @@
             this.lblAnchorF9.AutoSize = true;
             this.lblAnchorF9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblAnchorF9.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.lblAnchorF9.Location = new System.Drawing.Point(162, 0);
+            this.lblAnchorF9.Location = new System.Drawing.Point(174, 0);
             this.lblAnchorF9.Margin = new System.Windows.Forms.Padding(0);
             this.lblAnchorF9.Name = "lblAnchorF9";
-            this.lblAnchorF9.Size = new System.Drawing.Size(65, 35);
+            this.lblAnchorF9.Size = new System.Drawing.Size(87, 35);
             this.lblAnchorF9.TabIndex = 2;
             this.lblAnchorF9.Text = "9";
             this.lblAnchorF9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1577,7 +1578,7 @@
             this.lblAnchorF1.Location = new System.Drawing.Point(0, 0);
             this.lblAnchorF1.Margin = new System.Windows.Forms.Padding(0);
             this.lblAnchorF1.Name = "lblAnchorF1";
-            this.lblAnchorF1.Size = new System.Drawing.Size(65, 35);
+            this.lblAnchorF1.Size = new System.Drawing.Size(87, 35);
             this.lblAnchorF1.TabIndex = 0;
             this.lblAnchorF1.Text = "1";
             this.lblAnchorF1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1586,20 +1587,20 @@
             // 
             this.txtAnchorF1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtAnchorF1.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.txtAnchorF1.Location = new System.Drawing.Point(66, 0);
+            this.txtAnchorF1.Location = new System.Drawing.Point(88, 0);
             this.txtAnchorF1.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.txtAnchorF1.Name = "txtAnchorF1";
-            this.txtAnchorF1.Size = new System.Drawing.Size(95, 35);
+            this.txtAnchorF1.Size = new System.Drawing.Size(85, 35);
             this.txtAnchorF1.TabIndex = 1;
             // 
             // pictureBox3
             // 
             this.pictureBox3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(327, 3);
+            this.pictureBox3.Location = new System.Drawing.Point(351, 3);
             this.pictureBox3.Name = "pictureBox3";
             this.tableLayoutPanel3.SetRowSpan(this.pictureBox3, 10);
-            this.pictureBox3.Size = new System.Drawing.Size(214, 350);
+            this.pictureBox3.Size = new System.Drawing.Size(190, 350);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 40;
             this.pictureBox3.TabStop = false;
@@ -1617,11 +1618,11 @@
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 5;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 18F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 18F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 36F));
             this.tableLayoutPanel1.Controls.Add(this.txtMaxSteeveForceDiff, 3, 9);
             this.tableLayoutPanel1.Controls.Add(this.lblMaxSteeveForceDiff, 2, 9);
             this.tableLayoutPanel1.Controls.Add(this.txtSteeveForceDiffLimit, 1, 9);
@@ -1685,20 +1686,21 @@
             // 
             this.txtMaxSteeveForceDiff.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtMaxSteeveForceDiff.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.txtMaxSteeveForceDiff.Location = new System.Drawing.Point(232, 325);
+            this.txtMaxSteeveForceDiff.Location = new System.Drawing.Point(265, 325);
             this.txtMaxSteeveForceDiff.Margin = new System.Windows.Forms.Padding(1);
             this.txtMaxSteeveForceDiff.Name = "txtMaxSteeveForceDiff";
-            this.txtMaxSteeveForceDiff.Size = new System.Drawing.Size(97, 36);
+            this.txtMaxSteeveForceDiff.Size = new System.Drawing.Size(86, 36);
             this.txtMaxSteeveForceDiff.TabIndex = 39;
             // 
             // lblMaxSteeveForceDiff
             // 
             this.lblMaxSteeveForceDiff.AutoSize = true;
             this.lblMaxSteeveForceDiff.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblMaxSteeveForceDiff.Location = new System.Drawing.Point(165, 325);
+            this.lblMaxSteeveForceDiff.FontSize = MetroFramework.MetroLabelSize.Small;
+            this.lblMaxSteeveForceDiff.Location = new System.Drawing.Point(176, 325);
             this.lblMaxSteeveForceDiff.Margin = new System.Windows.Forms.Padding(0, 1, 0, 1);
             this.lblMaxSteeveForceDiff.Name = "lblMaxSteeveForceDiff";
-            this.lblMaxSteeveForceDiff.Size = new System.Drawing.Size(66, 36);
+            this.lblMaxSteeveForceDiff.Size = new System.Drawing.Size(88, 36);
             this.lblMaxSteeveForceDiff.TabIndex = 38;
             this.lblMaxSteeveForceDiff.Text = "力最大差值";
             this.lblMaxSteeveForceDiff.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1707,20 +1709,21 @@
             // 
             this.txtSteeveForceDiffLimit.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtSteeveForceDiffLimit.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.txtSteeveForceDiffLimit.Location = new System.Drawing.Point(67, 325);
+            this.txtSteeveForceDiffLimit.Location = new System.Drawing.Point(89, 325);
             this.txtSteeveForceDiffLimit.Margin = new System.Windows.Forms.Padding(1);
             this.txtSteeveForceDiffLimit.Name = "txtSteeveForceDiffLimit";
-            this.txtSteeveForceDiffLimit.Size = new System.Drawing.Size(97, 36);
+            this.txtSteeveForceDiffLimit.Size = new System.Drawing.Size(86, 36);
             this.txtSteeveForceDiffLimit.TabIndex = 37;
             // 
             // lblSteeveForceDiffLimit
             // 
             this.lblSteeveForceDiffLimit.AutoSize = true;
             this.lblSteeveForceDiffLimit.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblSteeveForceDiffLimit.FontSize = MetroFramework.MetroLabelSize.Small;
             this.lblSteeveForceDiffLimit.Location = new System.Drawing.Point(0, 325);
             this.lblSteeveForceDiffLimit.Margin = new System.Windows.Forms.Padding(0, 1, 0, 1);
             this.lblSteeveForceDiffLimit.Name = "lblSteeveForceDiffLimit";
-            this.lblSteeveForceDiffLimit.Size = new System.Drawing.Size(66, 36);
+            this.lblSteeveForceDiffLimit.Size = new System.Drawing.Size(88, 36);
             this.lblSteeveForceDiffLimit.TabIndex = 36;
             this.lblSteeveForceDiffLimit.Text = "力差值上限";
             this.lblSteeveForceDiffLimit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1729,20 +1732,20 @@
             // 
             this.txtMaxSteeveForce.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtMaxSteeveForce.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.txtMaxSteeveForce.Location = new System.Drawing.Point(232, 289);
+            this.txtMaxSteeveForce.Location = new System.Drawing.Point(265, 289);
             this.txtMaxSteeveForce.Margin = new System.Windows.Forms.Padding(1, 1, 1, 0);
             this.txtMaxSteeveForce.Name = "txtMaxSteeveForce";
-            this.txtMaxSteeveForce.Size = new System.Drawing.Size(97, 35);
+            this.txtMaxSteeveForce.Size = new System.Drawing.Size(86, 35);
             this.txtMaxSteeveForce.TabIndex = 35;
             // 
             // lblMaxSteeveForce
             // 
             this.lblMaxSteeveForce.AutoSize = true;
             this.lblMaxSteeveForce.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblMaxSteeveForce.Location = new System.Drawing.Point(165, 289);
+            this.lblMaxSteeveForce.Location = new System.Drawing.Point(176, 289);
             this.lblMaxSteeveForce.Margin = new System.Windows.Forms.Padding(0, 1, 0, 0);
             this.lblMaxSteeveForce.Name = "lblMaxSteeveForce";
-            this.lblMaxSteeveForce.Size = new System.Drawing.Size(66, 35);
+            this.lblMaxSteeveForce.Size = new System.Drawing.Size(88, 35);
             this.lblMaxSteeveForce.TabIndex = 34;
             this.lblMaxSteeveForce.Text = "最大力值";
             this.lblMaxSteeveForce.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1751,10 +1754,10 @@
             // 
             this.txtSteeveForceLimit.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtSteeveForceLimit.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.txtSteeveForceLimit.Location = new System.Drawing.Point(67, 289);
+            this.txtSteeveForceLimit.Location = new System.Drawing.Point(89, 289);
             this.txtSteeveForceLimit.Margin = new System.Windows.Forms.Padding(1, 1, 1, 0);
             this.txtSteeveForceLimit.Name = "txtSteeveForceLimit";
-            this.txtSteeveForceLimit.Size = new System.Drawing.Size(97, 35);
+            this.txtSteeveForceLimit.Size = new System.Drawing.Size(86, 35);
             this.txtSteeveForceLimit.TabIndex = 33;
             // 
             // lblSteeveForceLimit
@@ -1764,7 +1767,7 @@
             this.lblSteeveForceLimit.Location = new System.Drawing.Point(0, 289);
             this.lblSteeveForceLimit.Margin = new System.Windows.Forms.Padding(0, 1, 0, 0);
             this.lblSteeveForceLimit.Name = "lblSteeveForceLimit";
-            this.lblSteeveForceLimit.Size = new System.Drawing.Size(66, 35);
+            this.lblSteeveForceLimit.Size = new System.Drawing.Size(88, 35);
             this.lblSteeveForceLimit.TabIndex = 32;
             this.lblSteeveForceLimit.Text = "力值上限";
             this.lblSteeveForceLimit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1773,10 +1776,10 @@
             // 
             this.txtSteeveF16.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtSteeveF16.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.txtSteeveF16.Location = new System.Drawing.Point(232, 253);
+            this.txtSteeveF16.Location = new System.Drawing.Point(265, 253);
             this.txtSteeveF16.Margin = new System.Windows.Forms.Padding(1, 1, 1, 0);
             this.txtSteeveF16.Name = "txtSteeveF16";
-            this.txtSteeveF16.Size = new System.Drawing.Size(97, 35);
+            this.txtSteeveF16.Size = new System.Drawing.Size(86, 35);
             this.txtSteeveF16.TabIndex = 31;
             // 
             // lblSteeveF16
@@ -1784,10 +1787,10 @@
             this.lblSteeveF16.AutoSize = true;
             this.lblSteeveF16.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblSteeveF16.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.lblSteeveF16.Location = new System.Drawing.Point(165, 253);
+            this.lblSteeveF16.Location = new System.Drawing.Point(176, 253);
             this.lblSteeveF16.Margin = new System.Windows.Forms.Padding(0, 1, 0, 0);
             this.lblSteeveF16.Name = "lblSteeveF16";
-            this.lblSteeveF16.Size = new System.Drawing.Size(66, 35);
+            this.lblSteeveF16.Size = new System.Drawing.Size(88, 35);
             this.lblSteeveF16.TabIndex = 30;
             this.lblSteeveF16.Text = "16";
             this.lblSteeveF16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1796,10 +1799,10 @@
             // 
             this.txtSteeveF8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtSteeveF8.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.txtSteeveF8.Location = new System.Drawing.Point(67, 253);
+            this.txtSteeveF8.Location = new System.Drawing.Point(89, 253);
             this.txtSteeveF8.Margin = new System.Windows.Forms.Padding(1, 1, 1, 0);
             this.txtSteeveF8.Name = "txtSteeveF8";
-            this.txtSteeveF8.Size = new System.Drawing.Size(97, 35);
+            this.txtSteeveF8.Size = new System.Drawing.Size(86, 35);
             this.txtSteeveF8.TabIndex = 29;
             // 
             // lblSteeveF8
@@ -1810,7 +1813,7 @@
             this.lblSteeveF8.Location = new System.Drawing.Point(0, 253);
             this.lblSteeveF8.Margin = new System.Windows.Forms.Padding(0, 1, 0, 0);
             this.lblSteeveF8.Name = "lblSteeveF8";
-            this.lblSteeveF8.Size = new System.Drawing.Size(66, 35);
+            this.lblSteeveF8.Size = new System.Drawing.Size(88, 35);
             this.lblSteeveF8.TabIndex = 28;
             this.lblSteeveF8.Text = "8";
             this.lblSteeveF8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1819,10 +1822,10 @@
             // 
             this.txtSteeveF15.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtSteeveF15.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.txtSteeveF15.Location = new System.Drawing.Point(232, 217);
+            this.txtSteeveF15.Location = new System.Drawing.Point(265, 217);
             this.txtSteeveF15.Margin = new System.Windows.Forms.Padding(1, 1, 1, 0);
             this.txtSteeveF15.Name = "txtSteeveF15";
-            this.txtSteeveF15.Size = new System.Drawing.Size(97, 35);
+            this.txtSteeveF15.Size = new System.Drawing.Size(86, 35);
             this.txtSteeveF15.TabIndex = 27;
             // 
             // lblSteeveF15
@@ -1830,10 +1833,10 @@
             this.lblSteeveF15.AutoSize = true;
             this.lblSteeveF15.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblSteeveF15.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.lblSteeveF15.Location = new System.Drawing.Point(165, 217);
+            this.lblSteeveF15.Location = new System.Drawing.Point(176, 217);
             this.lblSteeveF15.Margin = new System.Windows.Forms.Padding(0, 1, 0, 0);
             this.lblSteeveF15.Name = "lblSteeveF15";
-            this.lblSteeveF15.Size = new System.Drawing.Size(66, 35);
+            this.lblSteeveF15.Size = new System.Drawing.Size(88, 35);
             this.lblSteeveF15.TabIndex = 26;
             this.lblSteeveF15.Text = "15";
             this.lblSteeveF15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1842,10 +1845,10 @@
             // 
             this.txtSteeveF7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtSteeveF7.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.txtSteeveF7.Location = new System.Drawing.Point(67, 217);
+            this.txtSteeveF7.Location = new System.Drawing.Point(89, 217);
             this.txtSteeveF7.Margin = new System.Windows.Forms.Padding(1, 1, 1, 0);
             this.txtSteeveF7.Name = "txtSteeveF7";
-            this.txtSteeveF7.Size = new System.Drawing.Size(97, 35);
+            this.txtSteeveF7.Size = new System.Drawing.Size(86, 35);
             this.txtSteeveF7.TabIndex = 25;
             // 
             // lblSteeveF7
@@ -1856,7 +1859,7 @@
             this.lblSteeveF7.Location = new System.Drawing.Point(0, 217);
             this.lblSteeveF7.Margin = new System.Windows.Forms.Padding(0, 1, 0, 0);
             this.lblSteeveF7.Name = "lblSteeveF7";
-            this.lblSteeveF7.Size = new System.Drawing.Size(66, 35);
+            this.lblSteeveF7.Size = new System.Drawing.Size(88, 35);
             this.lblSteeveF7.TabIndex = 24;
             this.lblSteeveF7.Text = "7";
             this.lblSteeveF7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1865,10 +1868,10 @@
             // 
             this.txtSteeveF14.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtSteeveF14.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.txtSteeveF14.Location = new System.Drawing.Point(232, 181);
+            this.txtSteeveF14.Location = new System.Drawing.Point(265, 181);
             this.txtSteeveF14.Margin = new System.Windows.Forms.Padding(1, 1, 1, 0);
             this.txtSteeveF14.Name = "txtSteeveF14";
-            this.txtSteeveF14.Size = new System.Drawing.Size(97, 35);
+            this.txtSteeveF14.Size = new System.Drawing.Size(86, 35);
             this.txtSteeveF14.TabIndex = 23;
             // 
             // lblSteeveF14
@@ -1876,10 +1879,10 @@
             this.lblSteeveF14.AutoSize = true;
             this.lblSteeveF14.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblSteeveF14.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.lblSteeveF14.Location = new System.Drawing.Point(165, 181);
+            this.lblSteeveF14.Location = new System.Drawing.Point(176, 181);
             this.lblSteeveF14.Margin = new System.Windows.Forms.Padding(0, 1, 0, 0);
             this.lblSteeveF14.Name = "lblSteeveF14";
-            this.lblSteeveF14.Size = new System.Drawing.Size(66, 35);
+            this.lblSteeveF14.Size = new System.Drawing.Size(88, 35);
             this.lblSteeveF14.TabIndex = 22;
             this.lblSteeveF14.Text = "14";
             this.lblSteeveF14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1888,10 +1891,10 @@
             // 
             this.txtSteeveF6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtSteeveF6.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.txtSteeveF6.Location = new System.Drawing.Point(67, 181);
+            this.txtSteeveF6.Location = new System.Drawing.Point(89, 181);
             this.txtSteeveF6.Margin = new System.Windows.Forms.Padding(1, 1, 1, 0);
             this.txtSteeveF6.Name = "txtSteeveF6";
-            this.txtSteeveF6.Size = new System.Drawing.Size(97, 35);
+            this.txtSteeveF6.Size = new System.Drawing.Size(86, 35);
             this.txtSteeveF6.TabIndex = 21;
             // 
             // lblSteeveF6
@@ -1902,7 +1905,7 @@
             this.lblSteeveF6.Location = new System.Drawing.Point(0, 181);
             this.lblSteeveF6.Margin = new System.Windows.Forms.Padding(0, 1, 0, 0);
             this.lblSteeveF6.Name = "lblSteeveF6";
-            this.lblSteeveF6.Size = new System.Drawing.Size(66, 35);
+            this.lblSteeveF6.Size = new System.Drawing.Size(88, 35);
             this.lblSteeveF6.TabIndex = 20;
             this.lblSteeveF6.Text = "6";
             this.lblSteeveF6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1911,10 +1914,10 @@
             // 
             this.txtSteeveF13.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtSteeveF13.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.txtSteeveF13.Location = new System.Drawing.Point(232, 145);
+            this.txtSteeveF13.Location = new System.Drawing.Point(265, 145);
             this.txtSteeveF13.Margin = new System.Windows.Forms.Padding(1, 1, 1, 0);
             this.txtSteeveF13.Name = "txtSteeveF13";
-            this.txtSteeveF13.Size = new System.Drawing.Size(97, 35);
+            this.txtSteeveF13.Size = new System.Drawing.Size(86, 35);
             this.txtSteeveF13.TabIndex = 19;
             // 
             // lblSteeveF13
@@ -1922,10 +1925,10 @@
             this.lblSteeveF13.AutoSize = true;
             this.lblSteeveF13.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblSteeveF13.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.lblSteeveF13.Location = new System.Drawing.Point(165, 145);
+            this.lblSteeveF13.Location = new System.Drawing.Point(176, 145);
             this.lblSteeveF13.Margin = new System.Windows.Forms.Padding(0, 1, 0, 0);
             this.lblSteeveF13.Name = "lblSteeveF13";
-            this.lblSteeveF13.Size = new System.Drawing.Size(66, 35);
+            this.lblSteeveF13.Size = new System.Drawing.Size(88, 35);
             this.lblSteeveF13.TabIndex = 18;
             this.lblSteeveF13.Text = "13";
             this.lblSteeveF13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1934,10 +1937,10 @@
             // 
             this.txtSteeveF5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtSteeveF5.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.txtSteeveF5.Location = new System.Drawing.Point(67, 145);
+            this.txtSteeveF5.Location = new System.Drawing.Point(89, 145);
             this.txtSteeveF5.Margin = new System.Windows.Forms.Padding(1, 1, 1, 0);
             this.txtSteeveF5.Name = "txtSteeveF5";
-            this.txtSteeveF5.Size = new System.Drawing.Size(97, 35);
+            this.txtSteeveF5.Size = new System.Drawing.Size(86, 35);
             this.txtSteeveF5.TabIndex = 17;
             // 
             // lblSteeveF5
@@ -1948,7 +1951,7 @@
             this.lblSteeveF5.Location = new System.Drawing.Point(0, 145);
             this.lblSteeveF5.Margin = new System.Windows.Forms.Padding(0, 1, 0, 0);
             this.lblSteeveF5.Name = "lblSteeveF5";
-            this.lblSteeveF5.Size = new System.Drawing.Size(66, 35);
+            this.lblSteeveF5.Size = new System.Drawing.Size(88, 35);
             this.lblSteeveF5.TabIndex = 16;
             this.lblSteeveF5.Text = "5";
             this.lblSteeveF5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1957,10 +1960,10 @@
             // 
             this.txtSteeveF12.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtSteeveF12.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.txtSteeveF12.Location = new System.Drawing.Point(232, 109);
+            this.txtSteeveF12.Location = new System.Drawing.Point(265, 109);
             this.txtSteeveF12.Margin = new System.Windows.Forms.Padding(1, 1, 1, 0);
             this.txtSteeveF12.Name = "txtSteeveF12";
-            this.txtSteeveF12.Size = new System.Drawing.Size(97, 35);
+            this.txtSteeveF12.Size = new System.Drawing.Size(86, 35);
             this.txtSteeveF12.TabIndex = 15;
             // 
             // lblSteeveF12
@@ -1968,10 +1971,10 @@
             this.lblSteeveF12.AutoSize = true;
             this.lblSteeveF12.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblSteeveF12.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.lblSteeveF12.Location = new System.Drawing.Point(165, 109);
+            this.lblSteeveF12.Location = new System.Drawing.Point(176, 109);
             this.lblSteeveF12.Margin = new System.Windows.Forms.Padding(0, 1, 0, 0);
             this.lblSteeveF12.Name = "lblSteeveF12";
-            this.lblSteeveF12.Size = new System.Drawing.Size(66, 35);
+            this.lblSteeveF12.Size = new System.Drawing.Size(88, 35);
             this.lblSteeveF12.TabIndex = 14;
             this.lblSteeveF12.Text = "12";
             this.lblSteeveF12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1980,10 +1983,10 @@
             // 
             this.txtSteeveF4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtSteeveF4.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.txtSteeveF4.Location = new System.Drawing.Point(67, 109);
+            this.txtSteeveF4.Location = new System.Drawing.Point(89, 109);
             this.txtSteeveF4.Margin = new System.Windows.Forms.Padding(1, 1, 1, 0);
             this.txtSteeveF4.Name = "txtSteeveF4";
-            this.txtSteeveF4.Size = new System.Drawing.Size(97, 35);
+            this.txtSteeveF4.Size = new System.Drawing.Size(86, 35);
             this.txtSteeveF4.TabIndex = 13;
             // 
             // lblSteeveF4
@@ -1994,7 +1997,7 @@
             this.lblSteeveF4.Location = new System.Drawing.Point(0, 109);
             this.lblSteeveF4.Margin = new System.Windows.Forms.Padding(0, 1, 0, 0);
             this.lblSteeveF4.Name = "lblSteeveF4";
-            this.lblSteeveF4.Size = new System.Drawing.Size(66, 35);
+            this.lblSteeveF4.Size = new System.Drawing.Size(88, 35);
             this.lblSteeveF4.TabIndex = 12;
             this.lblSteeveF4.Text = "4";
             this.lblSteeveF4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -2003,10 +2006,10 @@
             // 
             this.txtSteeveF11.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtSteeveF11.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.txtSteeveF11.Location = new System.Drawing.Point(232, 73);
+            this.txtSteeveF11.Location = new System.Drawing.Point(265, 73);
             this.txtSteeveF11.Margin = new System.Windows.Forms.Padding(1, 1, 1, 0);
             this.txtSteeveF11.Name = "txtSteeveF11";
-            this.txtSteeveF11.Size = new System.Drawing.Size(97, 35);
+            this.txtSteeveF11.Size = new System.Drawing.Size(86, 35);
             this.txtSteeveF11.TabIndex = 11;
             // 
             // lblSteeveF11
@@ -2014,10 +2017,10 @@
             this.lblSteeveF11.AutoSize = true;
             this.lblSteeveF11.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblSteeveF11.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.lblSteeveF11.Location = new System.Drawing.Point(165, 73);
+            this.lblSteeveF11.Location = new System.Drawing.Point(176, 73);
             this.lblSteeveF11.Margin = new System.Windows.Forms.Padding(0, 1, 0, 0);
             this.lblSteeveF11.Name = "lblSteeveF11";
-            this.lblSteeveF11.Size = new System.Drawing.Size(66, 35);
+            this.lblSteeveF11.Size = new System.Drawing.Size(88, 35);
             this.lblSteeveF11.TabIndex = 10;
             this.lblSteeveF11.Text = "11";
             this.lblSteeveF11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -2026,10 +2029,10 @@
             // 
             this.txtSteeveF3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtSteeveF3.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.txtSteeveF3.Location = new System.Drawing.Point(67, 73);
+            this.txtSteeveF3.Location = new System.Drawing.Point(89, 73);
             this.txtSteeveF3.Margin = new System.Windows.Forms.Padding(1, 1, 1, 0);
             this.txtSteeveF3.Name = "txtSteeveF3";
-            this.txtSteeveF3.Size = new System.Drawing.Size(97, 35);
+            this.txtSteeveF3.Size = new System.Drawing.Size(86, 35);
             this.txtSteeveF3.TabIndex = 9;
             // 
             // lblSteeveF3
@@ -2040,7 +2043,7 @@
             this.lblSteeveF3.Location = new System.Drawing.Point(0, 73);
             this.lblSteeveF3.Margin = new System.Windows.Forms.Padding(0, 1, 0, 0);
             this.lblSteeveF3.Name = "lblSteeveF3";
-            this.lblSteeveF3.Size = new System.Drawing.Size(66, 35);
+            this.lblSteeveF3.Size = new System.Drawing.Size(88, 35);
             this.lblSteeveF3.TabIndex = 8;
             this.lblSteeveF3.Text = "3";
             this.lblSteeveF3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -2049,10 +2052,10 @@
             // 
             this.txtSteeveF10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtSteeveF10.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.txtSteeveF10.Location = new System.Drawing.Point(232, 37);
+            this.txtSteeveF10.Location = new System.Drawing.Point(265, 37);
             this.txtSteeveF10.Margin = new System.Windows.Forms.Padding(1, 1, 1, 0);
             this.txtSteeveF10.Name = "txtSteeveF10";
-            this.txtSteeveF10.Size = new System.Drawing.Size(97, 35);
+            this.txtSteeveF10.Size = new System.Drawing.Size(86, 35);
             this.txtSteeveF10.TabIndex = 7;
             // 
             // lblSteeveF10
@@ -2060,10 +2063,10 @@
             this.lblSteeveF10.AutoSize = true;
             this.lblSteeveF10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblSteeveF10.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.lblSteeveF10.Location = new System.Drawing.Point(165, 37);
+            this.lblSteeveF10.Location = new System.Drawing.Point(176, 37);
             this.lblSteeveF10.Margin = new System.Windows.Forms.Padding(0, 1, 0, 0);
             this.lblSteeveF10.Name = "lblSteeveF10";
-            this.lblSteeveF10.Size = new System.Drawing.Size(66, 35);
+            this.lblSteeveF10.Size = new System.Drawing.Size(88, 35);
             this.lblSteeveF10.TabIndex = 6;
             this.lblSteeveF10.Text = "10";
             this.lblSteeveF10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -2072,10 +2075,10 @@
             // 
             this.txtSteeveF2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtSteeveF2.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.txtSteeveF2.Location = new System.Drawing.Point(67, 37);
+            this.txtSteeveF2.Location = new System.Drawing.Point(89, 37);
             this.txtSteeveF2.Margin = new System.Windows.Forms.Padding(1, 1, 1, 0);
             this.txtSteeveF2.Name = "txtSteeveF2";
-            this.txtSteeveF2.Size = new System.Drawing.Size(97, 35);
+            this.txtSteeveF2.Size = new System.Drawing.Size(86, 35);
             this.txtSteeveF2.TabIndex = 5;
             // 
             // lblSteeveF2
@@ -2086,7 +2089,7 @@
             this.lblSteeveF2.Location = new System.Drawing.Point(0, 37);
             this.lblSteeveF2.Margin = new System.Windows.Forms.Padding(0, 1, 0, 0);
             this.lblSteeveF2.Name = "lblSteeveF2";
-            this.lblSteeveF2.Size = new System.Drawing.Size(66, 35);
+            this.lblSteeveF2.Size = new System.Drawing.Size(88, 35);
             this.lblSteeveF2.TabIndex = 4;
             this.lblSteeveF2.Text = "2";
             this.lblSteeveF2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -2095,10 +2098,10 @@
             // 
             this.txtSteeveF9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtSteeveF9.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.txtSteeveF9.Location = new System.Drawing.Point(232, 0);
+            this.txtSteeveF9.Location = new System.Drawing.Point(265, 0);
             this.txtSteeveF9.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.txtSteeveF9.Name = "txtSteeveF9";
-            this.txtSteeveF9.Size = new System.Drawing.Size(97, 36);
+            this.txtSteeveF9.Size = new System.Drawing.Size(86, 36);
             this.txtSteeveF9.TabIndex = 3;
             // 
             // lblSteeveF9
@@ -2106,10 +2109,10 @@
             this.lblSteeveF9.AutoSize = true;
             this.lblSteeveF9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblSteeveF9.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.lblSteeveF9.Location = new System.Drawing.Point(165, 0);
+            this.lblSteeveF9.Location = new System.Drawing.Point(176, 0);
             this.lblSteeveF9.Margin = new System.Windows.Forms.Padding(0);
             this.lblSteeveF9.Name = "lblSteeveF9";
-            this.lblSteeveF9.Size = new System.Drawing.Size(66, 36);
+            this.lblSteeveF9.Size = new System.Drawing.Size(88, 36);
             this.lblSteeveF9.TabIndex = 2;
             this.lblSteeveF9.Text = "9";
             this.lblSteeveF9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -2122,7 +2125,7 @@
             this.lblSteeveF1.Location = new System.Drawing.Point(0, 0);
             this.lblSteeveF1.Margin = new System.Windows.Forms.Padding(0);
             this.lblSteeveF1.Name = "lblSteeveF1";
-            this.lblSteeveF1.Size = new System.Drawing.Size(66, 36);
+            this.lblSteeveF1.Size = new System.Drawing.Size(88, 36);
             this.lblSteeveF1.TabIndex = 0;
             this.lblSteeveF1.Text = "1";
             this.lblSteeveF1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -2131,20 +2134,20 @@
             // 
             this.txtSteeveF1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtSteeveF1.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.txtSteeveF1.Location = new System.Drawing.Point(67, 0);
+            this.txtSteeveF1.Location = new System.Drawing.Point(89, 0);
             this.txtSteeveF1.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.txtSteeveF1.Name = "txtSteeveF1";
-            this.txtSteeveF1.Size = new System.Drawing.Size(97, 36);
+            this.txtSteeveF1.Size = new System.Drawing.Size(86, 36);
             this.txtSteeveF1.TabIndex = 1;
             // 
             // pictureBox2
             // 
             this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(333, 3);
+            this.pictureBox2.Location = new System.Drawing.Point(355, 3);
             this.pictureBox2.Name = "pictureBox2";
             this.tableLayoutPanel1.SetRowSpan(this.pictureBox2, 10);
-            this.pictureBox2.Size = new System.Drawing.Size(214, 356);
+            this.pictureBox2.Size = new System.Drawing.Size(192, 356);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 40;
             this.pictureBox2.TabStop = false;

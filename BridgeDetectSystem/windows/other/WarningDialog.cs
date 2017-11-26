@@ -42,6 +42,7 @@ namespace BridgeDetectSystem.windows
         {
             InitializeComponent();
             this.manager = manager;
+           // this.pictureBox1.Image = i;
         }
        
         private void button1_Click(object sender, EventArgs e)

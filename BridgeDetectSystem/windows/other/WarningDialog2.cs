@@ -58,11 +58,11 @@ namespace BridgeDetectSystem.windows
             PlaySound();
         }
 
-        private void WarningDialog2_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            e.Cancel = true;
-            this.Hide();
-        }
+        //private void WarningDialog2_FormClosing(object sender, FormClosingEventArgs e)
+        //{
+        //    e.Cancel = true;
+        //    this.Hide();
+        //}
 
         private void PlaySound()
         {
@@ -86,6 +86,11 @@ namespace BridgeDetectSystem.windows
             {
                 listBoxWarning.Items.Add(str);
             }
+
+        }
+
+        private void WarningDialog2_Load(object sender, EventArgs e)
+        {
 
         }
     }

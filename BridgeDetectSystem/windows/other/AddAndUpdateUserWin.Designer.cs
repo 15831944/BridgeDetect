@@ -216,7 +216,7 @@
             this.Name = "AddAndUpdateUser";
             this.Padding = new System.Windows.Forms.Padding(22, 72, 22, 24);
             this.Resizable = false;
-            this.Text = " ";
+            this.Text = " 用户权限设置";
             this.TextAlign = System.Windows.Forms.VisualStyles.HorizontalAlign.Center;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.AddAndUpdateUser_Load);

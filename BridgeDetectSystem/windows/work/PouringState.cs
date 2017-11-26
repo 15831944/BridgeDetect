@@ -110,21 +110,38 @@ namespace BridgeDetectSystem
 
                 double[] steeveForce = new double[dicSteeve.Count];//吊杆力数组，元素为double
                 double[] steeveDis = new double[dicSteeve.Count];//吊杆位移数组，元素为double
+                double[] realSteeveDis = new double[4];
+                
+
                 for (int i = 0; i < 4; i++)
                 {
                     steeveForce[i] = dicSteeve[i].GetForce();//为吊杆力数组赋值值
-                   // steeveDis[i] =Math.Abs( dicSteeve[i].GetDisplace() - adamHelper.steeveDisStandard);
-                    //为吊杆位移数组赋值
-                    steeveDis[i] =Math.Abs(adamHelper.standardlist[i] - dicSteeve[i].GetDisplace());
+                                                             // steeveDis[i] =Math.Abs( dicSteeve[i].GetDisplace() - adamHelper.steeveDisStandard);
+                                                             //为吊杆位移数组赋值
+                    realSteeveDis[i] =Math.Round(dicSteeve[i].GetDisplace(),1);//真实距离
+                    steeveDis[i] =Math.Abs(adamHelper.standardlist[i] - dicSteeve[i].GetDisplace());  steeveDis[i] = Math.Round(steeveDis[i], 1);  //保留一位小数
+                    //上升位移
                 }
-
-
+                double sum = 0;
+                for (int i = 0; i < 4; i++)
+                {
+                    sum += steeveDis[i];//求上升位移和
+                }
+                double AverageOfFour =Math.Round( sum / 4,1);
+                
+                //平均上升位移
                 SetTextValueManager.SetValueToText(steeveForce, ref txtSteeveF1, ref txtSteeveF2, ref txtSteeveF3, ref txtSteeveF4, ref txtMaxSteeveForce, ref txtMaxSteeveForceDiff);
                 txtSteeveForceLimit.Text = steeveForceLimit.ToString();
                 txtSteeveForceDiffLimit.Text = steeveForceDiffLimit.ToString();
                 SetTextValueManager.SetValueToText(steeveDis, ref txtSteeveDis1, ref txtSteeveDis2, ref txtSteeveDis3, ref txtSteeveDis4, ref txtMaxSteeveDis, ref txtMaxSteeveDisDiff);
                 txtSteeveDisLimit.Text = steeveDisLimit.ToString();//吊杆位移上限
                 txtSteeveDisDiffLimit.Text = steeveDisDiffLimit.ToString();//吊杆位移差上限
+                //
+                txtSteeveDis5.Text = realSteeveDis[0].ToString();//真实距离平均位移赋值
+                txtSteeveDis6.Text = realSteeveDis[1].ToString();
+                txtSteeveDis7.Text = realSteeveDis[2].ToString();
+                txtSteeveDis8.Text = realSteeveDis[3].ToString();
+                txtSteeveDis16.Text = AverageOfFour.ToString();
             }
             catch (Exception ex)
             {
@@ -174,11 +191,15 @@ namespace BridgeDetectSystem
                 double[] frontPivotDis = new double[dicFrontPivot.Count];
                 txtFrontDisLimit.Text = FrontDisLimit.ToString();
 
-                frontPivotDis[0] =  firstStandard-dicFrontPivot[0].GetDisplace();//数组存位移
+                frontPivotDis[0] =Math.Round(firstStandard-dicFrontPivot[0].GetDisplace(),1);//数组存位移
               
-                frontPivotDis[1] = secondStanard - dicFrontPivot[1].GetDisplace();
-                frontPivotDis[2] = threeStandard-dicFrontPivot[2].GetDisplace();
-                frontPivotDis[3] = fourStandard - dicFrontPivot[3].GetDisplace();
+                frontPivotDis[1] = Math.Round(secondStanard - dicFrontPivot[1].GetDisplace(),1);
+                frontPivotDis[2] =Math.Round( threeStandard-dicFrontPivot[2].GetDisplace(),1);
+                frontPivotDis[3] = Math.Round( fourStandard - dicFrontPivot[3].GetDisplace(),1);
+                for (int k = 0; k < 4; k++)
+                {
+                    frontPivotDis[k] = Math.Abs(frontPivotDis[k]);
+                }
                 txtFrontPivotDis1.Text = frontPivotDis[0].ToString();
                 txtFrontPivotDis2.Text = frontPivotDis[1].ToString();
                 txtFrontPivotDis3.Text = frontPivotDis[2].ToString();

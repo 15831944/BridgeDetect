@@ -28,6 +28,8 @@ namespace BridgeDetectSystem
             #region 初始化视频监控
 
             string ip = "192.168.1.100";
+
+
             string userName = "admin";
             string password = "admin123456";
 
@@ -197,7 +199,8 @@ namespace BridgeDetectSystem
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            txtRailway.Text = adamHelper2.v.ToString();
+            double y = Math.Round(adamHelper2.v, 1);
+            txtRailway.Text = y.ToString();
 
         }
     }

@@ -18,7 +18,7 @@ namespace BridgeDetectSystem.adam
         public System.Threading.Timer readTimer { get; set; }
         //吊杆力和位移
         public Dictionary<int, Steeve> steeveDic { get; }
-        public Dictionary <int,Steeve> steeveCopy { get; set; }
+        public Dictionary<int, Steeve> steeveCopy { get; set; }
         //锚杆力
         public Dictionary<int, Anchor> anchorDic { get; set; }
         //前支点位移
@@ -74,7 +74,7 @@ namespace BridgeDetectSystem.adam
                     //throw ex;
                     System.Windows.Forms.MessageBox.Show("研华模块掉线，请检查硬件连接，确保连接完全正确，重新启动软件");
                 }
-            }, null, Timeout.Infinite,Timeout.Infinite);
+            }, null, Timeout.Infinite, Timeout.Infinite);
         }
 
 
@@ -132,48 +132,8 @@ namespace BridgeDetectSystem.adam
 
                 if (i == 0)
                 {
-                    ////读取模块192.168.1.3数据，吊杆位移0，1，2，3与吊杆力4，5，6，7
-                    //for (int j = 0; j < 4; j++)
-                    //{//
-                    //    forceSensor = new Sensor(SensorType.forceSensor, 4, 20, 300, 1, 0);
-                    //    tempDic.TryGetValue(j + 4, out forceData);
-                    //    forceSensor.readValue = double.Parse(forceData);
-                    //    disSensor = new Sensor(SensorType.displaceSensor, 4, 20, 29.8, 100, 20);
-                    //    tempDic.TryGetValue(j, out disData);
-                    //    disSensor.readValue = double.Parse(disData);
-                    //    Steeve steeves = new Steeve(j, forceSensor, disSensor);
-
-                    //    steeveDic[steeves.id] = steeves;
-                    //}
-
-                    ////代替循环--每个力传感器校正
-                    //  j = 0;
-                    // List<Sensor> sss = new List<Sensor>();
-                    //List<Sensor> ds = new List<Sensor>();
-                    //var fs1 = new Sensor(SensorType.forceSensor, 4, 20, 300, 1, 0);
-                    //var fs2 = new Sensor(SensorType.forceSensor, 4, 20, 300, 1, 0);
-                    //var fs3 = new Sensor(SensorType.forceSensor, 4, 20, 300, 1, 0);
-                    //var fs4 = new Sensor(SensorType.forceSensor, 4, 20, 300, 1, 0);
-                    //var ds1 = new Sensor(SensorType.displaceSensor, 4, 20, 29.9, 100, 20);
-                    //var ds2 = new Sensor(SensorType.displaceSensor, 4, 20, 29.9, 100, 20);
-                    //var ds3 = new Sensor(SensorType.displaceSensor, 4, 20, 29.9, 100, 20);
-                    //var ds4 = new Sensor(SensorType.displaceSensor, 4, 20, 29.9, 100, 20);
-                    //sss.Add(fs1);
-                    //sss.Add(fs2);
-                    //sss.Add(fs3);
-                    //sss.Add(fs4);
-                    //ds.Add(ds1);
-                    //ds.Add(ds2);
-                    //ds.Add(ds3);
-                    //ds.Add(ds4);
-                    //for (int k = 0; k < 4; k++)
-                    //{ tempDic.TryGetValue(k + 4, out forceData);
-                    //    tempDic.TryGetValue(k, out disData);
-                    //    ds[k].readValue = double.Parse(disData);
-                    //    sss[k].readValue = double.Parse(forceData);
-                    //}
-                    
-                    //j=0
+                    ////读取模块192.168.1.3数据，吊杆位移0，1，2，3与吊杆力4，5，6，7通道                  
+                    //j=0 标号 17080383 空载 4.026mA 
                     forceSensor = new Sensor(SensorType.forceSensor, 4, 20, 300, 1, 0);
                     tempDic.TryGetValue(4, out forceData);
                     forceSensor.readValue = double.Parse(forceData);
@@ -182,7 +142,7 @@ namespace BridgeDetectSystem.adam
                     disSensor.readValue = double.Parse(disData);
                     Steeve steeve0 = new Steeve(0, forceSensor, disSensor);
                     steeveDic[steeve0.id] = steeve0;
-                    //j=1
+                    //j=1标号17110130空载3.992mA
                     forceSensor = new Sensor(SensorType.forceSensor, 4, 20, 300, 1, 0);
                     tempDic.TryGetValue(5, out forceData);
                     forceSensor.readValue = double.Parse(forceData);
@@ -191,7 +151,7 @@ namespace BridgeDetectSystem.adam
                     disSensor.readValue = double.Parse(disData);
                     Steeve steeve1 = new Steeve(1, forceSensor, disSensor);
                     steeveDic[steeve1.id] = steeve1;
-                    //j=2
+                    //j=2 17080285 空载 4.012mA
                     forceSensor = new Sensor(SensorType.forceSensor, 4, 20, 300, 1, 0);
                     tempDic.TryGetValue(6, out forceData);
                     forceSensor.readValue = double.Parse(forceData);
@@ -200,42 +160,49 @@ namespace BridgeDetectSystem.adam
                     disSensor.readValue = double.Parse(disData);
                     Steeve steeve2 = new Steeve(2, forceSensor, disSensor);
                     steeveDic[steeve2.id] = steeve2;
-                    //j=3
+                    //j=3 17080386 空载4.014mA
                     forceSensor = new Sensor(SensorType.forceSensor, 4, 20, 300, 1, 0);
                     tempDic.TryGetValue(7, out forceData);
                     forceSensor.readValue = double.Parse(forceData);
                     disSensor = new Sensor(SensorType.displaceSensor, 4, 20, 29.8, 100, 20);
                     tempDic.TryGetValue(3, out disData);
                     disSensor.readValue = double.Parse(disData);
-                    Steeve steeve3= new Steeve(3, forceSensor, disSensor);
+                    Steeve steeve3 = new Steeve(3, forceSensor, disSensor);
                     steeveDic[steeve3.id] = steeve3;
 
                 }
-                
-                
+
+
                 else if (i == 1)
                 {
                     int j = 0;
-                   // int count = 0;
-                   
-                    for (j = 0; j < 4; j++)//前支架位移
+                    // int count = 0;
+
+                    for (j = 0; j < 3; j++)//前支架位移电流
                     {
-                        disSensor = new Sensor(SensorType.displaceSensor, 4, 20,3.8, 100,20);//传感器量程0.2-4 m；
+                        disSensor = new Sensor(SensorType.displaceSensor, 4, 20, 3.8, 1000, 200);//传感器量程0.2-4 m；//单位mm
                         tempDic.TryGetValue(j, out disData);
                         disSensor.readValue = double.Parse(disData);
 
                         FrontPivot pivot = new FrontPivot(j, disSensor);
                         frontPivotDic[pivot.id] = pivot;
                     }
+                    disSensor = new Sensor(SensorType.displaceSensor, 4, 20, 0.8, 1000, 0);//传感器量程0.2-4 m；
+                    tempDic.TryGetValue(3, out disData);
+                    disSensor.readValue = double.Parse(disData);
+
+                    FrontPivot pivot1 = new FrontPivot(3, disSensor);
+                    frontPivotDic[pivot1.id] = pivot1;
+
                     #region 锚杆力，接收但不显示，不保存，不后台报警
                     //  for (j = 4; j < 8; j++)//锚杆力
 
-                    forceSensor = new Sensor(SensorType.forceSensor,4 , 20, 300, 1, 0);
-                        tempDic.TryGetValue(4, out forceData);
-                        forceSensor.readValue = double.Parse(forceData);
+                    forceSensor = new Sensor(SensorType.forceSensor, 4, 20, 300, 1, 0);
+                    tempDic.TryGetValue(4, out forceData);
+                    forceSensor.readValue = double.Parse(forceData);
 
-                        Anchor anchor0 = new Anchor(0, forceSensor);
-                        anchorDic[anchor0.id] = anchor0;
+                    Anchor anchor0 = new Anchor(0, forceSensor);
+                    anchorDic[anchor0.id] = anchor0;
 
                     forceSensor = new Sensor(SensorType.forceSensor, 4, 20, 300, 1, 0);
                     tempDic.TryGetValue(5, out forceData);
@@ -262,14 +229,14 @@ namespace BridgeDetectSystem.adam
         }
 
         /// <summary>
-        /// 读取初始数值作为基准，只读一次。。。。？？？？？？
+        /// 读取初始数值作为吊杆位移基准，只读一次。。。。？？？？？？
         /// </summary>
         public void ReadStandardValue()
         {
-          
+
             List<double> disList = new List<double>();
             standardlist = new List<double>();
-            Sensor sensor = new Sensor(SensorType.displaceSensor, 4, 20, 29.8, 100,20);
+            Sensor sensor = new Sensor(SensorType.displaceSensor, 4, 20, 29.8, 100, 20);
 
             for (int i = 0; i < 4; i++)
             {
@@ -277,35 +244,42 @@ namespace BridgeDetectSystem.adam
                 standardlist.Add(sensor.GetRealValue());  //每个吊杆的基准值
                 disList.Add(sensor.GetRealValue());
             }
-          
+
             double sum = 0;
             foreach (double val in disList)
             {
                 sum += val;
             }
-         
+
             //平均值作基准值
-            steeveDisStandard =Math.Round(sum / disList.Count, 3);
+            steeveDisStandard = Math.Round(sum / disList.Count, 3);
 
 
+           
+        }
+        /// <summary>
+        /// 读前支点位移
+        /// </summary>
+        public void ReadFrontStandard()
+        {
             //前支点基准值
-            
-            Sensor sensor1 = new Sensor(SensorType.displaceSensor, 4, 20, 3.8, 100,20);
+
+            Sensor sensor1 = new Sensor(SensorType.displaceSensor, 4, 20, 3.8, 1000, 200);
             sensor1.readValue = double.Parse(adamList[1].Read(0));
             first_frontPivotDisStandard = sensor1.GetRealValue();
 
-            Sensor sensor2 = new Sensor(SensorType.displaceSensor, 4, 20, 3.8, 100,20);
+            Sensor sensor2 = new Sensor(SensorType.displaceSensor, 4, 20, 3.8, 1000, 200);
             sensor2.readValue = double.Parse(adamList[1].Read(1));
             second_frontPivotDisStandard = sensor2.GetRealValue();
 
-            Sensor sensor3 = new Sensor(SensorType.displaceSensor, 4, 20, 3.8, 100, 20);
+            Sensor sensor3 = new Sensor(SensorType.displaceSensor, 4, 20, 3.8, 1000, 200);
             sensor3.readValue = double.Parse(adamList[1].Read(2));
             three_standard = sensor3.GetRealValue();
 
-            Sensor sensor4 = new Sensor(SensorType.displaceSensor, 4, 20, 3.8, 100, 20);
+            Sensor sensor4 = new Sensor(SensorType.displaceSensor, 4, 20, 0.8, 1000, 0);
             sensor4.readValue = double.Parse(adamList[1].Read(3));
             four_standard = sensor4.GetRealValue();
-           
+
         }
 
         /// <summary>
@@ -325,8 +299,10 @@ namespace BridgeDetectSystem.adam
             //读取初始的值一次，并记录在字段steeveDisStandard、frontPivotDisStandard中
             //之后作为报警的基准
             ReadStandardValue();
+            ReadFrontStandard();
             readTimer.Change(0, period);
         }
+
 
         #endregion
     }

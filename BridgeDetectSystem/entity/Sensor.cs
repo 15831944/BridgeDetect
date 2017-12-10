@@ -38,7 +38,10 @@ namespace BridgeDetectSystem.entity
         /// <returns></returns>
         public double GetRealValue()
         {
-            return Math.Round(range * (readValue - outputStart) *coefficient/ (outputEnd - outputStart)+b,digits);
+            double val= Math.Round(range * (readValue - outputStart) *coefficient/ (outputEnd - outputStart)+b,digits);
+            if (val < 0)
+                return 0;
+            return val;
         }
    
     }

@@ -32,8 +32,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PouringState));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.btnFirstPage = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnExit = new System.Windows.Forms.ToolStripMenuItem();
             this.btnReSetStandard = new System.Windows.Forms.ToolStripMenuItem();
+            this.前支点重置ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnSteeveForce = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnFront = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.grpSteeveDis = new System.Windows.Forms.GroupBox();
@@ -54,6 +56,14 @@
             this.txtFrontPivotDis4 = new MetroFramework.Controls.MetroTextBox();
             this.txtFrontDisLimit = new MetroFramework.Controls.MetroTextBox();
             this.txtMaxFrontDis = new MetroFramework.Controls.MetroTextBox();
+            this.lblRealFront1 = new MetroFramework.Controls.MetroLabel();
+            this.lblRealFront2 = new MetroFramework.Controls.MetroLabel();
+            this.lblReal3 = new MetroFramework.Controls.MetroLabel();
+            this.lblReal4 = new MetroFramework.Controls.MetroLabel();
+            this.txtReal1 = new MetroFramework.Controls.MetroTextBox();
+            this.txtReal2 = new MetroFramework.Controls.MetroTextBox();
+            this.txtReal3 = new MetroFramework.Controls.MetroTextBox();
+            this.txtReal4 = new MetroFramework.Controls.MetroTextBox();
             this.panel6 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.txtMaxSteeveDisDiff = new MetroFramework.Controls.MetroTextBox();
@@ -96,6 +106,8 @@
             this.lblSteeveDis9 = new MetroFramework.Controls.MetroLabel();
             this.lblSteeveDis1 = new MetroFramework.Controls.MetroLabel();
             this.txtSteeveDis1 = new MetroFramework.Controls.MetroTextBox();
+            this.lblAver = new MetroFramework.Controls.MetroLabel();
+            this.txtAver = new MetroFramework.Controls.MetroTextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.grpSteeveForce = new System.Windows.Forms.GroupBox();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -215,8 +227,10 @@
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnFirstPage,
-            this.btnExit,
-            this.btnReSetStandard});
+            this.btnReSetStandard,
+            this.前支点重置ToolStripMenuItem,
+            this.btnSteeveForce,
+            this.btnFront});
             this.menuStrip1.Location = new System.Drawing.Point(22, 72);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1108, 48);
@@ -229,17 +243,8 @@
             this.btnFirstPage.ForeColor = System.Drawing.Color.White;
             this.btnFirstPage.Name = "btnFirstPage";
             this.btnFirstPage.Size = new System.Drawing.Size(61, 44);
-            this.btnFirstPage.Text = "首页";
+            this.btnFirstPage.Text = "返回";
             this.btnFirstPage.Click += new System.EventHandler(this.btnFirstPage_Click);
-            // 
-            // btnExit
-            // 
-            this.btnExit.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnExit.ForeColor = System.Drawing.Color.White;
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(61, 44);
-            this.btnExit.Text = "退出";
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // btnReSetStandard
             // 
@@ -249,6 +254,32 @@
             this.btnReSetStandard.Size = new System.Drawing.Size(221, 44);
             this.btnReSetStandard.Text = "吊杆与前支点位移重置";
             this.btnReSetStandard.Click += new System.EventHandler(this.btnReSetStandard_Click);
+            // 
+            // 前支点重置ToolStripMenuItem
+            // 
+            this.前支点重置ToolStripMenuItem.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.前支点重置ToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.前支点重置ToolStripMenuItem.Name = "前支点重置ToolStripMenuItem";
+            this.前支点重置ToolStripMenuItem.Size = new System.Drawing.Size(121, 44);
+            this.前支点重置ToolStripMenuItem.Text = "前支点重置";
+            // 
+            // btnSteeveForce
+            // 
+            this.btnSteeveForce.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnSteeveForce.ForeColor = System.Drawing.Color.White;
+            this.btnSteeveForce.Name = "btnSteeveForce";
+            this.btnSteeveForce.Size = new System.Drawing.Size(121, 44);
+            this.btnSteeveForce.Text = "吊杆力放大";
+            this.btnSteeveForce.Click += new System.EventHandler(this.btnSteeveForce_Click);
+            // 
+            // btnFront
+            // 
+            this.btnFront.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnFront.ForeColor = System.Drawing.Color.White;
+            this.btnFront.Name = "btnFront";
+            this.btnFront.Size = new System.Drawing.Size(161, 44);
+            this.btnFront.Text = "前支点位移放大";
+            this.btnFront.Click += new System.EventHandler(this.btnFront_Click);
             // 
             // panel1
             // 
@@ -276,6 +307,7 @@
             this.grpSteeveDis.Controls.Add(this.panel7);
             this.grpSteeveDis.Controls.Add(this.panel6);
             this.grpSteeveDis.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grpSteeveDis.ForeColor = System.Drawing.Color.Red;
             this.grpSteeveDis.Location = new System.Drawing.Point(0, 0);
             this.grpSteeveDis.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grpSteeveDis.Name = "grpSteeveDis";
@@ -283,7 +315,7 @@
             this.grpSteeveDis.Size = new System.Drawing.Size(552, 768);
             this.grpSteeveDis.TabIndex = 0;
             this.grpSteeveDis.TabStop = false;
-            this.grpSteeveDis.Text = "前吊杆位移(cm)";
+            this.grpSteeveDis.Text = "前吊杆位移(cm)(注：负为上升，正为下降)";
             // 
             // panel7
             // 
@@ -313,7 +345,7 @@
             this.groupBox1.Size = new System.Drawing.Size(546, 381);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "前支点沉降位移(cm)";
+            this.groupBox1.Text = "前支点位移(mm)";
             // 
             // tableLayoutPanel4
             // 
@@ -323,29 +355,39 @@
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 45F));
             this.tableLayoutPanel4.Controls.Add(this.lblFrontPivotDis2, 0, 1);
             this.tableLayoutPanel4.Controls.Add(this.lblFrontPivotDis4, 0, 3);
-            this.tableLayoutPanel4.Controls.Add(this.lblFrontDIsLimit, 0, 5);
+            this.tableLayoutPanel4.Controls.Add(this.lblFrontDIsLimit, 0, 8);
             this.tableLayoutPanel4.Controls.Add(this.lblFrontPivotDis3, 0, 2);
             this.tableLayoutPanel4.Controls.Add(this.lblFrontPivotDis1, 0, 0);
-            this.tableLayoutPanel4.Controls.Add(this.lblMaxFrontDis, 0, 7);
+            this.tableLayoutPanel4.Controls.Add(this.lblMaxFrontDis, 0, 9);
             this.tableLayoutPanel4.Controls.Add(this.pictureBox1, 2, 0);
             this.tableLayoutPanel4.Controls.Add(this.txtFrontPivotDis1, 1, 0);
             this.tableLayoutPanel4.Controls.Add(this.txtFrontPivotDis2, 1, 1);
             this.tableLayoutPanel4.Controls.Add(this.txtFrontPivotDis3, 1, 2);
             this.tableLayoutPanel4.Controls.Add(this.txtFrontPivotDis4, 1, 3);
-            this.tableLayoutPanel4.Controls.Add(this.txtFrontDisLimit, 1, 5);
-            this.tableLayoutPanel4.Controls.Add(this.txtMaxFrontDis, 1, 7);
+            this.tableLayoutPanel4.Controls.Add(this.txtFrontDisLimit, 1, 8);
+            this.tableLayoutPanel4.Controls.Add(this.txtMaxFrontDis, 1, 9);
+            this.tableLayoutPanel4.Controls.Add(this.lblRealFront1, 0, 4);
+            this.tableLayoutPanel4.Controls.Add(this.lblRealFront2, 0, 5);
+            this.tableLayoutPanel4.Controls.Add(this.lblReal3, 0, 6);
+            this.tableLayoutPanel4.Controls.Add(this.lblReal4, 0, 7);
+            this.tableLayoutPanel4.Controls.Add(this.txtReal1, 1, 4);
+            this.tableLayoutPanel4.Controls.Add(this.txtReal2, 1, 5);
+            this.tableLayoutPanel4.Controls.Add(this.txtReal3, 1, 6);
+            this.tableLayoutPanel4.Controls.Add(this.txtReal4, 1, 7);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 24);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
-            this.tableLayoutPanel4.RowCount = 8;
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.81778F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.81777F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.82133F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.82133F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.82133F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.82133F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.5392F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.53992F));
+            this.tableLayoutPanel4.RowCount = 10;
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.998937F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.99893F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.00171F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.00171F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.00171F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.00171F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.996985F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.996985F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.00067F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.00067F));
             this.tableLayoutPanel4.Size = new System.Drawing.Size(540, 354);
             this.tableLayoutPanel4.TabIndex = 4;
             // 
@@ -353,76 +395,76 @@
             // 
             this.lblFrontPivotDis2.AutoSize = true;
             this.lblFrontPivotDis2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblFrontPivotDis2.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.lblFrontPivotDis2.Location = new System.Drawing.Point(3, 48);
+            this.lblFrontPivotDis2.FontSize = MetroFramework.MetroLabelSize.Small;
+            this.lblFrontPivotDis2.Location = new System.Drawing.Point(3, 38);
             this.lblFrontPivotDis2.Margin = new System.Windows.Forms.Padding(3);
             this.lblFrontPivotDis2.Name = "lblFrontPivotDis2";
-            this.lblFrontPivotDis2.Size = new System.Drawing.Size(102, 39);
+            this.lblFrontPivotDis2.Size = new System.Drawing.Size(102, 29);
             this.lblFrontPivotDis2.TabIndex = 0;
-            this.lblFrontPivotDis2.Text = "2";
+            this.lblFrontPivotDis2.Text = "2沉降位移";
             this.lblFrontPivotDis2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblFrontPivotDis4
             // 
             this.lblFrontPivotDis4.AutoSize = true;
             this.lblFrontPivotDis4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblFrontPivotDis4.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.lblFrontPivotDis4.Location = new System.Drawing.Point(3, 138);
+            this.lblFrontPivotDis4.FontSize = MetroFramework.MetroLabelSize.Small;
+            this.lblFrontPivotDis4.Location = new System.Drawing.Point(3, 108);
             this.lblFrontPivotDis4.Margin = new System.Windows.Forms.Padding(3);
             this.lblFrontPivotDis4.Name = "lblFrontPivotDis4";
-            this.lblFrontPivotDis4.Size = new System.Drawing.Size(102, 39);
+            this.lblFrontPivotDis4.Size = new System.Drawing.Size(102, 29);
             this.lblFrontPivotDis4.TabIndex = 2;
-            this.lblFrontPivotDis4.Text = "4";
+            this.lblFrontPivotDis4.Text = "4沉降位移";
             this.lblFrontPivotDis4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblFrontDIsLimit
             // 
             this.lblFrontDIsLimit.AutoSize = true;
             this.lblFrontDIsLimit.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblFrontDIsLimit.Location = new System.Drawing.Point(3, 228);
+            this.lblFrontDIsLimit.Location = new System.Drawing.Point(3, 283);
             this.lblFrontDIsLimit.Margin = new System.Windows.Forms.Padding(3);
             this.lblFrontDIsLimit.Name = "lblFrontDIsLimit";
-            this.lblFrontDIsLimit.Size = new System.Drawing.Size(102, 39);
+            this.lblFrontDIsLimit.Size = new System.Drawing.Size(102, 29);
             this.lblFrontDIsLimit.TabIndex = 4;
-            this.lblFrontDIsLimit.Text = "位移上限";
+            this.lblFrontDIsLimit.Text = "沉降位移上限";
             this.lblFrontDIsLimit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblFrontPivotDis3
             // 
             this.lblFrontPivotDis3.AutoSize = true;
             this.lblFrontPivotDis3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblFrontPivotDis3.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.lblFrontPivotDis3.Location = new System.Drawing.Point(3, 93);
+            this.lblFrontPivotDis3.FontSize = MetroFramework.MetroLabelSize.Small;
+            this.lblFrontPivotDis3.Location = new System.Drawing.Point(3, 73);
             this.lblFrontPivotDis3.Margin = new System.Windows.Forms.Padding(3);
             this.lblFrontPivotDis3.Name = "lblFrontPivotDis3";
-            this.lblFrontPivotDis3.Size = new System.Drawing.Size(102, 39);
+            this.lblFrontPivotDis3.Size = new System.Drawing.Size(102, 29);
             this.lblFrontPivotDis3.TabIndex = 6;
-            this.lblFrontPivotDis3.Text = "3";
+            this.lblFrontPivotDis3.Text = "3沉降位移";
             this.lblFrontPivotDis3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblFrontPivotDis1
             // 
             this.lblFrontPivotDis1.AutoSize = true;
             this.lblFrontPivotDis1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblFrontPivotDis1.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.lblFrontPivotDis1.FontSize = MetroFramework.MetroLabelSize.Small;
             this.lblFrontPivotDis1.Location = new System.Drawing.Point(3, 3);
             this.lblFrontPivotDis1.Margin = new System.Windows.Forms.Padding(3);
             this.lblFrontPivotDis1.Name = "lblFrontPivotDis1";
-            this.lblFrontPivotDis1.Size = new System.Drawing.Size(102, 39);
+            this.lblFrontPivotDis1.Size = new System.Drawing.Size(102, 29);
             this.lblFrontPivotDis1.TabIndex = 7;
-            this.lblFrontPivotDis1.Text = "1";
+            this.lblFrontPivotDis1.Text = "1沉降位移";
             this.lblFrontPivotDis1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblMaxFrontDis
             // 
             this.lblMaxFrontDis.AutoSize = true;
             this.lblMaxFrontDis.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblMaxFrontDis.Location = new System.Drawing.Point(3, 313);
+            this.lblMaxFrontDis.Location = new System.Drawing.Point(3, 318);
             this.lblMaxFrontDis.Margin = new System.Windows.Forms.Padding(3);
             this.lblMaxFrontDis.Name = "lblMaxFrontDis";
-            this.lblMaxFrontDis.Size = new System.Drawing.Size(102, 38);
+            this.lblMaxFrontDis.Size = new System.Drawing.Size(102, 33);
             this.lblMaxFrontDis.TabIndex = 10;
-            this.lblMaxFrontDis.Text = "最大位移";
+            this.lblMaxFrontDis.Text = "最大沉降位移";
             this.lblMaxFrontDis.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pictureBox1
@@ -431,7 +473,7 @@
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(300, 3);
             this.pictureBox1.Name = "pictureBox1";
-            this.tableLayoutPanel4.SetRowSpan(this.pictureBox1, 8);
+            this.tableLayoutPanel4.SetRowSpan(this.pictureBox1, 10);
             this.pictureBox1.Size = new System.Drawing.Size(237, 348);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 11;
@@ -443,53 +485,133 @@
             this.txtFrontPivotDis1.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.txtFrontPivotDis1.Location = new System.Drawing.Point(111, 3);
             this.txtFrontPivotDis1.Name = "txtFrontPivotDis1";
-            this.txtFrontPivotDis1.Size = new System.Drawing.Size(183, 39);
+            this.txtFrontPivotDis1.Size = new System.Drawing.Size(183, 29);
             this.txtFrontPivotDis1.TabIndex = 12;
             // 
             // txtFrontPivotDis2
             // 
             this.txtFrontPivotDis2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtFrontPivotDis2.FontSize = MetroFramework.MetroTextBoxSize.Medium;
-            this.txtFrontPivotDis2.Location = new System.Drawing.Point(111, 48);
+            this.txtFrontPivotDis2.Location = new System.Drawing.Point(111, 38);
             this.txtFrontPivotDis2.Name = "txtFrontPivotDis2";
-            this.txtFrontPivotDis2.Size = new System.Drawing.Size(183, 39);
+            this.txtFrontPivotDis2.Size = new System.Drawing.Size(183, 29);
             this.txtFrontPivotDis2.TabIndex = 13;
             // 
             // txtFrontPivotDis3
             // 
             this.txtFrontPivotDis3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtFrontPivotDis3.FontSize = MetroFramework.MetroTextBoxSize.Medium;
-            this.txtFrontPivotDis3.Location = new System.Drawing.Point(111, 93);
+            this.txtFrontPivotDis3.Location = new System.Drawing.Point(111, 73);
             this.txtFrontPivotDis3.Name = "txtFrontPivotDis3";
-            this.txtFrontPivotDis3.Size = new System.Drawing.Size(183, 39);
+            this.txtFrontPivotDis3.Size = new System.Drawing.Size(183, 29);
             this.txtFrontPivotDis3.TabIndex = 14;
             // 
             // txtFrontPivotDis4
             // 
             this.txtFrontPivotDis4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtFrontPivotDis4.FontSize = MetroFramework.MetroTextBoxSize.Medium;
-            this.txtFrontPivotDis4.Location = new System.Drawing.Point(111, 138);
+            this.txtFrontPivotDis4.Location = new System.Drawing.Point(111, 108);
             this.txtFrontPivotDis4.Name = "txtFrontPivotDis4";
-            this.txtFrontPivotDis4.Size = new System.Drawing.Size(183, 39);
+            this.txtFrontPivotDis4.Size = new System.Drawing.Size(183, 29);
             this.txtFrontPivotDis4.TabIndex = 15;
             // 
             // txtFrontDisLimit
             // 
             this.txtFrontDisLimit.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtFrontDisLimit.FontSize = MetroFramework.MetroTextBoxSize.Medium;
-            this.txtFrontDisLimit.Location = new System.Drawing.Point(111, 228);
+            this.txtFrontDisLimit.Location = new System.Drawing.Point(111, 283);
             this.txtFrontDisLimit.Name = "txtFrontDisLimit";
-            this.txtFrontDisLimit.Size = new System.Drawing.Size(183, 39);
+            this.txtFrontDisLimit.Size = new System.Drawing.Size(183, 29);
             this.txtFrontDisLimit.TabIndex = 16;
             // 
             // txtMaxFrontDis
             // 
             this.txtMaxFrontDis.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtMaxFrontDis.FontSize = MetroFramework.MetroTextBoxSize.Medium;
-            this.txtMaxFrontDis.Location = new System.Drawing.Point(111, 313);
+            this.txtMaxFrontDis.Location = new System.Drawing.Point(111, 318);
             this.txtMaxFrontDis.Name = "txtMaxFrontDis";
-            this.txtMaxFrontDis.Size = new System.Drawing.Size(183, 38);
+            this.txtMaxFrontDis.Size = new System.Drawing.Size(183, 33);
             this.txtMaxFrontDis.TabIndex = 17;
+            // 
+            // lblRealFront1
+            // 
+            this.lblRealFront1.AutoSize = true;
+            this.lblRealFront1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblRealFront1.Location = new System.Drawing.Point(3, 143);
+            this.lblRealFront1.Margin = new System.Windows.Forms.Padding(3);
+            this.lblRealFront1.Name = "lblRealFront1";
+            this.lblRealFront1.Size = new System.Drawing.Size(102, 29);
+            this.lblRealFront1.TabIndex = 18;
+            this.lblRealFront1.Text = "1实际距离";
+            this.lblRealFront1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblRealFront2
+            // 
+            this.lblRealFront2.AutoSize = true;
+            this.lblRealFront2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblRealFront2.Location = new System.Drawing.Point(3, 178);
+            this.lblRealFront2.Margin = new System.Windows.Forms.Padding(3);
+            this.lblRealFront2.Name = "lblRealFront2";
+            this.lblRealFront2.Size = new System.Drawing.Size(102, 29);
+            this.lblRealFront2.TabIndex = 19;
+            this.lblRealFront2.Text = "2实际距离";
+            this.lblRealFront2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblReal3
+            // 
+            this.lblReal3.AutoSize = true;
+            this.lblReal3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblReal3.Location = new System.Drawing.Point(3, 213);
+            this.lblReal3.Margin = new System.Windows.Forms.Padding(3);
+            this.lblReal3.Name = "lblReal3";
+            this.lblReal3.Size = new System.Drawing.Size(102, 29);
+            this.lblReal3.TabIndex = 20;
+            this.lblReal3.Text = "3实际距离";
+            this.lblReal3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblReal4
+            // 
+            this.lblReal4.AutoSize = true;
+            this.lblReal4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblReal4.Location = new System.Drawing.Point(3, 248);
+            this.lblReal4.Margin = new System.Windows.Forms.Padding(3);
+            this.lblReal4.Name = "lblReal4";
+            this.lblReal4.Size = new System.Drawing.Size(102, 29);
+            this.lblReal4.TabIndex = 21;
+            this.lblReal4.Text = "4实际距离";
+            this.lblReal4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // txtReal1
+            // 
+            this.txtReal1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtReal1.Location = new System.Drawing.Point(111, 143);
+            this.txtReal1.Name = "txtReal1";
+            this.txtReal1.Size = new System.Drawing.Size(183, 29);
+            this.txtReal1.TabIndex = 22;
+            // 
+            // txtReal2
+            // 
+            this.txtReal2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtReal2.Location = new System.Drawing.Point(111, 178);
+            this.txtReal2.Name = "txtReal2";
+            this.txtReal2.Size = new System.Drawing.Size(183, 29);
+            this.txtReal2.TabIndex = 23;
+            // 
+            // txtReal3
+            // 
+            this.txtReal3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtReal3.Location = new System.Drawing.Point(111, 213);
+            this.txtReal3.Name = "txtReal3";
+            this.txtReal3.Size = new System.Drawing.Size(183, 29);
+            this.txtReal3.TabIndex = 24;
+            // 
+            // txtReal4
+            // 
+            this.txtReal4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtReal4.Location = new System.Drawing.Point(111, 248);
+            this.txtReal4.Name = "txtReal4";
+            this.txtReal4.Size = new System.Drawing.Size(183, 29);
+            this.txtReal4.TabIndex = 25;
             // 
             // panel6
             // 
@@ -503,51 +625,55 @@
             // 
             // tableLayoutPanel2
             // 
-            this.tableLayoutPanel2.ColumnCount = 4;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
-            this.tableLayoutPanel2.Controls.Add(this.txtMaxSteeveDisDiff, 3, 9);
-            this.tableLayoutPanel2.Controls.Add(this.lblMaxSteeveDisDiff, 2, 9);
+            this.tableLayoutPanel2.ColumnCount = 6;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 17F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 17F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15.20147F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 19.59707F));
+            this.tableLayoutPanel2.Controls.Add(this.txtMaxSteeveDisDiff, 4, 9);
+            this.tableLayoutPanel2.Controls.Add(this.lblMaxSteeveDisDiff, 3, 9);
             this.tableLayoutPanel2.Controls.Add(this.txtSteeveDisDiffLimit, 1, 9);
             this.tableLayoutPanel2.Controls.Add(this.lblSteeveDisDiffLimit, 0, 9);
             this.tableLayoutPanel2.Controls.Add(this.txtMaxSteeveDis, 3, 8);
             this.tableLayoutPanel2.Controls.Add(this.lblMaxSteeveDis, 2, 8);
             this.tableLayoutPanel2.Controls.Add(this.txtSteeveDisLimit, 1, 8);
             this.tableLayoutPanel2.Controls.Add(this.lblSteeveDisLimit, 0, 8);
-            this.tableLayoutPanel2.Controls.Add(this.txtSteeveDis16, 3, 7);
-            this.tableLayoutPanel2.Controls.Add(this.lblSteeveDis16, 2, 7);
+            this.tableLayoutPanel2.Controls.Add(this.txtSteeveDis16, 4, 7);
+            this.tableLayoutPanel2.Controls.Add(this.lblSteeveDis16, 3, 7);
             this.tableLayoutPanel2.Controls.Add(this.txtSteeveDis8, 1, 7);
             this.tableLayoutPanel2.Controls.Add(this.lblSteeveDis8, 0, 7);
-            this.tableLayoutPanel2.Controls.Add(this.txtSteeveDis15, 3, 6);
-            this.tableLayoutPanel2.Controls.Add(this.lblSteeveDis15, 2, 6);
+            this.tableLayoutPanel2.Controls.Add(this.txtSteeveDis15, 4, 6);
+            this.tableLayoutPanel2.Controls.Add(this.lblSteeveDis15, 3, 6);
             this.tableLayoutPanel2.Controls.Add(this.txtSteeveDis7, 1, 6);
             this.tableLayoutPanel2.Controls.Add(this.lblSteeveDis7, 0, 6);
-            this.tableLayoutPanel2.Controls.Add(this.txtSteeveDis14, 3, 5);
-            this.tableLayoutPanel2.Controls.Add(this.lblSteeveDis14, 2, 5);
+            this.tableLayoutPanel2.Controls.Add(this.txtSteeveDis14, 4, 5);
+            this.tableLayoutPanel2.Controls.Add(this.lblSteeveDis14, 3, 5);
             this.tableLayoutPanel2.Controls.Add(this.txtSteeveDis6, 1, 5);
             this.tableLayoutPanel2.Controls.Add(this.lblSteeveDis6, 0, 5);
-            this.tableLayoutPanel2.Controls.Add(this.txtSteeveDis13, 3, 4);
-            this.tableLayoutPanel2.Controls.Add(this.lblSteeveDis13, 2, 4);
+            this.tableLayoutPanel2.Controls.Add(this.txtSteeveDis13, 4, 4);
+            this.tableLayoutPanel2.Controls.Add(this.lblSteeveDis13, 3, 4);
             this.tableLayoutPanel2.Controls.Add(this.txtSteeveDis5, 1, 4);
             this.tableLayoutPanel2.Controls.Add(this.lblSteeveDis5, 0, 4);
-            this.tableLayoutPanel2.Controls.Add(this.txtSteeveDis12, 3, 3);
-            this.tableLayoutPanel2.Controls.Add(this.lblSteeveDis12, 2, 3);
+            this.tableLayoutPanel2.Controls.Add(this.txtSteeveDis12, 4, 3);
+            this.tableLayoutPanel2.Controls.Add(this.lblSteeveDis12, 3, 3);
             this.tableLayoutPanel2.Controls.Add(this.txtSteeveDis4, 1, 3);
             this.tableLayoutPanel2.Controls.Add(this.lblSteeveDis4, 0, 3);
-            this.tableLayoutPanel2.Controls.Add(this.txtSteeveDis11, 3, 2);
-            this.tableLayoutPanel2.Controls.Add(this.lblSteeveDis11, 2, 2);
+            this.tableLayoutPanel2.Controls.Add(this.txtSteeveDis11, 4, 2);
+            this.tableLayoutPanel2.Controls.Add(this.lblSteeveDis11, 3, 2);
             this.tableLayoutPanel2.Controls.Add(this.txtSteeveDis3, 1, 2);
             this.tableLayoutPanel2.Controls.Add(this.lblSteeveDis3, 0, 2);
-            this.tableLayoutPanel2.Controls.Add(this.txtSteeveDis10, 3, 1);
-            this.tableLayoutPanel2.Controls.Add(this.lblSteeveDis10, 2, 1);
+            this.tableLayoutPanel2.Controls.Add(this.txtSteeveDis10, 4, 1);
+            this.tableLayoutPanel2.Controls.Add(this.lblSteeveDis10, 3, 1);
             this.tableLayoutPanel2.Controls.Add(this.txtSteeveDis2, 1, 1);
             this.tableLayoutPanel2.Controls.Add(this.lblSteeveDis2, 0, 1);
-            this.tableLayoutPanel2.Controls.Add(this.txtSteeveDis9, 3, 0);
-            this.tableLayoutPanel2.Controls.Add(this.lblSteeveDis9, 2, 0);
+            this.tableLayoutPanel2.Controls.Add(this.txtSteeveDis9, 4, 0);
+            this.tableLayoutPanel2.Controls.Add(this.lblSteeveDis9, 3, 0);
             this.tableLayoutPanel2.Controls.Add(this.lblSteeveDis1, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.txtSteeveDis1, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.lblAver, 4, 8);
+            this.tableLayoutPanel2.Controls.Add(this.txtAver, 5, 8);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -561,51 +687,56 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.22099F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.22099F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(546, 362);
             this.tableLayoutPanel2.TabIndex = 1;
             // 
             // txtMaxSteeveDisDiff
             // 
+            this.tableLayoutPanel2.SetColumnSpan(this.txtMaxSteeveDisDiff, 2);
             this.txtMaxSteeveDisDiff.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtMaxSteeveDisDiff.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.txtMaxSteeveDisDiff.Location = new System.Drawing.Point(382, 325);
+            this.txtMaxSteeveDisDiff.Location = new System.Drawing.Point(357, 325);
             this.txtMaxSteeveDisDiff.Margin = new System.Windows.Forms.Padding(1);
             this.txtMaxSteeveDisDiff.Name = "txtMaxSteeveDisDiff";
-            this.txtMaxSteeveDisDiff.Size = new System.Drawing.Size(163, 36);
+            this.txtMaxSteeveDisDiff.Size = new System.Drawing.Size(188, 36);
             this.txtMaxSteeveDisDiff.TabIndex = 39;
             // 
             // lblMaxSteeveDisDiff
             // 
             this.lblMaxSteeveDisDiff.AutoSize = true;
             this.lblMaxSteeveDisDiff.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblMaxSteeveDisDiff.Location = new System.Drawing.Point(272, 325);
+            this.lblMaxSteeveDisDiff.FontSize = MetroFramework.MetroLabelSize.Small;
+            this.lblMaxSteeveDisDiff.Location = new System.Drawing.Point(270, 325);
             this.lblMaxSteeveDisDiff.Margin = new System.Windows.Forms.Padding(0, 1, 0, 1);
             this.lblMaxSteeveDisDiff.Name = "lblMaxSteeveDisDiff";
-            this.lblMaxSteeveDisDiff.Size = new System.Drawing.Size(109, 36);
+            this.lblMaxSteeveDisDiff.Size = new System.Drawing.Size(86, 36);
             this.lblMaxSteeveDisDiff.TabIndex = 38;
             this.lblMaxSteeveDisDiff.Text = "最大位移差";
             this.lblMaxSteeveDisDiff.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txtSteeveDisDiffLimit
             // 
+            this.tableLayoutPanel2.SetColumnSpan(this.txtSteeveDisDiffLimit, 2);
             this.txtSteeveDisDiffLimit.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtSteeveDisDiffLimit.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.txtSteeveDisDiffLimit.Location = new System.Drawing.Point(110, 325);
+            this.txtSteeveDisDiffLimit.Location = new System.Drawing.Point(87, 325);
             this.txtSteeveDisDiffLimit.Margin = new System.Windows.Forms.Padding(1);
             this.txtSteeveDisDiffLimit.Name = "txtSteeveDisDiffLimit";
-            this.txtSteeveDisDiffLimit.Size = new System.Drawing.Size(161, 36);
+            this.txtSteeveDisDiffLimit.Size = new System.Drawing.Size(182, 36);
             this.txtSteeveDisDiffLimit.TabIndex = 37;
             // 
             // lblSteeveDisDiffLimit
             // 
             this.lblSteeveDisDiffLimit.AutoSize = true;
             this.lblSteeveDisDiffLimit.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblSteeveDisDiffLimit.FontSize = MetroFramework.MetroLabelSize.Small;
             this.lblSteeveDisDiffLimit.Location = new System.Drawing.Point(0, 325);
             this.lblSteeveDisDiffLimit.Margin = new System.Windows.Forms.Padding(0, 1, 0, 1);
             this.lblSteeveDisDiffLimit.Name = "lblSteeveDisDiffLimit";
-            this.lblSteeveDisDiffLimit.Size = new System.Drawing.Size(109, 36);
+            this.lblSteeveDisDiffLimit.Size = new System.Drawing.Size(86, 36);
             this.lblSteeveDisDiffLimit.TabIndex = 36;
             this.lblSteeveDisDiffLimit.Text = "位移差上限";
             this.lblSteeveDisDiffLimit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -614,20 +745,21 @@
             // 
             this.txtMaxSteeveDis.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtMaxSteeveDis.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.txtMaxSteeveDis.Location = new System.Drawing.Point(382, 289);
+            this.txtMaxSteeveDis.Location = new System.Drawing.Point(271, 289);
             this.txtMaxSteeveDis.Margin = new System.Windows.Forms.Padding(1, 1, 1, 0);
             this.txtMaxSteeveDis.Name = "txtMaxSteeveDis";
-            this.txtMaxSteeveDis.Size = new System.Drawing.Size(163, 35);
+            this.txtMaxSteeveDis.Size = new System.Drawing.Size(84, 35);
             this.txtMaxSteeveDis.TabIndex = 35;
             // 
             // lblMaxSteeveDis
             // 
             this.lblMaxSteeveDis.AutoSize = true;
             this.lblMaxSteeveDis.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblMaxSteeveDis.Location = new System.Drawing.Point(272, 289);
+            this.lblMaxSteeveDis.FontSize = MetroFramework.MetroLabelSize.Small;
+            this.lblMaxSteeveDis.Location = new System.Drawing.Point(178, 289);
             this.lblMaxSteeveDis.Margin = new System.Windows.Forms.Padding(0, 1, 0, 0);
             this.lblMaxSteeveDis.Name = "lblMaxSteeveDis";
-            this.lblMaxSteeveDis.Size = new System.Drawing.Size(109, 35);
+            this.lblMaxSteeveDis.Size = new System.Drawing.Size(92, 35);
             this.lblMaxSteeveDis.TabIndex = 34;
             this.lblMaxSteeveDis.Text = "最大位移";
             this.lblMaxSteeveDis.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -636,32 +768,34 @@
             // 
             this.txtSteeveDisLimit.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtSteeveDisLimit.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.txtSteeveDisLimit.Location = new System.Drawing.Point(110, 289);
+            this.txtSteeveDisLimit.Location = new System.Drawing.Point(87, 289);
             this.txtSteeveDisLimit.Margin = new System.Windows.Forms.Padding(1, 1, 1, 0);
             this.txtSteeveDisLimit.Name = "txtSteeveDisLimit";
-            this.txtSteeveDisLimit.Size = new System.Drawing.Size(161, 35);
+            this.txtSteeveDisLimit.Size = new System.Drawing.Size(90, 35);
             this.txtSteeveDisLimit.TabIndex = 33;
             // 
             // lblSteeveDisLimit
             // 
             this.lblSteeveDisLimit.AutoSize = true;
             this.lblSteeveDisLimit.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblSteeveDisLimit.FontSize = MetroFramework.MetroLabelSize.Small;
             this.lblSteeveDisLimit.Location = new System.Drawing.Point(0, 289);
             this.lblSteeveDisLimit.Margin = new System.Windows.Forms.Padding(0, 1, 0, 0);
             this.lblSteeveDisLimit.Name = "lblSteeveDisLimit";
-            this.lblSteeveDisLimit.Size = new System.Drawing.Size(109, 35);
+            this.lblSteeveDisLimit.Size = new System.Drawing.Size(86, 35);
             this.lblSteeveDisLimit.TabIndex = 32;
             this.lblSteeveDisLimit.Text = "位移上限";
             this.lblSteeveDisLimit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txtSteeveDis16
             // 
+            this.tableLayoutPanel2.SetColumnSpan(this.txtSteeveDis16, 2);
             this.txtSteeveDis16.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtSteeveDis16.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.txtSteeveDis16.Location = new System.Drawing.Point(382, 253);
+            this.txtSteeveDis16.Location = new System.Drawing.Point(357, 253);
             this.txtSteeveDis16.Margin = new System.Windows.Forms.Padding(1, 1, 1, 0);
             this.txtSteeveDis16.Name = "txtSteeveDis16";
-            this.txtSteeveDis16.Size = new System.Drawing.Size(163, 35);
+            this.txtSteeveDis16.Size = new System.Drawing.Size(188, 35);
             this.txtSteeveDis16.TabIndex = 31;
             // 
             // lblSteeveDis16
@@ -669,22 +803,23 @@
             this.lblSteeveDis16.AutoSize = true;
             this.lblSteeveDis16.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblSteeveDis16.FontSize = MetroFramework.MetroLabelSize.Small;
-            this.lblSteeveDis16.Location = new System.Drawing.Point(272, 253);
+            this.lblSteeveDis16.Location = new System.Drawing.Point(270, 253);
             this.lblSteeveDis16.Margin = new System.Windows.Forms.Padding(0, 1, 0, 0);
             this.lblSteeveDis16.Name = "lblSteeveDis16";
-            this.lblSteeveDis16.Size = new System.Drawing.Size(109, 35);
+            this.lblSteeveDis16.Size = new System.Drawing.Size(86, 35);
             this.lblSteeveDis16.TabIndex = 30;
-            this.lblSteeveDis16.Text = "吊杆平均位移";
+            this.lblSteeveDis16.Text = "12";
             this.lblSteeveDis16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txtSteeveDis8
             // 
+            this.tableLayoutPanel2.SetColumnSpan(this.txtSteeveDis8, 2);
             this.txtSteeveDis8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtSteeveDis8.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.txtSteeveDis8.Location = new System.Drawing.Point(110, 253);
+            this.txtSteeveDis8.Location = new System.Drawing.Point(87, 253);
             this.txtSteeveDis8.Margin = new System.Windows.Forms.Padding(1, 1, 1, 0);
             this.txtSteeveDis8.Name = "txtSteeveDis8";
-            this.txtSteeveDis8.Size = new System.Drawing.Size(161, 35);
+            this.txtSteeveDis8.Size = new System.Drawing.Size(182, 35);
             this.txtSteeveDis8.TabIndex = 29;
             // 
             // lblSteeveDis8
@@ -695,42 +830,44 @@
             this.lblSteeveDis8.Location = new System.Drawing.Point(0, 253);
             this.lblSteeveDis8.Margin = new System.Windows.Forms.Padding(0, 1, 0, 0);
             this.lblSteeveDis8.Name = "lblSteeveDis8";
-            this.lblSteeveDis8.Size = new System.Drawing.Size(109, 35);
+            this.lblSteeveDis8.Size = new System.Drawing.Size(86, 35);
             this.lblSteeveDis8.TabIndex = 28;
-            this.lblSteeveDis8.Text = "4实际距离";
+            this.lblSteeveDis8.Text = "8";
             this.lblSteeveDis8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txtSteeveDis15
             // 
+            this.tableLayoutPanel2.SetColumnSpan(this.txtSteeveDis15, 2);
             this.txtSteeveDis15.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtSteeveDis15.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.txtSteeveDis15.Location = new System.Drawing.Point(382, 217);
+            this.txtSteeveDis15.Location = new System.Drawing.Point(357, 217);
             this.txtSteeveDis15.Margin = new System.Windows.Forms.Padding(1, 1, 1, 0);
             this.txtSteeveDis15.Name = "txtSteeveDis15";
-            this.txtSteeveDis15.Size = new System.Drawing.Size(163, 35);
+            this.txtSteeveDis15.Size = new System.Drawing.Size(188, 35);
             this.txtSteeveDis15.TabIndex = 27;
             // 
             // lblSteeveDis15
             // 
             this.lblSteeveDis15.AutoSize = true;
             this.lblSteeveDis15.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblSteeveDis15.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.lblSteeveDis15.Location = new System.Drawing.Point(272, 217);
+            this.lblSteeveDis15.FontSize = MetroFramework.MetroLabelSize.Small;
+            this.lblSteeveDis15.Location = new System.Drawing.Point(270, 217);
             this.lblSteeveDis15.Margin = new System.Windows.Forms.Padding(0, 1, 0, 0);
             this.lblSteeveDis15.Name = "lblSteeveDis15";
-            this.lblSteeveDis15.Size = new System.Drawing.Size(109, 35);
+            this.lblSteeveDis15.Size = new System.Drawing.Size(86, 35);
             this.lblSteeveDis15.TabIndex = 26;
-            this.lblSteeveDis15.Text = "15";
+            this.lblSteeveDis15.Text = "11";
             this.lblSteeveDis15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txtSteeveDis7
             // 
+            this.tableLayoutPanel2.SetColumnSpan(this.txtSteeveDis7, 2);
             this.txtSteeveDis7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtSteeveDis7.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.txtSteeveDis7.Location = new System.Drawing.Point(110, 217);
+            this.txtSteeveDis7.Location = new System.Drawing.Point(87, 217);
             this.txtSteeveDis7.Margin = new System.Windows.Forms.Padding(1, 1, 1, 0);
             this.txtSteeveDis7.Name = "txtSteeveDis7";
-            this.txtSteeveDis7.Size = new System.Drawing.Size(161, 35);
+            this.txtSteeveDis7.Size = new System.Drawing.Size(182, 35);
             this.txtSteeveDis7.TabIndex = 25;
             // 
             // lblSteeveDis7
@@ -741,42 +878,44 @@
             this.lblSteeveDis7.Location = new System.Drawing.Point(0, 217);
             this.lblSteeveDis7.Margin = new System.Windows.Forms.Padding(0, 1, 0, 0);
             this.lblSteeveDis7.Name = "lblSteeveDis7";
-            this.lblSteeveDis7.Size = new System.Drawing.Size(109, 35);
+            this.lblSteeveDis7.Size = new System.Drawing.Size(86, 35);
             this.lblSteeveDis7.TabIndex = 24;
-            this.lblSteeveDis7.Text = "3实际距离";
+            this.lblSteeveDis7.Text = "7";
             this.lblSteeveDis7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txtSteeveDis14
             // 
+            this.tableLayoutPanel2.SetColumnSpan(this.txtSteeveDis14, 2);
             this.txtSteeveDis14.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtSteeveDis14.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.txtSteeveDis14.Location = new System.Drawing.Point(382, 181);
+            this.txtSteeveDis14.Location = new System.Drawing.Point(357, 181);
             this.txtSteeveDis14.Margin = new System.Windows.Forms.Padding(1, 1, 1, 0);
             this.txtSteeveDis14.Name = "txtSteeveDis14";
-            this.txtSteeveDis14.Size = new System.Drawing.Size(163, 35);
+            this.txtSteeveDis14.Size = new System.Drawing.Size(188, 35);
             this.txtSteeveDis14.TabIndex = 23;
             // 
             // lblSteeveDis14
             // 
             this.lblSteeveDis14.AutoSize = true;
             this.lblSteeveDis14.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblSteeveDis14.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.lblSteeveDis14.Location = new System.Drawing.Point(272, 181);
+            this.lblSteeveDis14.FontSize = MetroFramework.MetroLabelSize.Small;
+            this.lblSteeveDis14.Location = new System.Drawing.Point(270, 181);
             this.lblSteeveDis14.Margin = new System.Windows.Forms.Padding(0, 1, 0, 0);
             this.lblSteeveDis14.Name = "lblSteeveDis14";
-            this.lblSteeveDis14.Size = new System.Drawing.Size(109, 35);
+            this.lblSteeveDis14.Size = new System.Drawing.Size(86, 35);
             this.lblSteeveDis14.TabIndex = 22;
-            this.lblSteeveDis14.Text = "14";
+            this.lblSteeveDis14.Text = "10";
             this.lblSteeveDis14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txtSteeveDis6
             // 
+            this.tableLayoutPanel2.SetColumnSpan(this.txtSteeveDis6, 2);
             this.txtSteeveDis6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtSteeveDis6.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.txtSteeveDis6.Location = new System.Drawing.Point(110, 181);
+            this.txtSteeveDis6.Location = new System.Drawing.Point(87, 181);
             this.txtSteeveDis6.Margin = new System.Windows.Forms.Padding(1, 1, 1, 0);
             this.txtSteeveDis6.Name = "txtSteeveDis6";
-            this.txtSteeveDis6.Size = new System.Drawing.Size(161, 35);
+            this.txtSteeveDis6.Size = new System.Drawing.Size(182, 35);
             this.txtSteeveDis6.TabIndex = 21;
             // 
             // lblSteeveDis6
@@ -786,42 +925,44 @@
             this.lblSteeveDis6.Location = new System.Drawing.Point(0, 181);
             this.lblSteeveDis6.Margin = new System.Windows.Forms.Padding(0, 1, 0, 0);
             this.lblSteeveDis6.Name = "lblSteeveDis6";
-            this.lblSteeveDis6.Size = new System.Drawing.Size(109, 35);
+            this.lblSteeveDis6.Size = new System.Drawing.Size(86, 35);
             this.lblSteeveDis6.TabIndex = 20;
-            this.lblSteeveDis6.Text = "2实际距离";
+            this.lblSteeveDis6.Text = "6";
             this.lblSteeveDis6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txtSteeveDis13
             // 
+            this.tableLayoutPanel2.SetColumnSpan(this.txtSteeveDis13, 2);
             this.txtSteeveDis13.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtSteeveDis13.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.txtSteeveDis13.Location = new System.Drawing.Point(382, 145);
+            this.txtSteeveDis13.Location = new System.Drawing.Point(357, 145);
             this.txtSteeveDis13.Margin = new System.Windows.Forms.Padding(1, 1, 1, 0);
             this.txtSteeveDis13.Name = "txtSteeveDis13";
-            this.txtSteeveDis13.Size = new System.Drawing.Size(163, 35);
+            this.txtSteeveDis13.Size = new System.Drawing.Size(188, 35);
             this.txtSteeveDis13.TabIndex = 19;
             // 
             // lblSteeveDis13
             // 
             this.lblSteeveDis13.AutoSize = true;
             this.lblSteeveDis13.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblSteeveDis13.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.lblSteeveDis13.Location = new System.Drawing.Point(272, 145);
+            this.lblSteeveDis13.FontSize = MetroFramework.MetroLabelSize.Small;
+            this.lblSteeveDis13.Location = new System.Drawing.Point(270, 145);
             this.lblSteeveDis13.Margin = new System.Windows.Forms.Padding(0, 1, 0, 0);
             this.lblSteeveDis13.Name = "lblSteeveDis13";
-            this.lblSteeveDis13.Size = new System.Drawing.Size(109, 35);
+            this.lblSteeveDis13.Size = new System.Drawing.Size(86, 35);
             this.lblSteeveDis13.TabIndex = 18;
-            this.lblSteeveDis13.Text = "13";
+            this.lblSteeveDis13.Text = "9";
             this.lblSteeveDis13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txtSteeveDis5
             // 
+            this.tableLayoutPanel2.SetColumnSpan(this.txtSteeveDis5, 2);
             this.txtSteeveDis5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtSteeveDis5.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.txtSteeveDis5.Location = new System.Drawing.Point(110, 145);
+            this.txtSteeveDis5.Location = new System.Drawing.Point(87, 145);
             this.txtSteeveDis5.Margin = new System.Windows.Forms.Padding(1, 1, 1, 0);
             this.txtSteeveDis5.Name = "txtSteeveDis5";
-            this.txtSteeveDis5.Size = new System.Drawing.Size(161, 35);
+            this.txtSteeveDis5.Size = new System.Drawing.Size(182, 35);
             this.txtSteeveDis5.TabIndex = 17;
             // 
             // lblSteeveDis5
@@ -832,42 +973,44 @@
             this.lblSteeveDis5.Location = new System.Drawing.Point(0, 145);
             this.lblSteeveDis5.Margin = new System.Windows.Forms.Padding(0, 1, 0, 0);
             this.lblSteeveDis5.Name = "lblSteeveDis5";
-            this.lblSteeveDis5.Size = new System.Drawing.Size(109, 35);
+            this.lblSteeveDis5.Size = new System.Drawing.Size(86, 35);
             this.lblSteeveDis5.TabIndex = 16;
-            this.lblSteeveDis5.Text = "1实际距离";
+            this.lblSteeveDis5.Text = "5";
             this.lblSteeveDis5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txtSteeveDis12
             // 
+            this.tableLayoutPanel2.SetColumnSpan(this.txtSteeveDis12, 2);
             this.txtSteeveDis12.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtSteeveDis12.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.txtSteeveDis12.Location = new System.Drawing.Point(382, 109);
+            this.txtSteeveDis12.Location = new System.Drawing.Point(357, 109);
             this.txtSteeveDis12.Margin = new System.Windows.Forms.Padding(1, 1, 1, 0);
             this.txtSteeveDis12.Name = "txtSteeveDis12";
-            this.txtSteeveDis12.Size = new System.Drawing.Size(163, 35);
+            this.txtSteeveDis12.Size = new System.Drawing.Size(188, 35);
             this.txtSteeveDis12.TabIndex = 15;
             // 
             // lblSteeveDis12
             // 
             this.lblSteeveDis12.AutoSize = true;
             this.lblSteeveDis12.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblSteeveDis12.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.lblSteeveDis12.Location = new System.Drawing.Point(272, 109);
+            this.lblSteeveDis12.FontSize = MetroFramework.MetroLabelSize.Small;
+            this.lblSteeveDis12.Location = new System.Drawing.Point(270, 109);
             this.lblSteeveDis12.Margin = new System.Windows.Forms.Padding(0, 1, 0, 0);
             this.lblSteeveDis12.Name = "lblSteeveDis12";
-            this.lblSteeveDis12.Size = new System.Drawing.Size(109, 35);
+            this.lblSteeveDis12.Size = new System.Drawing.Size(86, 35);
             this.lblSteeveDis12.TabIndex = 14;
-            this.lblSteeveDis12.Text = "12";
+            this.lblSteeveDis12.Text = "4实际距离";
             this.lblSteeveDis12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txtSteeveDis4
             // 
+            this.tableLayoutPanel2.SetColumnSpan(this.txtSteeveDis4, 2);
             this.txtSteeveDis4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtSteeveDis4.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.txtSteeveDis4.Location = new System.Drawing.Point(110, 109);
+            this.txtSteeveDis4.Location = new System.Drawing.Point(87, 109);
             this.txtSteeveDis4.Margin = new System.Windows.Forms.Padding(1, 1, 1, 0);
             this.txtSteeveDis4.Name = "txtSteeveDis4";
-            this.txtSteeveDis4.Size = new System.Drawing.Size(161, 35);
+            this.txtSteeveDis4.Size = new System.Drawing.Size(182, 35);
             this.txtSteeveDis4.TabIndex = 13;
             // 
             // lblSteeveDis4
@@ -878,42 +1021,44 @@
             this.lblSteeveDis4.Location = new System.Drawing.Point(0, 109);
             this.lblSteeveDis4.Margin = new System.Windows.Forms.Padding(0, 1, 0, 0);
             this.lblSteeveDis4.Name = "lblSteeveDis4";
-            this.lblSteeveDis4.Size = new System.Drawing.Size(109, 35);
+            this.lblSteeveDis4.Size = new System.Drawing.Size(86, 35);
             this.lblSteeveDis4.TabIndex = 12;
-            this.lblSteeveDis4.Text = "4上升位移";
+            this.lblSteeveDis4.Text = "4升降位移";
             this.lblSteeveDis4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txtSteeveDis11
             // 
+            this.tableLayoutPanel2.SetColumnSpan(this.txtSteeveDis11, 2);
             this.txtSteeveDis11.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtSteeveDis11.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.txtSteeveDis11.Location = new System.Drawing.Point(382, 73);
+            this.txtSteeveDis11.Location = new System.Drawing.Point(357, 73);
             this.txtSteeveDis11.Margin = new System.Windows.Forms.Padding(1, 1, 1, 0);
             this.txtSteeveDis11.Name = "txtSteeveDis11";
-            this.txtSteeveDis11.Size = new System.Drawing.Size(163, 35);
+            this.txtSteeveDis11.Size = new System.Drawing.Size(188, 35);
             this.txtSteeveDis11.TabIndex = 11;
             // 
             // lblSteeveDis11
             // 
             this.lblSteeveDis11.AutoSize = true;
             this.lblSteeveDis11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblSteeveDis11.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.lblSteeveDis11.Location = new System.Drawing.Point(272, 73);
+            this.lblSteeveDis11.FontSize = MetroFramework.MetroLabelSize.Small;
+            this.lblSteeveDis11.Location = new System.Drawing.Point(270, 73);
             this.lblSteeveDis11.Margin = new System.Windows.Forms.Padding(0, 1, 0, 0);
             this.lblSteeveDis11.Name = "lblSteeveDis11";
-            this.lblSteeveDis11.Size = new System.Drawing.Size(109, 35);
+            this.lblSteeveDis11.Size = new System.Drawing.Size(86, 35);
             this.lblSteeveDis11.TabIndex = 10;
-            this.lblSteeveDis11.Text = "11";
+            this.lblSteeveDis11.Text = "3实际距离";
             this.lblSteeveDis11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txtSteeveDis3
             // 
+            this.tableLayoutPanel2.SetColumnSpan(this.txtSteeveDis3, 2);
             this.txtSteeveDis3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtSteeveDis3.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.txtSteeveDis3.Location = new System.Drawing.Point(110, 73);
+            this.txtSteeveDis3.Location = new System.Drawing.Point(87, 73);
             this.txtSteeveDis3.Margin = new System.Windows.Forms.Padding(1, 1, 1, 0);
             this.txtSteeveDis3.Name = "txtSteeveDis3";
-            this.txtSteeveDis3.Size = new System.Drawing.Size(161, 35);
+            this.txtSteeveDis3.Size = new System.Drawing.Size(182, 35);
             this.txtSteeveDis3.TabIndex = 9;
             // 
             // lblSteeveDis3
@@ -924,42 +1069,44 @@
             this.lblSteeveDis3.Location = new System.Drawing.Point(0, 73);
             this.lblSteeveDis3.Margin = new System.Windows.Forms.Padding(0, 1, 0, 0);
             this.lblSteeveDis3.Name = "lblSteeveDis3";
-            this.lblSteeveDis3.Size = new System.Drawing.Size(109, 35);
+            this.lblSteeveDis3.Size = new System.Drawing.Size(86, 35);
             this.lblSteeveDis3.TabIndex = 8;
-            this.lblSteeveDis3.Text = "3上升位移";
+            this.lblSteeveDis3.Text = "3升降位移";
             this.lblSteeveDis3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txtSteeveDis10
             // 
+            this.tableLayoutPanel2.SetColumnSpan(this.txtSteeveDis10, 2);
             this.txtSteeveDis10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtSteeveDis10.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.txtSteeveDis10.Location = new System.Drawing.Point(382, 37);
+            this.txtSteeveDis10.Location = new System.Drawing.Point(357, 37);
             this.txtSteeveDis10.Margin = new System.Windows.Forms.Padding(1, 1, 1, 0);
             this.txtSteeveDis10.Name = "txtSteeveDis10";
-            this.txtSteeveDis10.Size = new System.Drawing.Size(163, 35);
+            this.txtSteeveDis10.Size = new System.Drawing.Size(188, 35);
             this.txtSteeveDis10.TabIndex = 7;
             // 
             // lblSteeveDis10
             // 
             this.lblSteeveDis10.AutoSize = true;
             this.lblSteeveDis10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblSteeveDis10.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.lblSteeveDis10.Location = new System.Drawing.Point(272, 37);
+            this.lblSteeveDis10.FontSize = MetroFramework.MetroLabelSize.Small;
+            this.lblSteeveDis10.Location = new System.Drawing.Point(270, 37);
             this.lblSteeveDis10.Margin = new System.Windows.Forms.Padding(0, 1, 0, 0);
             this.lblSteeveDis10.Name = "lblSteeveDis10";
-            this.lblSteeveDis10.Size = new System.Drawing.Size(109, 35);
+            this.lblSteeveDis10.Size = new System.Drawing.Size(86, 35);
             this.lblSteeveDis10.TabIndex = 6;
-            this.lblSteeveDis10.Text = "10";
+            this.lblSteeveDis10.Text = "2实际距离";
             this.lblSteeveDis10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txtSteeveDis2
             // 
+            this.tableLayoutPanel2.SetColumnSpan(this.txtSteeveDis2, 2);
             this.txtSteeveDis2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtSteeveDis2.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.txtSteeveDis2.Location = new System.Drawing.Point(110, 37);
+            this.txtSteeveDis2.Location = new System.Drawing.Point(87, 37);
             this.txtSteeveDis2.Margin = new System.Windows.Forms.Padding(1, 1, 1, 0);
             this.txtSteeveDis2.Name = "txtSteeveDis2";
-            this.txtSteeveDis2.Size = new System.Drawing.Size(161, 35);
+            this.txtSteeveDis2.Size = new System.Drawing.Size(182, 35);
             this.txtSteeveDis2.TabIndex = 5;
             // 
             // lblSteeveDis2
@@ -970,32 +1117,33 @@
             this.lblSteeveDis2.Location = new System.Drawing.Point(0, 37);
             this.lblSteeveDis2.Margin = new System.Windows.Forms.Padding(0, 1, 0, 0);
             this.lblSteeveDis2.Name = "lblSteeveDis2";
-            this.lblSteeveDis2.Size = new System.Drawing.Size(109, 35);
+            this.lblSteeveDis2.Size = new System.Drawing.Size(86, 35);
             this.lblSteeveDis2.TabIndex = 4;
-            this.lblSteeveDis2.Text = "2上升位移";
+            this.lblSteeveDis2.Text = "2升降位移";
             this.lblSteeveDis2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txtSteeveDis9
             // 
+            this.tableLayoutPanel2.SetColumnSpan(this.txtSteeveDis9, 2);
             this.txtSteeveDis9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtSteeveDis9.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.txtSteeveDis9.Location = new System.Drawing.Point(382, 0);
+            this.txtSteeveDis9.Location = new System.Drawing.Point(357, 0);
             this.txtSteeveDis9.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.txtSteeveDis9.Name = "txtSteeveDis9";
-            this.txtSteeveDis9.Size = new System.Drawing.Size(163, 36);
+            this.txtSteeveDis9.Size = new System.Drawing.Size(188, 36);
             this.txtSteeveDis9.TabIndex = 3;
             // 
             // lblSteeveDis9
             // 
             this.lblSteeveDis9.AutoSize = true;
             this.lblSteeveDis9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblSteeveDis9.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.lblSteeveDis9.Location = new System.Drawing.Point(272, 0);
+            this.lblSteeveDis9.FontSize = MetroFramework.MetroLabelSize.Small;
+            this.lblSteeveDis9.Location = new System.Drawing.Point(270, 0);
             this.lblSteeveDis9.Margin = new System.Windows.Forms.Padding(0);
             this.lblSteeveDis9.Name = "lblSteeveDis9";
-            this.lblSteeveDis9.Size = new System.Drawing.Size(109, 36);
+            this.lblSteeveDis9.Size = new System.Drawing.Size(86, 36);
             this.lblSteeveDis9.TabIndex = 2;
-            this.lblSteeveDis9.Text = "9";
+            this.lblSteeveDis9.Text = "1实际距离";
             this.lblSteeveDis9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblSteeveDis1
@@ -1006,20 +1154,41 @@
             this.lblSteeveDis1.Location = new System.Drawing.Point(0, 0);
             this.lblSteeveDis1.Margin = new System.Windows.Forms.Padding(0);
             this.lblSteeveDis1.Name = "lblSteeveDis1";
-            this.lblSteeveDis1.Size = new System.Drawing.Size(109, 36);
+            this.lblSteeveDis1.Size = new System.Drawing.Size(86, 36);
             this.lblSteeveDis1.TabIndex = 0;
-            this.lblSteeveDis1.Text = "1上升位移";
+            this.lblSteeveDis1.Text = "1升降位移";
             this.lblSteeveDis1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txtSteeveDis1
             // 
+            this.tableLayoutPanel2.SetColumnSpan(this.txtSteeveDis1, 2);
             this.txtSteeveDis1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtSteeveDis1.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.txtSteeveDis1.Location = new System.Drawing.Point(110, 0);
+            this.txtSteeveDis1.Location = new System.Drawing.Point(87, 0);
             this.txtSteeveDis1.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.txtSteeveDis1.Name = "txtSteeveDis1";
-            this.txtSteeveDis1.Size = new System.Drawing.Size(161, 36);
+            this.txtSteeveDis1.Size = new System.Drawing.Size(182, 36);
             this.txtSteeveDis1.TabIndex = 1;
+            // 
+            // lblAver
+            // 
+            this.lblAver.AutoSize = true;
+            this.lblAver.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblAver.FontSize = MetroFramework.MetroLabelSize.Small;
+            this.lblAver.Location = new System.Drawing.Point(359, 288);
+            this.lblAver.Name = "lblAver";
+            this.lblAver.Size = new System.Drawing.Size(76, 36);
+            this.lblAver.TabIndex = 40;
+            this.lblAver.Text = "平均位移";
+            this.lblAver.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // txtAver
+            // 
+            this.txtAver.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtAver.Location = new System.Drawing.Point(441, 291);
+            this.txtAver.Name = "txtAver";
+            this.txtAver.Size = new System.Drawing.Size(102, 30);
+            this.txtAver.TabIndex = 41;
             // 
             // panel2
             // 
@@ -1742,6 +1911,7 @@
             // 
             this.lblMaxSteeveForce.AutoSize = true;
             this.lblMaxSteeveForce.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblMaxSteeveForce.FontSize = MetroFramework.MetroLabelSize.Small;
             this.lblMaxSteeveForce.Location = new System.Drawing.Point(176, 289);
             this.lblMaxSteeveForce.Margin = new System.Windows.Forms.Padding(0, 1, 0, 0);
             this.lblMaxSteeveForce.Name = "lblMaxSteeveForce";
@@ -1764,6 +1934,7 @@
             // 
             this.lblSteeveForceLimit.AutoSize = true;
             this.lblSteeveForceLimit.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblSteeveForceLimit.FontSize = MetroFramework.MetroLabelSize.Small;
             this.lblSteeveForceLimit.Location = new System.Drawing.Point(0, 289);
             this.lblSteeveForceLimit.Margin = new System.Windows.Forms.Padding(0, 1, 0, 0);
             this.lblSteeveForceLimit.Name = "lblSteeveForceLimit";
@@ -2213,7 +2384,6 @@
 
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem btnFirstPage;
-        private System.Windows.Forms.ToolStripMenuItem btnExit;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel2;
@@ -2348,7 +2518,6 @@
         private MetroFramework.Controls.MetroTextBox txtAnchorF1;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.ToolStripMenuItem btnReSetStandard;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.GroupBox groupBox1;
@@ -2367,5 +2536,19 @@
         private MetroFramework.Controls.MetroTextBox txtFrontDisLimit;
         private MetroFramework.Controls.MetroTextBox txtMaxFrontDis;
         private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private MetroFramework.Controls.MetroLabel lblAver;
+        private MetroFramework.Controls.MetroTextBox txtAver;
+        private MetroFramework.Controls.MetroLabel lblRealFront1;
+        private MetroFramework.Controls.MetroLabel lblRealFront2;
+        private MetroFramework.Controls.MetroLabel lblReal3;
+        private MetroFramework.Controls.MetroLabel lblReal4;
+        private MetroFramework.Controls.MetroTextBox txtReal1;
+        private MetroFramework.Controls.MetroTextBox txtReal2;
+        private MetroFramework.Controls.MetroTextBox txtReal3;
+        private MetroFramework.Controls.MetroTextBox txtReal4;
+        private System.Windows.Forms.ToolStripMenuItem 前支点重置ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem btnSteeveForce;
+        private System.Windows.Forms.ToolStripMenuItem btnFront;
     }
 }

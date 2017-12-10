@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWin));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.btnFirstPage = new System.Windows.Forms.ToolStripMenuItem();
             this.btnUserSet = new System.Windows.Forms.ToolStripMenuItem();
             this.btnSetParameter = new System.Windows.Forms.ToolStripMenuItem();
             this.btnAlarmRecord = new System.Windows.Forms.ToolStripMenuItem();
@@ -72,7 +71,6 @@
             this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(93)))), ((int)(((byte)(152)))));
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnFirstPage,
             this.btnUserSet,
             this.btnSetParameter,
             this.btnAlarmRecord,
@@ -84,14 +82,6 @@
             this.menuStrip1.Size = new System.Drawing.Size(1108, 48);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
-            // 
-            // btnFirstPage
-            // 
-            this.btnFirstPage.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnFirstPage.ForeColor = System.Drawing.Color.White;
-            this.btnFirstPage.Name = "btnFirstPage";
-            this.btnFirstPage.Size = new System.Drawing.Size(61, 44);
-            this.btnFirstPage.Text = "首页";
             // 
             // btnUserSet
             // 
@@ -308,7 +298,6 @@
 
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem btnFirstPage;
         private System.Windows.Forms.ToolStripMenuItem btnUserSet;
         private System.Windows.Forms.ToolStripMenuItem btnSetParameter;
         private System.Windows.Forms.ToolStripMenuItem btnAlarmRecord;

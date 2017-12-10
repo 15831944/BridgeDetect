@@ -18,13 +18,14 @@ namespace BridgeDetectSystem
     {
         private UserRightManager rightManager ;
         private string userName;
-
+       // private AdamHelper adamhelper;
         public MainWin()
         {
             InitializeComponent();
 
             rightManager = UserRightManager.GetInstance();
             userName = UserRightManager.user.userName;
+            //adamhelper = AdamHelper.GetInstance();
         }
 
         #region 查看记录按钮
@@ -127,20 +128,24 @@ namespace BridgeDetectSystem
         /// <param name="e"></param>
         private void btnPouring_Click(object sender, EventArgs e)
         {
-            PouringState win = null;
-            try
-            {
-                win = new PouringState();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            if (win != null)
-            {
-                win.Show();
-                log("点击了浇注状态按钮");
-            }
+            
+            
+            
+                PouringState win = null;
+                try
+                {
+                    win = new PouringState();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                if (win != null)
+                {
+                    win.Show();
+                    log("点击了浇注状态按钮");
+                }
+            
         }
 
         /// <summary>

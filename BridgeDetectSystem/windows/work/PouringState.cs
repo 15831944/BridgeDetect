@@ -37,11 +37,10 @@ namespace BridgeDetectSystem
         {
             InitializeComponent();
             adamHelper = AdamHelper.GetInstance();
-
             dataStoreManager = DataStoreManager.GetInstance();
             warningManager = WarningManager.GetInstance();
             config = ConfigManager.GetInstance();
-
+            //timer1.Enabled = false;
         }
 
         private void PourState_Load(object sender, EventArgs e)
@@ -51,6 +50,7 @@ namespace BridgeDetectSystem
             this.panel4.Height = (this.panel1.Height - menuStrip1.Height) / 2;
             this.panel6.Height = (this.panel1.Height - menuStrip1.Height) / 2;
             //this.panel8.Width = this.panel7.Width / 2;
+
 
             //得到配置项的值
             steeveForceLimit = config.Get(ConfigManager.ConfigKeys.steeve_ForceLimit);
@@ -62,7 +62,7 @@ namespace BridgeDetectSystem
             anchorForceLimit = config.Get(ConfigManager.ConfigKeys.anchor_ForceLimit);
             anchorForceDiffLimit = config.Get(ConfigManager.ConfigKeys.anchor_ForceDiffLimit);
             FrontDisLimit = config.Get(ConfigManager.ConfigKeys.frontPivot_DisLimit);
-           // 开始接收数据
+            // 开始接收数据
             timer1.Enabled = true;
             adamHelper.StartTimer(250);
             dataStoreManager.StartTimer(500, 1000);
@@ -73,8 +73,9 @@ namespace BridgeDetectSystem
         {
 
             RefreshSteeveText();
-           // RefreshAnchorText();
+            // RefreshAnchorText();
             RefreshFrontPivotText();
+
         }
         /// <summary>
         /// 关闭窗体时关闭线程
@@ -106,42 +107,43 @@ namespace BridgeDetectSystem
             try
             {  //自己加吊杆锚杆互换
                 Dictionary<int, Steeve> dicSteeve = adamHelper.steeveDic;//得到吊杆的字典集合，用方法得到力和位移
-            
+
 
                 double[] steeveForce = new double[dicSteeve.Count];//吊杆力数组，元素为double
                 double[] steeveDis = new double[dicSteeve.Count];//吊杆位移数组，元素为double
                 double[] realSteeveDis = new double[4];
-                
+
 
                 for (int i = 0; i < 4; i++)
                 {
                     steeveForce[i] = dicSteeve[i].GetForce();//为吊杆力数组赋值值
-                                                             // steeveDis[i] =Math.Abs( dicSteeve[i].GetDisplace() - adamHelper.steeveDisStandard);
-                                                             //为吊杆位移数组赋值
-                    realSteeveDis[i] =Math.Round(dicSteeve[i].GetDisplace(),1);//真实距离
-                    steeveDis[i] =Math.Abs(adamHelper.standardlist[i] - dicSteeve[i].GetDisplace());  steeveDis[i] = Math.Round(steeveDis[i], 1);  //保留一位小数
-                    //上升位移
+                    realSteeveDis[i] = Math.Round(dicSteeve[i].GetDisplace(), 1);//真实距离
+                    steeveDis[i] = dicSteeve[i].GetDisplace() - adamHelper.standardlist[i];//升降位移
+                    steeveDis[i] = Math.Round(steeveDis[i], 1);  //保留一位小数
+                
                 }
                 double sum = 0;
                 for (int i = 0; i < 4; i++)
                 {
                     sum += steeveDis[i];//求上升位移和
                 }
-                double AverageOfFour =Math.Round( sum / 4,1);
-                
+                double AverageOfFour = Math.Round(sum / 4, 1);
+
                 //平均上升位移
                 SetTextValueManager.SetValueToText(steeveForce, ref txtSteeveF1, ref txtSteeveF2, ref txtSteeveF3, ref txtSteeveF4, ref txtMaxSteeveForce, ref txtMaxSteeveForceDiff);
                 txtSteeveForceLimit.Text = steeveForceLimit.ToString();
                 txtSteeveForceDiffLimit.Text = steeveForceDiffLimit.ToString();
+
                 SetTextValueManager.SetValueToText(steeveDis, ref txtSteeveDis1, ref txtSteeveDis2, ref txtSteeveDis3, ref txtSteeveDis4, ref txtMaxSteeveDis, ref txtMaxSteeveDisDiff);
+
                 txtSteeveDisLimit.Text = steeveDisLimit.ToString();//吊杆位移上限
                 txtSteeveDisDiffLimit.Text = steeveDisDiffLimit.ToString();//吊杆位移差上限
                 //
-                txtSteeveDis5.Text = realSteeveDis[0].ToString();//真实距离平均位移赋值
-                txtSteeveDis6.Text = realSteeveDis[1].ToString();
-                txtSteeveDis7.Text = realSteeveDis[2].ToString();
-                txtSteeveDis8.Text = realSteeveDis[3].ToString();
-                txtSteeveDis16.Text = AverageOfFour.ToString();
+                txtSteeveDis9.Text = realSteeveDis[0].ToString();//真实距离和平均位移赋值
+                txtSteeveDis10.Text = realSteeveDis[1].ToString();
+                txtSteeveDis11.Text = realSteeveDis[2].ToString();
+                txtSteeveDis12.Text = realSteeveDis[3].ToString();
+                txtAver.Text = AverageOfFour.ToString();
             }
             catch (Exception ex)
             {
@@ -155,11 +157,11 @@ namespace BridgeDetectSystem
         /// </summary>
         private void RefreshAnchorText()
         {
-           // Dictionary<int, Anchor> dicAnchor = adamHelper.anchorDic;
+            // Dictionary<int, Anchor> dicAnchor = adamHelper.anchorDic;
             try
-            {  
-               
-                Dictionary<int, Anchor> dicAnchor= adamHelper.anchorDic;
+            {
+
+                Dictionary<int, Anchor> dicAnchor = adamHelper.anchorDic;
                 double[] anchorForce = new double[4];
                 for (int i = 0; i < 4; i++)
                 {
@@ -188,23 +190,36 @@ namespace BridgeDetectSystem
                 threeStandard = adamHelper.three_standard;
                 fourStandard = adamHelper.four_standard;
                 Dictionary<int, FrontPivot> dicFrontPivot = adamHelper.frontPivotDic;
-                double[] frontPivotDis = new double[dicFrontPivot.Count];
-                txtFrontDisLimit.Text = FrontDisLimit.ToString();
-
-                frontPivotDis[0] =Math.Round(firstStandard-dicFrontPivot[0].GetDisplace(),1);//数组存位移
+                double[] frontPivotDis = new double[4];//前支点沉降位移
               
-                frontPivotDis[1] = Math.Round(secondStanard - dicFrontPivot[1].GetDisplace(),1);
-                frontPivotDis[2] =Math.Round( threeStandard-dicFrontPivot[2].GetDisplace(),1);
-                frontPivotDis[3] = Math.Round( fourStandard - dicFrontPivot[3].GetDisplace(),1);
+                double[] realFront = new double[4];//真实距离
+                for (int i = 0; i < 4; i++)
+                {
+                    realFront[i] = dicFrontPivot[i].GetDisplace();
+                    realFront[i] = Math.Round(realFront[i], 1);
+
+                }
+                frontPivotDis[0] = Math.Round(firstStandard - dicFrontPivot[0].GetDisplace(), 1);
+                frontPivotDis[1] = Math.Round(secondStanard - dicFrontPivot[1].GetDisplace(), 1);
+                frontPivotDis[2] = Math.Round(threeStandard - dicFrontPivot[2].GetDisplace(), 1);
+                frontPivotDis[3] = Math.Round(fourStandard - dicFrontPivot[3].GetDisplace(), 1);
                 for (int k = 0; k < 4; k++)
                 {
                     frontPivotDis[k] = Math.Abs(frontPivotDis[k]);
                 }
+
+                double maxfront = frontPivotDis.Max();
                 txtFrontPivotDis1.Text = frontPivotDis[0].ToString();
                 txtFrontPivotDis2.Text = frontPivotDis[1].ToString();
                 txtFrontPivotDis3.Text = frontPivotDis[2].ToString();
                 txtFrontPivotDis4.Text = frontPivotDis[3].ToString();
+                SetTextValueManager.set4(realFront, ref txtReal1,ref txtReal2,ref txtReal3,ref txtReal4);
+                txtMaxFrontDis.Text = maxfront.ToString();
+                txtFrontDisLimit.Text = FrontDisLimit.ToString();
+                
+
             }
+
             catch (Exception ex)
             {
                 timer1.Enabled = false;
@@ -212,8 +227,8 @@ namespace BridgeDetectSystem
             }
         }
 
-       
-        
+
+
         #endregion
 
         #region 菜单栏按钮功能方法
@@ -265,5 +280,17 @@ namespace BridgeDetectSystem
             }
         }
         #endregion
+
+      
+
+        private void btnFront_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSteeveForce_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -70,8 +70,8 @@ namespace BridgeDetectSystem.service
             }
             for (int i = 0; i < 4; i++)
             {
-                //  dissteeve[i] =Math.Abs( dicSteeve[i].GetDisplace() - averstandard);
-                dissteeve[i] =Math.Round( standardlist[i] - dicSteeve[i].GetDisplace(),1);
+                
+                dissteeve[i] =Math.Round(dicSteeve[i].GetDisplace()-standardlist[i],1);
             }
             
             string sqlSteeveForce = string.Format("insert into SteeveForce values(newid(),getdate(),'{0}',{1},{2},{3},{4})", name, dicSteeve[0].GetForce(), dicSteeve[1].GetForce(), dicSteeve[2].GetForce(), dicSteeve[3].GetForce());                      //吊杆力

@@ -168,6 +168,18 @@
     <Compile Include="video\CHCNetSDK.cs" />
     <Compile Include="video\PlayCtrl.cs" />
     <Compile Include="video\VideoPlayer.cs" />
+    <Compile Include="windows\work\FrontDisWin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="windows\work\FrontDisWin.Designer.cs">
+      <DependentUpon>FrontDisWin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="windows\work\SteeveForceWin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="windows\work\SteeveForceWin.Designer.cs">
+      <DependentUpon>SteeveForceWin.cs</DependentUpon>
+    </Compile>
     <Compile Include="windows\work\VideoMonitorWin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -254,6 +266,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="windows\other\WarningDialog.resx">
       <DependentUpon>WarningDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="windows\work\FrontDisWin.resx">
+      <DependentUpon>FrontDisWin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="windows\work\SteeveForceWin.resx">
+      <DependentUpon>SteeveForceWin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="windows\work\VideoMonitorWin.resx">
       <DependentUpon>VideoMonitorWin.cs</DependentUpon>

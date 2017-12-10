@@ -66,7 +66,7 @@ namespace BridgeDetectSystem.adam
 
         #region 方法
         private static readonly object obj = new object(); //锁对象
-        
+
 
         private void ReadRailWay()
         {
@@ -86,25 +86,26 @@ namespace BridgeDetectSystem.adam
             {
                 readTimer.Change(Timeout.Infinite, Timeout.Infinite);
                 hasData = false;
-                System.Windows.Forms.MessageBox.Show("adamHelper2中数据读取失败！请检查线路"+ex.Message);
+                System.Windows.Forms.MessageBox.Show("adamHelper2中数据读取失败！请检查线路" + ex.Message);
             }
         }
 
         private void ConvertToRealValue(double x)
         {
-           
-            
+
+
             //string disData;
-           //位移传感器
+            //位移传感器
             Sensor disSensor;
-            disSensor = new Sensor(SensorType.displaceSensor, 4, 20, 29.8, 100,20);
-           
+            disSensor = new Sensor(SensorType.displaceSensor, 4, 20, 29.8, 100, 20);
+
             disSensor.readValue = x;
-           f = new FrontPivot(0, disSensor);
+            f = new FrontPivot(4, disSensor);
             v = f.GetDisplace();
+            v = Math.Round(v, 1);
             //转成实际值
 
-            //readData=??
+
         }
 
         /// <summary>

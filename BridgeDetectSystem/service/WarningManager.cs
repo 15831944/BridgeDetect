@@ -240,7 +240,8 @@ namespace BridgeDetectSystem.service
             {
                 if (disList[i] > steeveDisLimit)
                 {
-                    warningList.Add("第" + i + "号吊杆位移过大,值为：" + disList[i] + "(cm)");
+                    int t = i + 1;
+                    warningList.Add("第" + t + "号吊杆位移过大,值为：" + disList[i] + "(cm)");
                 }
             }
             //基准位移差报警
@@ -250,19 +251,19 @@ namespace BridgeDetectSystem.service
                 {
                     if (Math.Abs(standardlist[i] - standardlist[j]) >= steeveDisDiffLimit)
                     {
-                        warningList.Add("第" + i + "、" + j + "号" + "吊杆基准之间位移差值过大。值分别为："
+                        warningList.Add("第" + (i+1) + "、" + (j+1) + "号" + "吊杆基准之间位移差值过大。值分别为："
                             + standardlist[i] + "(cm)" + "||" + standardlist[j] + "cm");
                     }
                 }
             }
-            //吊杆位移差
+            //吊杆上升位移差
             for (int i = 0; i < 4; i++)
             {
                 for (int j = i + 1; j < 4; j++)
                 {
                     if (Math.Abs(disList[i] - disList[j]) >= steeveDisDiffLimit)
                     {
-                        warningList.Add("第" + i + "、" + j + "号"  + "吊杆之间位移差值过大。值分别为："
+                        warningList.Add("第" + (i+1) + "、" + (j+1) + "号"  + "吊杆之间位移差值过大。值分别为："
                             + disList[i] + "(cm)" + "||" + disList[j] + "cm");
                     }
                 }
@@ -336,7 +337,7 @@ namespace BridgeDetectSystem.service
             {
                 if (forceList[i] >= forceLimit)
                 {
-                    warningList.Add("第" + i + "号" + str + "力过大,值为：" + forceList[i] + "(KN)");
+                    warningList.Add("第" + (i+1) + "号" + str + "力过大,值为：" + forceList[i] + "(KN)");
                 }
             }
             for (int i = 0; i < forceList.Count; i++)
@@ -345,7 +346,7 @@ namespace BridgeDetectSystem.service
                 {
                     if (Math.Abs(forceList[i] - forceList[j]) >= forceDiff)
                     {
-                        warningList.Add("第" + i + "、" + j + "号" + str + "之间力差值过大。值分别为："
+                        warningList.Add("第" + (i+1) + "、" + (j+1) + "号" + str + "之间力差值过大。值分别为："
                             + forceList[i] + "(KN)" + "||" + forceList[j] + "KN");
                     }
                 }

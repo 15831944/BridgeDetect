@@ -174,13 +174,12 @@
             this.lblFrontPivotDisLimit.AutoSize = true;
             this.tableLayoutPanel2.SetColumnSpan(this.lblFrontPivotDisLimit, 2);
             this.lblFrontPivotDisLimit.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblFrontPivotDisLimit.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.lblFrontPivotDisLimit.Location = new System.Drawing.Point(3, 333);
             this.lblFrontPivotDisLimit.Margin = new System.Windows.Forms.Padding(3);
             this.lblFrontPivotDisLimit.Name = "lblFrontPivotDisLimit";
             this.lblFrontPivotDisLimit.Size = new System.Drawing.Size(214, 60);
             this.lblFrontPivotDisLimit.TabIndex = 3;
-            this.lblFrontPivotDisLimit.Text = "前支点位移上限(cm)";
+            this.lblFrontPivotDisLimit.Text = "前支点沉降位移上限(mm)";
             this.lblFrontPivotDisLimit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnSave

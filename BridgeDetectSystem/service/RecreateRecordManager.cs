@@ -6,7 +6,7 @@ using System.Text;
 
 namespace BridgeDetectSystem.service
 {
-  public static class RecreateRecordManager
+    public static class RecreateRecordManager
     {
         private static DBHelper dbHelper = DBHelper.GetInstance();
 
@@ -117,7 +117,43 @@ namespace BridgeDetectSystem.service
                 )");
 
         }
+        /// <summary>
+        ///7， 重建吊杆位移基准表
+        /// </summary>
+        public static void RecreateSteeveDisStandard()
+        {
+            dbHelper.ExecuteNonQuery(@"IF OBJECT_ID('dbo.SteeveStandard', 'U') IS NOT NULL 
+                                        DROP TABLE dbo.SteeveStandard; ");
+            dbHelper.ExecuteNonQuery(
+                @"create table SteeveStandard
+                (    
+                [steeveStandard1] [real] NULL,
+	            [steeveStandard2] [real] NULL,
+	            [steeveStandard3] [real] NULL,
+	            [steeveStandard4] [real] NULL
+                )");
+            //string sql = "insert into SteeveStandard values(0,0,0,0)";
+            //try { int r = dbHelper.ExecuteNonQuery(sql); }
+            //catch (Exception ex)
+            //{
+            //    throw new Exception("初始基准错误" + ex.Message);
+            //}
 
+        }
+        public static void RecreateFrontDisStandard()
+        {
+            dbHelper.ExecuteNonQuery(@"IF OBJECT_ID('dbo.FrontStandard', 'U') IS NOT NULL 
+                                        DROP TABLE dbo.FrontStandard; ");
+            dbHelper.ExecuteNonQuery(
+                @"create table FrontStandard
+                (    
+    [frontStandard1] [real] NULL,
+	[frontStandard2] [real] NULL,
+	[frontStandard3] [real] NULL,
+	[frontStandard4] [real] NULL
+                )");
+
+        }
         public static void InitialDataBase()
         {
             RecreateUserManagerTable();
@@ -126,6 +162,8 @@ namespace BridgeDetectSystem.service
             RecreateAnchorForce();
             RecreateFrontPivotDis();
             RecreateAlarmRecord();
+            RecreateFrontDisStandard();//保存前支点基准值
+            RecreateSteeveDisStandard();//保存吊杆位移基准值
         }
     }
 }

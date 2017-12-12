@@ -120,7 +120,7 @@ namespace BridgeDetectSystem
                     realSteeveDis[i] = Math.Round(dicSteeve[i].GetDisplace(), 1);//真实距离
                     steeveDis[i] = dicSteeve[i].GetDisplace() - adamHelper.standardlist[i];//升降位移
                     steeveDis[i] = Math.Round(steeveDis[i], 1);  //保留一位小数
-                
+
                 }
                 double sum = 0;
                 for (int i = 0; i < 4; i++)
@@ -191,7 +191,7 @@ namespace BridgeDetectSystem
                 fourStandard = adamHelper.four_standard;
                 Dictionary<int, FrontPivot> dicFrontPivot = adamHelper.frontPivotDic;
                 double[] frontPivotDis = new double[4];//前支点沉降位移
-              
+
                 double[] realFront = new double[4];//真实距离
                 for (int i = 0; i < 4; i++)
                 {
@@ -213,10 +213,10 @@ namespace BridgeDetectSystem
                 txtFrontPivotDis2.Text = frontPivotDis[1].ToString();
                 txtFrontPivotDis3.Text = frontPivotDis[2].ToString();
                 txtFrontPivotDis4.Text = frontPivotDis[3].ToString();
-                SetTextValueManager.set4(realFront, ref txtReal1,ref txtReal2,ref txtReal3,ref txtReal4);
+                SetTextValueManager.set4(realFront, ref txtReal1, ref txtReal2, ref txtReal3, ref txtReal4);
                 txtMaxFrontDis.Text = maxfront.ToString();
                 txtFrontDisLimit.Text = FrontDisLimit.ToString();
-                
+
 
             }
 
@@ -247,16 +247,42 @@ namespace BridgeDetectSystem
         {
             this.Close();
         }
+        private void btnFront_Click(object sender, EventArgs e)
+        {
 
+        }
 
+        private void btnSteeveForce_Click(object sender, EventArgs e)
+        {
 
+        }
 
         /// <summary>
-        /// 重置基准点
+        /// 重置吊杆基准点，清空SteeveStandard表，重新读取位移基准
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btnReSetStandard_Click(object sender, EventArgs e)
+        private void btnReSetSteeveStandard_Click_1(object sender, EventArgs e)
+        {
+            string sqlstr = "delete from SteeveStandard";
+            ResetRead(sqlstr);
+            
+        }
+        /// <summary>
+        /// 重置前支架基准点位移，删FrontStandard。重新读
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ResetFrontStandard_Click(object sender, EventArgs e)
+        {
+            string sql = "delete from FrontStandard";
+            ResetRead(sql);
+        }
+        /// <summary>
+        /// 删基准表，重置
+        /// </summary>
+        /// <param name="sql"></param>
+        private void ResetRead(string sql)
         {
             if (dataStoreManager != null)
             {
@@ -271,7 +297,8 @@ namespace BridgeDetectSystem
 
             try
             {
-                adamHelper.StartTimer(250);
+                OperateSql.deleteTable(sql);
+                adamHelper.StartTimer(250);//重新开始读取
                 dataStoreManager.StartTimer(500, 1000);
             }
             catch (Exception ex)
@@ -279,18 +306,6 @@ namespace BridgeDetectSystem
                 MessageBox.Show("重置发生错误" + ex.Message);
             }
         }
-        #endregion
-
-      
-
-        private void btnFront_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnSteeveForce_Click(object sender, EventArgs e)
-        {
-
-        }
     }
+    #endregion
 }

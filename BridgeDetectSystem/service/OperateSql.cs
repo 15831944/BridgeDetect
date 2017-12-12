@@ -42,8 +42,35 @@ namespace BridgeDetectSystem.service
                 }
             }
         }
-     
-       
+        /// <summary>
+        /// 判断表是否为空
+        /// </summary>
+        /// <param name="sql"></param>
+        /// <returns></returns>
+        public static bool IsTableNull(string sql)
+        {
+            
+                DBHelper dbhelper = DBHelper.GetInstance();
+                DataTable dt = dbhelper.ExecuteSqlDataAdapter(sql, null, 0);
+                if (dt.Rows.Count == 0) { return true; }//是空表
+                else { return false; }
+         }
+     /// <summary>
+     /// 读取标准值表
+     /// </summary>
+     /// <param name="sql"></param>
+     /// <returns></returns>
+      public static DataTable ReadStandard(string sql)
+        {
+            DBHelper dbhelper = DBHelper.GetInstance();
+            DataTable dt = dbhelper.ExecuteSqlDataAdapter(sql, null, 0);
+            return dt;
+        }
+     public static void deleteTable(string sql)
+        {
+            DBHelper dbhelper = DBHelper.GetInstance();
+            int r = dbhelper.ExecuteNonQuery(sql);
+        }
     
         
         

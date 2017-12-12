@@ -3,14 +3,15 @@ using System;
 using System.Collections.Generic;
 using System.Threading;
 using BridgeDetectSystem.entity;
-
+using BridgeDetectSystem.util;
+using System.Data;
 
 namespace BridgeDetectSystem.adam
 {
     public class AdamHelper
     {
         #region  字段
-
+        public DBHelper dbhelper;
         private List<AdamOperation> adamList;
         private Dictionary<int, Dictionary<int, string>> allDataDic;
 
@@ -40,6 +41,7 @@ namespace BridgeDetectSystem.adam
         private static volatile AdamHelper instance = null;
         private AdamHelper(List<AdamOperation> list)
         {
+            this.dbhelper = DBHelper.GetInstance();
             this.adamList = list;
             this.allDataDic = new Dictionary<int, Dictionary<int, string>>();
             this.steeveDic = new Dictionary<int, Steeve>();
@@ -229,21 +231,49 @@ namespace BridgeDetectSystem.adam
         }
 
         /// <summary>
-        /// 读取初始数值作为吊杆位移基准，只读一次。。。。？？？？？？
+        /// 若表为空，则第一次读基准存入数据库，否则从吊杆位移基准数据表中读取基准，赋予standardlist。
         /// </summary>
         public void ReadStandardValue()
         {
-
             List<double> disList = new List<double>();
             standardlist = new List<double>();
-            Sensor sensor = new Sensor(SensorType.displaceSensor, 4, 20, 29.8, 100, 20);
-
-            for (int i = 0; i < 4; i++)
+            string sql = "select * from SteeveStandard";
+            try
             {
-                sensor.readValue = double.Parse(adamList[0].Read(i));//???位移加+4？？
-                standardlist.Add(sensor.GetRealValue());  //每个吊杆的基准值
-                disList.Add(sensor.GetRealValue());
+                if (OperateSql.IsTableNull(sql))
+                {
+
+
+                    Sensor sensor = new Sensor(SensorType.displaceSensor, 4, 20, 29.8, 100, 20);
+
+                    for (int i = 0; i < 4; i++)
+                    {
+                        sensor.readValue = double.Parse(adamList[0].Read(i));//???位移加+4？？
+                        standardlist.Add(sensor.GetRealValue());  //每个吊杆的基准值
+                        disList.Add(sensor.GetRealValue());
+                    }
+                    string sqlstr = string.Format("insert into SteeveStandard values({0},{1},{2},{3})", standardlist[0], standardlist[1], standardlist[2], standardlist[3]);
+                    int r = dbhelper.ExecuteNonQuery(sqlstr);//空表插入基准值
+                }
+                else
+                {   //否则读取数据库中基准值
+
+                    DataTable dt = OperateSql.ReadStandard(sql);
+                    for (int i = 0; i < 4; i++)
+                    {
+                        standardlist[i] = double.Parse(dt.Rows[0][i].ToString());
+
+                    }
+
+
+                }
+
             }
+            catch (Exception e)
+            {
+                throw e;
+            }
+
 
             double sum = 0;
             foreach (double val in disList)
@@ -255,31 +285,50 @@ namespace BridgeDetectSystem.adam
             steeveDisStandard = Math.Round(sum / disList.Count, 3);
 
 
-           
+
         }
         /// <summary>
-        /// 读前支点位移
+        /// 读前支点位移基准。。。
         /// </summary>
         public void ReadFrontStandard()
         {
             //前支点基准值
+            string sql = "select * from FrontStandard";
+            try
+            {
+                if (OperateSql.IsTableNull(sql))
+                {
+                    Sensor sensor1 = new Sensor(SensorType.displaceSensor, 4, 20, 3.8, 1000, 200);
+                    sensor1.readValue = double.Parse(adamList[1].Read(0));
+                    first_frontPivotDisStandard = sensor1.GetRealValue();
 
-            Sensor sensor1 = new Sensor(SensorType.displaceSensor, 4, 20, 3.8, 1000, 200);
-            sensor1.readValue = double.Parse(adamList[1].Read(0));
-            first_frontPivotDisStandard = sensor1.GetRealValue();
+                    Sensor sensor2 = new Sensor(SensorType.displaceSensor, 4, 20, 3.8, 1000, 200);
+                    sensor2.readValue = double.Parse(adamList[1].Read(1));
+                    second_frontPivotDisStandard = sensor2.GetRealValue();
 
-            Sensor sensor2 = new Sensor(SensorType.displaceSensor, 4, 20, 3.8, 1000, 200);
-            sensor2.readValue = double.Parse(adamList[1].Read(1));
-            second_frontPivotDisStandard = sensor2.GetRealValue();
+                    Sensor sensor3 = new Sensor(SensorType.displaceSensor, 4, 20, 3.8, 1000, 200);
+                    sensor3.readValue = double.Parse(adamList[1].Read(2));
+                    three_standard = sensor3.GetRealValue();
 
-            Sensor sensor3 = new Sensor(SensorType.displaceSensor, 4, 20, 3.8, 1000, 200);
-            sensor3.readValue = double.Parse(adamList[1].Read(2));
-            three_standard = sensor3.GetRealValue();
-
-            Sensor sensor4 = new Sensor(SensorType.displaceSensor, 4, 20, 0.8, 1000, 0);
-            sensor4.readValue = double.Parse(adamList[1].Read(3));
-            four_standard = sensor4.GetRealValue();
-
+                    Sensor sensor4 = new Sensor(SensorType.displaceSensor, 4, 20, 0.8, 1000, 0);
+                    sensor4.readValue = double.Parse(adamList[1].Read(3));
+                    four_standard = sensor4.GetRealValue();
+                    string sqlstr = string.Format("insert into FrontStandard values({0},{1},{2},{3})", first_frontPivotDisStandard, second_frontPivotDisStandard, three_standard, four_standard);
+                    int r = dbhelper.ExecuteNonQuery(sqlstr);//空表插入基准值
+                }
+                else
+                {
+                    DataTable dt = OperateSql.ReadStandard(sql);
+                    first_frontPivotDisStandard = double.Parse(dt.Rows[0][0].ToString());
+                    second_frontPivotDisStandard = double.Parse(dt.Rows[0][1].ToString());
+                    three_standard = double.Parse(dt.Rows[0][2].ToString());
+                    four_standard = double.Parse(dt.Rows[0][3].ToString());
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         /// <summary>
@@ -298,9 +347,10 @@ namespace BridgeDetectSystem.adam
         {
             //读取初始的值一次，并记录在字段steeveDisStandard、frontPivotDisStandard中
             //之后作为报警的基准
+
             ReadStandardValue();
             ReadFrontStandard();
-            readTimer.Change(0, period);
+            readTimer.Change(0, period);//读数据
         }
 
 

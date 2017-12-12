@@ -32,8 +32,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PouringState));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.btnFirstPage = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnReSetStandard = new System.Windows.Forms.ToolStripMenuItem();
-            this.前支点重置ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnReSetSteeveStandard = new System.Windows.Forms.ToolStripMenuItem();
+            this.ResetFrontStandard = new System.Windows.Forms.ToolStripMenuItem();
             this.btnSteeveForce = new System.Windows.Forms.ToolStripMenuItem();
             this.btnFront = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -227,8 +227,8 @@
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnFirstPage,
-            this.btnReSetStandard,
-            this.前支点重置ToolStripMenuItem,
+            this.btnReSetSteeveStandard,
+            this.ResetFrontStandard,
             this.btnSteeveForce,
             this.btnFront});
             this.menuStrip1.Location = new System.Drawing.Point(22, 72);
@@ -246,22 +246,23 @@
             this.btnFirstPage.Text = "返回";
             this.btnFirstPage.Click += new System.EventHandler(this.btnFirstPage_Click);
             // 
-            // btnReSetStandard
+            // btnReSetSteeveStandard
             // 
-            this.btnReSetStandard.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnReSetStandard.ForeColor = System.Drawing.Color.White;
-            this.btnReSetStandard.Name = "btnReSetStandard";
-            this.btnReSetStandard.Size = new System.Drawing.Size(221, 44);
-            this.btnReSetStandard.Text = "吊杆与前支点位移重置";
-            this.btnReSetStandard.Click += new System.EventHandler(this.btnReSetStandard_Click);
+            this.btnReSetSteeveStandard.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnReSetSteeveStandard.ForeColor = System.Drawing.Color.White;
+            this.btnReSetSteeveStandard.Name = "btnReSetSteeveStandard";
+            this.btnReSetSteeveStandard.Size = new System.Drawing.Size(181, 44);
+            this.btnReSetSteeveStandard.Text = "吊杆位移基准重置";
+            this.btnReSetSteeveStandard.Click += new System.EventHandler(this.btnReSetSteeveStandard_Click_1);
             // 
-            // 前支点重置ToolStripMenuItem
+            // ResetFrontStandard
             // 
-            this.前支点重置ToolStripMenuItem.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.前支点重置ToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.前支点重置ToolStripMenuItem.Name = "前支点重置ToolStripMenuItem";
-            this.前支点重置ToolStripMenuItem.Size = new System.Drawing.Size(121, 44);
-            this.前支点重置ToolStripMenuItem.Text = "前支点重置";
+            this.ResetFrontStandard.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.ResetFrontStandard.ForeColor = System.Drawing.Color.White;
+            this.ResetFrontStandard.Name = "ResetFrontStandard";
+            this.ResetFrontStandard.Size = new System.Drawing.Size(201, 44);
+            this.ResetFrontStandard.Text = "前支点位移基准重置";
+            this.ResetFrontStandard.Click += new System.EventHandler(this.ResetFrontStandard_Click);
             // 
             // btnSteeveForce
             // 
@@ -2517,7 +2518,7 @@
         private MetroFramework.Controls.MetroLabel lblAnchorF1;
         private MetroFramework.Controls.MetroTextBox txtAnchorF1;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.ToolStripMenuItem btnReSetStandard;
+        private System.Windows.Forms.ToolStripMenuItem btnReSetSteeveStandard;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.GroupBox groupBox1;
@@ -2547,7 +2548,7 @@
         private MetroFramework.Controls.MetroTextBox txtReal2;
         private MetroFramework.Controls.MetroTextBox txtReal3;
         private MetroFramework.Controls.MetroTextBox txtReal4;
-        private System.Windows.Forms.ToolStripMenuItem 前支点重置ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ResetFrontStandard;
         private System.Windows.Forms.ToolStripMenuItem btnSteeveForce;
         private System.Windows.Forms.ToolStripMenuItem btnFront;
     }

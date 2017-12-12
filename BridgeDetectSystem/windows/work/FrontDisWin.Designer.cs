@@ -30,9 +30,13 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrontDisWin));
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.menu = new System.Windows.Forms.MenuStrip();
-            this.btnDraw = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnDrawStart = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnEndDraw = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -43,10 +47,12 @@
             this.lblS3 = new System.Windows.Forms.Label();
             this.lblS4 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.tableLayoutPanel1.SuspendLayout();
             this.menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -66,6 +72,7 @@
             this.tableLayoutPanel1.Controls.Add(this.lblS3, 1, 4);
             this.tableLayoutPanel1.Controls.Add(this.lblS4, 1, 5);
             this.tableLayoutPanel1.Controls.Add(this.pictureBox1, 0, 6);
+            this.tableLayoutPanel1.Controls.Add(this.chart1, 2, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(20, 60);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -87,20 +94,31 @@
             this.menu.Dock = System.Windows.Forms.DockStyle.Fill;
             this.menu.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnDraw});
+            this.btnDrawStart,
+            this.btnEndDraw});
             this.menu.Location = new System.Drawing.Point(0, 0);
             this.menu.Name = "menu";
             this.menu.Size = new System.Drawing.Size(1112, 83);
             this.menu.TabIndex = 0;
             this.menu.Text = "menuStrip1";
             // 
-            // btnDraw
+            // btnDrawStart
             // 
-            this.btnDraw.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnDraw.ForeColor = System.Drawing.Color.White;
-            this.btnDraw.Name = "btnDraw";
-            this.btnDraw.Size = new System.Drawing.Size(101, 79);
-            this.btnDraw.Text = "曲线绘制";
+            this.btnDrawStart.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnDrawStart.ForeColor = System.Drawing.Color.White;
+            this.btnDrawStart.Name = "btnDrawStart";
+            this.btnDrawStart.Size = new System.Drawing.Size(181, 79);
+            this.btnDrawStart.Text = "曲线绘制（开始）";
+            this.btnDrawStart.Click += new System.EventHandler(this.btnDrawStart_Click);
+            // 
+            // btnEndDraw
+            // 
+            this.btnEndDraw.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnEndDraw.ForeColor = System.Drawing.Color.White;
+            this.btnEndDraw.Name = "btnEndDraw";
+            this.btnEndDraw.Size = new System.Drawing.Size(101, 79);
+            this.btnEndDraw.Text = "结束绘制";
+            this.btnEndDraw.Click += new System.EventHandler(this.btnEndDraw_Click);
             // 
             // label1
             // 
@@ -228,6 +246,24 @@
             this.pictureBox1.TabIndex = 10;
             this.pictureBox1.TabStop = false;
             // 
+            // chart1
+            // 
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            this.chart1.Dock = System.Windows.Forms.DockStyle.Fill;
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
+            this.chart1.Location = new System.Drawing.Point(508, 86);
+            this.chart1.Name = "chart1";
+            this.tableLayoutPanel1.SetRowSpan(this.chart1, 6);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chart1.Series.Add(series1);
+            this.chart1.Size = new System.Drawing.Size(601, 743);
+            this.chart1.TabIndex = 11;
+            this.chart1.Text = "chart1";
+            // 
             // timer1
             // 
             this.timer1.Enabled = true;
@@ -251,6 +287,7 @@
             this.menu.ResumeLayout(false);
             this.menu.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -259,7 +296,7 @@
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.MenuStrip menu;
-        private System.Windows.Forms.ToolStripMenuItem btnDraw;
+        private System.Windows.Forms.ToolStripMenuItem btnDrawStart;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -271,5 +308,7 @@
         private System.Windows.Forms.Label lblS4;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private System.Windows.Forms.ToolStripMenuItem btnEndDraw;
     }
 }

@@ -1,6 +1,7 @@
 ﻿using BridgeDetectSystem.adam;
 using BridgeDetectSystem.entity;
 using BridgeDetectSystem.service;
+using BridgeDetectSystem.windows.work;
 using MetroFramework.Controls;
 using System;
 using System.Collections.Generic;
@@ -249,11 +250,14 @@ namespace BridgeDetectSystem
         }
         private void btnFront_Click(object sender, EventArgs e)
         {
-
+            FrontDisWin win = new FrontDisWin();
+            win.Show();
         }
 
         private void btnSteeveForce_Click(object sender, EventArgs e)
         {
+            SteeveForceWin f = new SteeveForceWin();
+            f.Show();
 
         }
 

@@ -132,12 +132,7 @@ namespace BridgeDetectSystem.service
 	            [steeveStandard3] [real] NULL,
 	            [steeveStandard4] [real] NULL
                 )");
-            //string sql = "insert into SteeveStandard values(0,0,0,0)";
-            //try { int r = dbHelper.ExecuteNonQuery(sql); }
-            //catch (Exception ex)
-            //{
-            //    throw new Exception("初始基准错误" + ex.Message);
-            //}
+         
 
         }
         public static void RecreateFrontDisStandard()

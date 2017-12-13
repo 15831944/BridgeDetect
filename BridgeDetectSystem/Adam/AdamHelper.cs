@@ -235,7 +235,7 @@ namespace BridgeDetectSystem.adam
         /// </summary>
         public void ReadStandardValue()
         {
-            List<double> disList = new List<double>();
+           // List<double> disList = new List<double>();
             standardlist = new List<double>();
             string sql = "select * from SteeveStandard";
             try
@@ -250,7 +250,7 @@ namespace BridgeDetectSystem.adam
                     {
                         sensor.readValue = double.Parse(adamList[0].Read(i));//???位移加+4？？
                         standardlist.Add(sensor.GetRealValue());  //每个吊杆的基准值
-                        disList.Add(sensor.GetRealValue());
+                        //disList.Add(sensor.GetRealValue());
                     }
                     string sqlstr = string.Format("insert into SteeveStandard values({0},{1},{2},{3})", standardlist[0], standardlist[1], standardlist[2], standardlist[3]);
                     int r = dbhelper.ExecuteNonQuery(sqlstr);//空表插入基准值
@@ -260,8 +260,8 @@ namespace BridgeDetectSystem.adam
 
                     DataTable dt = OperateSql.ReadStandard(sql);
                     for (int i = 0; i < 4; i++)
-                    {
-                        standardlist[i] = double.Parse(dt.Rows[0][i].ToString());
+                    {//？？？
+                        standardlist.Add ( double.Parse(dt.Rows[0][i].ToString()));
 
                     }
 
@@ -276,13 +276,13 @@ namespace BridgeDetectSystem.adam
 
 
             double sum = 0;
-            foreach (double val in disList)
+            foreach (double val in standardlist)
             {
                 sum += val;
             }
 
             //平均值作基准值
-            steeveDisStandard = Math.Round(sum / disList.Count, 3);
+            steeveDisStandard = Math.Round(sum / 4, 3);
 
 
 

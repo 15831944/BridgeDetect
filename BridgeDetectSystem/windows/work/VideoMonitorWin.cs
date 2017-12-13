@@ -19,12 +19,14 @@ namespace BridgeDetectSystem
             InitializeComponent();
             adamHelper2 = AdamHelper2.GetInstance();
             warningManager2 = WarningManager2.GetInstance();
+          
         }
 
         private void VideoMonitor_Load(object sender, EventArgs e)
         {
             this.initial();
-
+            adamHelper2.StartTimer(250);
+            warningManager2.BgStart();//开始后台报警
             #region 初始化视频监控
 
             string ip = "192.168.1.100";
@@ -35,6 +37,7 @@ namespace BridgeDetectSystem
 
             VideoPlayer.initClass(ip, userName, password);
             player = VideoPlayer.GetInstance();
+           
             try
             {
                 player.Initial();
@@ -42,7 +45,9 @@ namespace BridgeDetectSystem
             }
             catch (VideoPlayerException ex)
             {
-                MessageBox.Show("视频预览初始化出错! " + ex.Message);
+                MessageBox.Show("请重新进入该界面！点击全部显示按钮");
+                
+                //MessageBox.Show("视频预览初始化出错! " + ex.Message);
                 return;
             }
 
@@ -50,9 +55,9 @@ namespace BridgeDetectSystem
 
 
             ShowPreview();
-            adamHelper2.StartTimer(250);
+          
 
-            warningManager2.BgStart();
+            
 
         }
 
@@ -187,8 +192,12 @@ namespace BridgeDetectSystem
         }
 
         private void btnAllVideo_Click(object sender, EventArgs e)
-        {//增加停掉。
-            warningManager2.BgCancel();
+        {
+            //增加停掉。
+            if (warningManager2.isStart==true)
+            {
+                warningManager2.BgCancel();
+            }
             adamHelper2.StopTimer();
             this.Close();
 

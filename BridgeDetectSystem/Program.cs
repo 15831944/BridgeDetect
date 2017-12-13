@@ -84,7 +84,7 @@ namespace BridgeDetectSystem
                 new Adam6217Operation("192.168.1.3", 0),
                 oper2
             };
-           //var oper3 = new Adam6217Operation("192.168.1.191", 2);
+          
             try
             {
 

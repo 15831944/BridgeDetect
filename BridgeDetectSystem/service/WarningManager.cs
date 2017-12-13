@@ -181,20 +181,20 @@ namespace BridgeDetectSystem.service
             double three = Math.Abs(disDiffList[2] - adamHelper.three_standard);
             double four = Math.Abs(disDiffList[3] - adamHelper.four_standard);
             FrontDisLimit = config.Get(ConfigManager.ConfigKeys.frontPivot_DisLimit);
-            if (first > FrontDisLimit)
+            if (first >= FrontDisLimit)
             {
                 warningList.Add("1号前支点沉降超过设定值！！！");
             }
-            if (second > FrontDisLimit)
+            if (second >=FrontDisLimit)
             {
                 warningList.Add("2号前支点沉降超过设定值！！！");
             }
-            if (three > FrontDisLimit)
+            if (three >= FrontDisLimit)
             {
                 warningList.Add("3号前支点沉降超过设定值！！！");
 
             }
-            if (four > FrontDisLimit)
+            if (four >= FrontDisLimit)
             {
                 warningList.Add("4号前支点沉降超过设定值！！！");
             }
@@ -238,7 +238,7 @@ namespace BridgeDetectSystem.service
             steeveDisDiffLimit = config.Get(ConfigManager.ConfigKeys.steeve_DisDiffLimit);//位移差上限
             for (int i = 0; i < disList.Count; i++)
             {
-                if (disList[i] > steeveDisLimit)
+                if (disList[i] >= steeveDisLimit)
                 {
                     int t = i + 1;
                     warningList.Add("第" + t + "号吊杆位移过大,值为：" + disList[i] + "(cm)");
@@ -280,14 +280,14 @@ namespace BridgeDetectSystem.service
          
             if (realDis < 0)
             {
-                if (Math.Abs( realDis )- config.Get(ConfigManager.ConfigKeys.basket_upDisLimit) > 0)
+                if (Math.Abs( realDis )- config.Get(ConfigManager.ConfigKeys.basket_upDisLimit) >= 0)
                 {
                     warningList.Add("前下横梁上升位移，超过设定值报警。上升的位移平均值为：" + realDis);
                 }
             }
             else
             {
-                if (Math.Abs(realDis) - config.Get(ConfigManager.ConfigKeys.basket_downDisLimit) >0)
+                if (Math.Abs(realDis) - config.Get(ConfigManager.ConfigKeys.basket_downDisLimit) >=0)
                 {
                     warningList.Add("前下横梁下降位移，超过设定值报警。下降的位移平均值为：" + Math.Abs(realDis));
                 }

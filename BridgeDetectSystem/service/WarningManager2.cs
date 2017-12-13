@@ -45,7 +45,7 @@ namespace BridgeDetectSystem.service
             bgWork.WorkerReportsProgress = true;
             bgWork.DoWork += new DoWorkEventHandler(BgDoWork);
             bgWork.ProgressChanged += new ProgressChangedEventHandler(BgProgressChanged);
-            if (bgWork.IsBusy) { return; }
+            if (bgWork.IsBusy) { return; } //。。。
             bgWork.RunWorkerAsync();
             isStart = true;
         }

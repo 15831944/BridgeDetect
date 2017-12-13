@@ -58,11 +58,7 @@ namespace BridgeDetectSystem.windows
             PlaySound();
         }
 
-        //private void WarningDialog2_FormClosing(object sender, FormClosingEventArgs e)
-        //{
-        //    e.Cancel = true;
-        //    this.Hide();
-        //}
+      
 
         private void PlaySound()
         {

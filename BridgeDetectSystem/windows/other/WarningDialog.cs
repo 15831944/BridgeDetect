@@ -91,9 +91,6 @@ namespace BridgeDetectSystem.windows
 
         }
 
-        private void WarningDialog_Load(object sender, EventArgs e)
-        {
-
-        }
+       
     }
 }

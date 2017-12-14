@@ -114,7 +114,7 @@ namespace BridgeDetectSystem.windows.work
             addDataDel = new AddDataDelegate(AddData);
             DateTime timeValue = DateTime.Now;
             DateTime minValue = timeValue.ToLocalTime();
-            DateTime maxValue = timeValue.AddSeconds(30).ToLocalTime();
+            DateTime maxValue = timeValue.AddSeconds(600).ToLocalTime();
 
             chart1.ChartAreas[0].AxisX.LabelStyle.Format = "HH:mm:ss";
             chart1.ChartAreas[0].AxisX.Title = "时间";
@@ -126,26 +126,30 @@ namespace BridgeDetectSystem.windows.work
             f1 = new Series();
             f1.ChartType = SeriesChartType.Spline;
             f1.BorderWidth = 1;
-            f1.BorderColor = Color.DarkRed;
+            f1.BorderColor = Color.Red;
             //f1.IsValueShownAsLabel = true;
+            f1.LegendText = "一号前支点";
             f1.XValueType = ChartValueType.DateTime;
             //f2
             f2 = new Series();
             f2.ChartType = SeriesChartType.Spline;
             f2.BorderWidth = 1;
-            f2.BorderColor = Color.Blue;
+            f2.BorderColor = Color.Orange;
+            f2.LegendText = "二号前支点";
             f2.XValueType = ChartValueType.DateTime;
 
             f3 = new Series();
             f3.ChartType = SeriesChartType.Spline;
             f3.BorderWidth = 1;
-            f3.BorderColor = Color.DarkSeaGreen;
+            f3.BorderColor = Color.Green;
+            f3.LegendText = "三号前支点";
             f3.XValueType = ChartValueType.DateTime;
 
             f4 = new Series();
             f4.ChartType = SeriesChartType.Spline;
             f4.BorderWidth = 1;
-            f4.BorderColor = Color.Black;
+            f4.BorderColor = Color.Blue;
+            f4.LegendText = "四号前支点";
             f4.XValueType = ChartValueType.DateTime;
             chart1.Series.Add(f1);
             chart1.Series.Add(f2);
@@ -163,7 +167,7 @@ namespace BridgeDetectSystem.windows.work
             f2.Points.AddXY(timetemp.ToLocalTime(), s2);
             f3.Points.AddXY(timetemp.ToLocalTime(), s3);
             f4.Points.AddXY(timetemp.ToLocalTime(), s4);
-            double removeBefore = timetemp.AddSeconds((double)(20) * (-1)).ToOADate();
+            double removeBefore = timetemp.AddSeconds((double)(500) * (-1)).ToOADate();
 
 
             while (f1.Points[0].XValue < removeBefore)
@@ -175,7 +179,7 @@ namespace BridgeDetectSystem.windows.work
 
             }
             chart1.ChartAreas[0].AxisX.Minimum = f1.Points[0].XValue;
-            chart1.ChartAreas[0].AxisX.Maximum = DateTime.FromOADate(f1.Points[0].XValue).AddSeconds(30).ToOADate();
+            chart1.ChartAreas[0].AxisX.Maximum = DateTime.FromOADate(f1.Points[0].XValue).AddSeconds(600).ToOADate();
 
             chart1.Invalidate();
         }
@@ -187,7 +191,7 @@ namespace BridgeDetectSystem.windows.work
                 while (true)
                 {
                     chart1.Invoke(addDataDel);
-                    Thread.Sleep(500);
+                    Thread.Sleep(10000);
                 }
             }
             catch (Exception e) { }

@@ -15,25 +15,17 @@ namespace BridgeDetectSystem.service
             txt2.Text = array[1].ToString();
             txt3.Text = array[2].ToString();
             txt4.Text = array[3].ToString();
-            if (array.Average() >= 0)
+            double[] arrayAbs = new double[array.Length];
+            for (int i = 0; i <4; i++)
             {
-                double Max = array.Max();
-                double Min = array.Min();
-                double MaxDiff = Max - Min;
-
-
-                txtmax.Text = Max.ToString();
-                txtmaxdiff.Text = MaxDiff.ToString();
-
+                arrayAbs[i] = array[i];
             }
-            else if (array.Average() < 0)
-            {
-                double Max = array.Min();//-4
-                double Min = array.Max();//-1
-                double MaxDiff = Min - Max;//3
-                txtmax.Text = Max.ToString();
-                txtmaxdiff.Text = MaxDiff.ToString();
-            }
+            double max = arrayAbs.Max();
+       
+            double maxdiff = array.Max() - array.Min();
+         
+            txtmax.Text = max.ToString();
+            txtmaxdiff.Text = maxdiff.ToString();
 
         }
         public static void set4(double[] a, ref MetroTextBox txt1, ref MetroTextBox txt2, ref MetroTextBox txt3, ref MetroTextBox txt4)

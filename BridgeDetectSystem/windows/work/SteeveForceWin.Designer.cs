@@ -33,6 +33,7 @@
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.menu = new System.Windows.Forms.MenuStrip();
             this.btnDrawStart = new System.Windows.Forms.ToolStripMenuItem();
@@ -47,8 +48,8 @@
             this.lblF3 = new System.Windows.Forms.Label();
             this.lblF4 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.tableLayoutPanel1.SuspendLayout();
             this.menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -58,9 +59,9 @@
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 3;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 18.18182F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 27.27273F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 54.54546F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 18F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
             this.tableLayoutPanel1.Controls.Add(this.menu, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.label2, 0, 2);
@@ -129,7 +130,7 @@
             this.label1.Location = new System.Drawing.Point(3, 86);
             this.label1.Margin = new System.Windows.Forms.Padding(3);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(499, 60);
+            this.label1.Size = new System.Drawing.Size(327, 60);
             this.label1.TabIndex = 1;
             this.label1.Text = "吊杆力数据显示（kN）";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -142,7 +143,7 @@
             this.label2.Location = new System.Drawing.Point(3, 152);
             this.label2.Margin = new System.Windows.Forms.Padding(3);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(196, 60);
+            this.label2.Size = new System.Drawing.Size(127, 60);
             this.label2.TabIndex = 2;
             this.label2.Text = "1";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -155,7 +156,7 @@
             this.label3.Location = new System.Drawing.Point(3, 218);
             this.label3.Margin = new System.Windows.Forms.Padding(3);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(196, 60);
+            this.label3.Size = new System.Drawing.Size(127, 60);
             this.label3.TabIndex = 3;
             this.label3.Text = "2";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -168,7 +169,7 @@
             this.label4.Location = new System.Drawing.Point(3, 284);
             this.label4.Margin = new System.Windows.Forms.Padding(3);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(196, 60);
+            this.label4.Size = new System.Drawing.Size(127, 60);
             this.label4.TabIndex = 4;
             this.label4.Text = "3";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -181,7 +182,7 @@
             this.label5.Location = new System.Drawing.Point(3, 350);
             this.label5.Margin = new System.Windows.Forms.Padding(3);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(196, 60);
+            this.label5.Size = new System.Drawing.Size(127, 60);
             this.label5.TabIndex = 5;
             this.label5.Text = "4";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -190,10 +191,10 @@
             // 
             this.lblF1.AutoSize = true;
             this.lblF1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblF1.Location = new System.Drawing.Point(205, 152);
+            this.lblF1.Location = new System.Drawing.Point(136, 152);
             this.lblF1.Margin = new System.Windows.Forms.Padding(3);
             this.lblF1.Name = "lblF1";
-            this.lblF1.Size = new System.Drawing.Size(297, 60);
+            this.lblF1.Size = new System.Drawing.Size(194, 60);
             this.lblF1.TabIndex = 6;
             this.lblF1.Text = "label6";
             this.lblF1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -202,10 +203,10 @@
             // 
             this.lblF2.AutoSize = true;
             this.lblF2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblF2.Location = new System.Drawing.Point(205, 218);
+            this.lblF2.Location = new System.Drawing.Point(136, 218);
             this.lblF2.Margin = new System.Windows.Forms.Padding(3);
             this.lblF2.Name = "lblF2";
-            this.lblF2.Size = new System.Drawing.Size(297, 60);
+            this.lblF2.Size = new System.Drawing.Size(194, 60);
             this.lblF2.TabIndex = 7;
             this.lblF2.Text = "label7";
             this.lblF2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -214,10 +215,10 @@
             // 
             this.lblF3.AutoSize = true;
             this.lblF3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblF3.Location = new System.Drawing.Point(205, 284);
+            this.lblF3.Location = new System.Drawing.Point(136, 284);
             this.lblF3.Margin = new System.Windows.Forms.Padding(3);
             this.lblF3.Name = "lblF3";
-            this.lblF3.Size = new System.Drawing.Size(297, 60);
+            this.lblF3.Size = new System.Drawing.Size(194, 60);
             this.lblF3.TabIndex = 8;
             this.lblF3.Text = "label8";
             this.lblF3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -226,10 +227,10 @@
             // 
             this.lblF4.AutoSize = true;
             this.lblF4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblF4.Location = new System.Drawing.Point(205, 350);
+            this.lblF4.Location = new System.Drawing.Point(136, 350);
             this.lblF4.Margin = new System.Windows.Forms.Padding(3);
             this.lblF4.Name = "lblF4";
-            this.lblF4.Size = new System.Drawing.Size(297, 60);
+            this.lblF4.Size = new System.Drawing.Size(194, 60);
             this.lblF4.TabIndex = 9;
             this.lblF4.Text = "label9";
             this.lblF4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -241,16 +242,10 @@
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(3, 416);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(499, 413);
+            this.pictureBox1.Size = new System.Drawing.Size(327, 413);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 10;
             this.pictureBox1.TabStop = false;
-            // 
-            // timer1
-            // 
-            this.timer1.Enabled = true;
-            this.timer1.Interval = 1000;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // chart1
             // 
@@ -259,16 +254,27 @@
             this.chart1.Dock = System.Windows.Forms.DockStyle.Fill;
             legend1.Name = "Legend1";
             this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(508, 86);
+            this.chart1.Location = new System.Drawing.Point(336, 86);
             this.chart1.Name = "chart1";
             this.tableLayoutPanel1.SetRowSpan(this.chart1, 6);
             series1.ChartArea = "ChartArea1";
             series1.Legend = "Legend1";
+            series1.LegendText = "一号吊杆";
             series1.Name = "Series1";
             this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(601, 743);
+            this.chart1.Size = new System.Drawing.Size(773, 743);
             this.chart1.TabIndex = 11;
             this.chart1.Text = "chart1";
+            title1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            title1.Name = "Title1";
+            title1.Text = "吊杆力曲线绘制";
+            this.chart1.Titles.Add(title1);
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // SteeveForceWin
             // 

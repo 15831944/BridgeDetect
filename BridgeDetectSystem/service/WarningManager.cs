@@ -183,20 +183,20 @@ namespace BridgeDetectSystem.service
             FrontDisLimit = config.Get(ConfigManager.ConfigKeys.frontPivot_DisLimit);
             if (first >= FrontDisLimit)
             {
-                warningList.Add("1号前支点沉降超过设定值！！！");
+                warningList.Add("1号前支点沉降超过设定值！！！沉降了"+first+"毫米");
             }
             if (second >=FrontDisLimit)
             {
-                warningList.Add("2号前支点沉降超过设定值！！！");
+                warningList.Add("2号前支点沉降超过设定值！！！沉降了"+second+"毫米");
             }
             if (three >= FrontDisLimit)
             {
-                warningList.Add("3号前支点沉降超过设定值！！！");
+                warningList.Add("3号前支点沉降超过设定值！！！沉降了"+ three+"毫米");
 
             }
             if (four >= FrontDisLimit)
             {
-                warningList.Add("4号前支点沉降超过设定值！！！");
+                warningList.Add("4号前支点沉降超过设定值！！！沉降了"+four+ "毫米");
             }
         }
 

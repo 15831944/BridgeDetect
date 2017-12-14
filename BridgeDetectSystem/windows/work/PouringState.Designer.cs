@@ -762,7 +762,7 @@
             this.lblMaxSteeveDis.Name = "lblMaxSteeveDis";
             this.lblMaxSteeveDis.Size = new System.Drawing.Size(92, 35);
             this.lblMaxSteeveDis.TabIndex = 34;
-            this.lblMaxSteeveDis.Text = "最大位移";
+            this.lblMaxSteeveDis.Text = "最大位移(Abs)";
             this.lblMaxSteeveDis.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txtSteeveDisLimit

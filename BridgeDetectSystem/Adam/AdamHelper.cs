@@ -135,7 +135,7 @@ namespace BridgeDetectSystem.adam
                 if (i == 0)
                 {
                     ////读取模块192.168.1.3数据，吊杆位移0，1，2，3与吊杆力4，5，6，7通道                  
-                    //j=0 标号 17080383 空载 4.026mA 
+                    //若更换 ？。；j=0 标号 17080383 空载 4.026mA 
                     forceSensor = new Sensor(SensorType.forceSensor, 4, 20, 300, 1, 0);
                     tempDic.TryGetValue(4, out forceData);
                     forceSensor.readValue = double.Parse(forceData);
@@ -182,17 +182,15 @@ namespace BridgeDetectSystem.adam
 
                     for (j = 0; j < 3; j++)//前支架位移电流
                     {
-                        disSensor = new Sensor(SensorType.displaceSensor, 4, 20, 3.8, 1000, 200);//传感器量程0.2-4 m；//单位mm
+                        disSensor = new Sensor(SensorType.displaceSensor, 4, 20, 1.2, 1000,0);//传感器量程0.2-4 m；//单位mm
                         tempDic.TryGetValue(j, out disData);
                         disSensor.readValue = double.Parse(disData);
-
                         FrontPivot pivot = new FrontPivot(j, disSensor);
                         frontPivotDic[pivot.id] = pivot;
                     }
-                    disSensor = new Sensor(SensorType.displaceSensor, 4, 20, 0.8, 1000, 0);//传感器量程0.2-4 m；
+                    disSensor = new Sensor(SensorType.displaceSensor, 4, 20, 1.2, 1000, 0);//传感器量程0.2-4 m；
                     tempDic.TryGetValue(3, out disData);
                     disSensor.readValue = double.Parse(disData);
-
                     FrontPivot pivot1 = new FrontPivot(3, disSensor);
                     frontPivotDic[pivot1.id] = pivot1;
 
@@ -235,7 +233,7 @@ namespace BridgeDetectSystem.adam
         /// </summary>
         public void ReadStandardValue()
         {
-           // List<double> disList = new List<double>();
+            // List<double> disList = new List<double>();
             standardlist = new List<double>();
             string sql = "select * from SteeveStandard";
             try
@@ -260,8 +258,8 @@ namespace BridgeDetectSystem.adam
 
                     DataTable dt = OperateSql.ReadStandard(sql);
                     for (int i = 0; i < 4; i++)
-                    {//？？？
-                        standardlist.Add ( double.Parse(dt.Rows[0][i].ToString()));
+                    {
+                        standardlist.Add(double.Parse(dt.Rows[0][i].ToString()));
 
                     }
 
@@ -288,7 +286,7 @@ namespace BridgeDetectSystem.adam
 
         }
         /// <summary>
-        /// 读前支点位移基准。。。
+        /// 读前支点位移基准。。拉绳式传感器。1.2m量程。
         /// </summary>
         public void ReadFrontStandard()
         {
@@ -298,19 +296,19 @@ namespace BridgeDetectSystem.adam
             {
                 if (OperateSql.IsTableNull(sql))
                 {
-                    Sensor sensor1 = new Sensor(SensorType.displaceSensor, 4, 20, 3.8, 1000, 200);
+                    Sensor sensor1 = new Sensor(SensorType.displaceSensor, 4, 20, 1.2, 1000, 0);
                     sensor1.readValue = double.Parse(adamList[1].Read(0));
                     first_frontPivotDisStandard = sensor1.GetRealValue();
 
-                    Sensor sensor2 = new Sensor(SensorType.displaceSensor, 4, 20, 3.8, 1000, 200);
+                    Sensor sensor2 = new Sensor(SensorType.displaceSensor, 4, 20, 1.2, 1000, 0);
                     sensor2.readValue = double.Parse(adamList[1].Read(1));
                     second_frontPivotDisStandard = sensor2.GetRealValue();
 
-                    Sensor sensor3 = new Sensor(SensorType.displaceSensor, 4, 20, 3.8, 1000, 200);
+                    Sensor sensor3 = new Sensor(SensorType.displaceSensor, 4, 20, 1.2, 1000, 0);
                     sensor3.readValue = double.Parse(adamList[1].Read(2));
                     three_standard = sensor3.GetRealValue();
 
-                    Sensor sensor4 = new Sensor(SensorType.displaceSensor, 4, 20, 0.8, 1000, 0);
+                    Sensor sensor4 = new Sensor(SensorType.displaceSensor, 4, 20, 1.2, 1000, 0);
                     sensor4.readValue = double.Parse(adamList[1].Read(3));
                     four_standard = sensor4.GetRealValue();
                     string sqlstr = string.Format("insert into FrontStandard values({0},{1},{2},{3})", first_frontPivotDisStandard, second_frontPivotDisStandard, three_standard, four_standard);
